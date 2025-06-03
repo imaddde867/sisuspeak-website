@@ -33,15 +33,28 @@ const CTASection = () => {
     setError('');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email to Formspree
+      const response = await fetch('https://formspree.io/f/xdkogqpb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          source: 'Sisu Speak CTA',
+          timestamp: new Date().toISOString(),
+          page: 'homepage'
+        }),
+      });
 
-      // Here you would typically send the email to your backend
-      console.log('Email submitted:', email);
-
-      setSubmitted(true);
-      setEmail('');
-      setIsValidEmail(false);
+      if (response.ok) {
+        setSubmitted(true);
+        setEmail('');
+        setIsValidEmail(false);
+        console.log('CTA signup successful:', email);
+      } else {
+        throw new Error('Failed to submit');
+      }
     } catch {
       setError('Something went wrong. Please try again.');
     } finally {

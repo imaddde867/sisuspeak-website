@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
+import { trackEmailSignup } from '@/utils/analytics';
+import { validateEmail, sanitizeInput } from '@/utils/validation';
+import { submitFormData, FormSubmissionQueue } from '@/utils/api';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -11,13 +14,8 @@ export default function Signup() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isValidEmail, setIsValidEmail] = useState(false);
 
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+    const value = sanitizeInput(e.target.value);
     setEmail(value);
     setErrors({});
     setIsValidEmail(validateEmail(value));
@@ -35,14 +33,41 @@ export default function Signup() {
     setErrors({});
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Waitlist signup:', email);
-      setSubmitted(true);
-      setEmail('');
-      setIsValidEmail(false);
-    } catch {
-      setErrors({ submit: 'Something went wrong. Please try again.' });
+      // Submit form data with retry logic
+      const formData = {
+        email: email,
+        source: 'Sisu Speak Waitlist',
+        timestamp: new Date().toISOString(),
+        page: 'signup'
+      };
+
+      const success = await submitFormData(formData);
+
+      if (success) {
+        setSubmitted(true);
+
+        // Track successful signup
+        trackEmailSignup(email, 'Sisu Speak Waitlist', 'signup');
+
+        setEmail('');
+        setIsValidEmail(false);
+
+        console.log('Waitlist signup successful:', email);
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Signup error:', error);
+
+      // Queue for later if offline
+      FormSubmissionQueue.add({
+        email: email,
+        source: 'Sisu Speak Waitlist',
+        timestamp: new Date().toISOString(),
+        page: 'signup'
+      });
+
+      setErrors({ submit: 'Something went wrong. We\'ve saved your email and will try again automatically.' });
     } finally {
       setIsSubmitting(false);
     }

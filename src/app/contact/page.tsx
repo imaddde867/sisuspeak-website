@@ -82,20 +82,37 @@ export default function Contact() {
     }
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        company: '',
-        phone: ''
+      // Send contact form to Formspree
+      const response = await fetch('https://formspree.io/f/xdkogqpb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'Sisu Speak Contact Form',
+          timestamp: new Date().toISOString(),
+          page: 'contact'
+        }),
       });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          company: '',
+          phone: ''
+        });
+        console.log('Contact form submitted successfully');
+      } else {
+        throw new Error('Failed to submit');
+      }
     } catch (error) {
       console.error('Submission error:', error);
+      setErrors({ submit: 'Something went wrong. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
