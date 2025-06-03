@@ -23,16 +23,22 @@ const FeatureCard = ({ icon, title, description, delay }: FeatureProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
-      className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-200 hover:-translate-y-1"
+      className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-200 hover:-translate-y-1 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
+      tabIndex={0}
+      role="article"
+      aria-labelledby={`feature-${title.replace(/\s+/g, '-').toLowerCase()}`}
     >
       {/* Icon container */}
-      <div className="h-12 w-12 bg-blue-100 group-hover:bg-blue-500 rounded-xl flex items-center justify-center text-blue-600 group-hover:text-white mb-4 transition-all duration-200">
-        <div className="text-lg">
+      <div className="h-12 w-12 bg-blue-100 group-hover:bg-blue-500 group-focus-within:bg-blue-500 rounded-xl flex items-center justify-center text-blue-600 group-hover:text-white group-focus-within:text-white mb-4 transition-all duration-200">
+        <div className="text-lg" aria-hidden="true">
           {icon}
         </div>
       </div>
 
-      <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors duration-200">
+      <h3
+        id={`feature-${title.replace(/\s+/g, '-').toLowerCase()}`}
+        className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-700 group-focus-within:text-blue-700 transition-colors duration-200"
+      >
         {title}
       </h3>
       <p className="text-slate-600 leading-relaxed">

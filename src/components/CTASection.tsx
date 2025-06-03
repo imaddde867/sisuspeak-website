@@ -7,24 +7,47 @@ const CTASection = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isValidEmail, setIsValidEmail] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    setError('');
+    setIsValidEmail(validateEmail(value));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!email || !email.includes('@')) {
+
+    if (!validateEmail(email)) {
       setError('Please enter a valid email address');
       return;
     }
-    
-    // Here you would typically send the email to your backend
-    console.log('Email submitted:', email);
-    setSubmitted(true);
+
+    setIsLoading(true);
     setError('');
-    
-    // Reset form after showing success message
-    setTimeout(() => {
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Here you would typically send the email to your backend
+      console.log('Email submitted:', email);
+
+      setSubmitted(true);
       setEmail('');
-    }, 100);
+      setIsValidEmail(false);
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -72,29 +95,72 @@ const CTASection = () => {
                     Join the Waitlist
                   </h3>
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
+                    <div className="relative">
                       <label htmlFor="email" className="block text-sm font-medium text-blue-100 mb-2">
                         Email Address
                       </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-200"
-                        placeholder="you@example.com"
-                        required
-                      />
+                      <div className="relative">
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={email}
+                          onChange={handleEmailChange}
+                          disabled={isLoading}
+                          className={`w-full px-4 py-3 pr-10 bg-white/20 border rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 ${
+                            error
+                              ? 'border-red-400 focus:ring-red-400'
+                              : isValidEmail
+                                ? 'border-green-400 focus:ring-green-400'
+                                : 'border-white/30 focus:ring-yellow-400'
+                          } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                          placeholder="you@example.com"
+                          required
+                        />
+                        {/* Email validation indicator */}
+                        {email && (
+                          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            {isValidEmail ? (
+                              <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                            ) : (
+                              <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                              </svg>
+                            )}
+                          </div>
+                        )}
+                      </div>
                       {error && (
-                        <p className="mt-2 text-sm text-red-300">{error}</p>
+                        <p className="mt-2 text-sm text-red-300 flex items-center gap-1">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                          </svg>
+                          {error}
+                        </p>
                       )}
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded-xl transition-colors duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-600"
+                      disabled={!isValidEmail || isLoading}
+                      className={`w-full font-bold py-3 px-6 rounded-xl transition-all duration-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-600 button-press ${
+                        !isValidEmail || isLoading
+                          ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
+                          : 'bg-yellow-400 hover:bg-yellow-500 text-blue-900 hover:scale-105'
+                      }`}
                     >
-                      Join Waitlist
+                      {isLoading ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Joining<span className="loading-dots"></span>
+                        </span>
+                      ) : (
+                        'Join Waitlist'
+                      )}
                     </button>
                   </form>
                   <p className="text-sm text-blue-200 mt-4 text-center">
