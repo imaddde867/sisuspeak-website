@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import { motion } from '@/utils/motion';
 
 const CTASection = () => {
   const [email, setEmail] = useState('');
@@ -43,7 +42,7 @@ const CTASection = () => {
       setSubmitted(true);
       setEmail('');
       setIsValidEmail(false);
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
@@ -81,7 +80,7 @@ const CTASection = () => {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Welcome to the family!</h3>
-                  <p className="text-blue-100 mb-4">We'll keep you updated on our progress and notify you when we launch.</p>
+                  <p className="text-blue-100 mb-4">We&apos;ll keep you updated on our progress and notify you when we launch.</p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="text-yellow-300 hover:text-yellow-200 font-medium transition-colors duration-200 underline"

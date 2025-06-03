@@ -104,7 +104,7 @@ export default function Contact() {
   return (
     <PageLayout
       title="Contact Us"
-      description="Have questions about Sisu Speak? We'd love to hear from you and answer any questions about our AI-powered Finnish learning platform."
+      description="Have questions about Sisu Speak? We&apos;d love to hear from you and answer any questions about our AI-powered Finnish learning platform."
     >
       <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,7 +116,7 @@ export default function Contact() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   Ready to start your Finnish learning journey? Have questions about our AI tutors?
-                  We're here to help you every step of the way.
+                  We&apos;re here to help you every step of the way.
                 </p>
 
                 <div className="space-y-6">
@@ -177,7 +177,7 @@ export default function Contact() {
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Message Sent! 🎉</h3>
                     <p className="text-gray-600 mb-8 leading-relaxed">
-                      Thank you for reaching out! We've received your message and our team will get back to you within 24 hours.
+                      Thank you for reaching out! We&apos;ve received your message and our team will get back to you within 24 hours.
                     </p>
                     <div className="space-y-4">
                       <button

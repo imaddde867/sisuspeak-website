@@ -62,7 +62,7 @@ const TermsOfServicePage = () => {
                 </p>
                 <ul className="list-disc pl-5 sm:pl-6 text-gray-600 space-y-1 sm:space-y-2 text-sm sm:text-base">
                   <li>Use the service for any illegal or unauthorized purpose</li>
-                  <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
+                  <li>Attempt to gain unauthorized access to our systems or other users&apos; accounts</li>
                   <li>Upload or transmit malicious code, viruses, or harmful content</li>
                   <li>Harass, abuse, or harm other users</li>
                   <li>Reverse engineer, decompile, or disassemble our software</li>

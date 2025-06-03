@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from '@/utils/motion';
 
 const Hero = () => {
   return (

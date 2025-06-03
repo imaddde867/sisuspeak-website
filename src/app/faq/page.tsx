@@ -170,7 +170,7 @@ const FAQPage = () => {
                 Still have questions?
               </h3>
               <p className="text-gray-600 mb-6 text-sm sm:text-base">
-                Can't find the answer you're looking for? We'd love to help you out.
+                Can&apos;t find the answer you&apos;re looking for? We&apos;d love to help you out.
               </p>
               <a
                 href="/contact"

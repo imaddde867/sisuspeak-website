@@ -7,16 +7,14 @@ interface PageLayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
-  showBreadcrumb?: boolean;
   className?: string;
 }
 
-const PageLayout = ({ 
-  children, 
-  title, 
-  description, 
-  showBreadcrumb = true,
-  className = '' 
+const PageLayout = ({
+  children,
+  title,
+  description,
+  className = ''
 }: PageLayoutProps) => {
   return (
     <>

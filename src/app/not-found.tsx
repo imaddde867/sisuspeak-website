@@ -80,7 +80,7 @@ export default function NotFound() {
             This page seems to have wandered off into the Finnish wilderness.
           </p>
           <p className="text-sm text-gray-500 italic">
-            "Ei löydy" — not found
+            &quot;Ei löydy&quot; — not found
           </p>
         </motion.div>
 

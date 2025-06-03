@@ -41,7 +41,7 @@ export default function Signup() {
       setSubmitted(true);
       setEmail('');
       setIsValidEmail(false);
-    } catch (err) {
+    } catch {
       setErrors({ submit: 'Something went wrong. Please try again.' });
     } finally {
       setIsSubmitting(false);
@@ -76,19 +76,19 @@ export default function Signup() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">You're on the list! 🎉</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">You&apos;re on the list! 🎉</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Thank you for joining our waitlist. We'll notify you as soon as Sisu Speak is ready for early access.
+                Thank you for joining our waitlist. We&apos;ll notify you as soon as Sisu Speak is ready for early access.
               </p>
 
               <div className="bg-blue-50 rounded-xl p-6 mb-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">What's next?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">What&apos;s next?</h3>
                 <div className="space-y-2 text-sm text-gray-700">
                   <div className="flex items-center justify-center">
                     <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>We'll send you exclusive updates</span>
+                    <span>We&apos;ll send you exclusive updates</span>
                   </div>
                   <div className="flex items-center justify-center">
                     <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">

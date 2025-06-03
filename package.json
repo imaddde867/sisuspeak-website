@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "analyze": "ANALYZE=true next build",
-    "export": "next build && next export"
+    "export": "next build"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
