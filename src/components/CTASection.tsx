@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
 
 const CTASection = () => {
   const [email, setEmail] = useState('');
@@ -49,6 +50,16 @@ const CTASection = () => {
 
       if (response.ok) {
         setSubmitted(true);
+
+        // Send welcome email
+        try {
+          await sendWelcomeEmailWithFallback(email);
+          console.log('Welcome email sent to:', email);
+        } catch (emailError) {
+          console.error('Failed to send welcome email:', emailError);
+          // Don't fail the signup if email fails
+        }
+
         setEmail('');
         setIsValidEmail(false);
         console.log('CTA signup successful:', email);

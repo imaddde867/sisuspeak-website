@@ -82,7 +82,7 @@ export default function Contact() {
     }
 
     try {
-      // Send contact form to Formspree
+      // Send contact form to Formspree (configured to send to imadeddine200507@gmail.com)
       const response = await fetch('https://formspree.io/f/xdkogqpb', {
         method: 'POST',
         headers: {
@@ -92,7 +92,9 @@ export default function Contact() {
           ...formData,
           source: 'Sisu Speak Contact Form',
           timestamp: new Date().toISOString(),
-          page: 'contact'
+          page: 'contact',
+          _replyto: formData.email, // Ensure reply-to is set to sender's email
+          _subject: `New Contact Form Submission: ${formData.subject || 'General Inquiry'}`,
         }),
       });
 
@@ -423,7 +425,7 @@ export default function Contact() {
                             <>
                               Send Message
                               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                               </svg>
                             </>
                           )}

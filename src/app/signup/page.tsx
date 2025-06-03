@@ -6,6 +6,7 @@ import PageLayout from '@/components/PageLayout';
 import { trackEmailSignup } from '@/utils/analytics';
 import { validateEmail, sanitizeInput } from '@/utils/validation';
 import { submitFormData, FormSubmissionQueue } from '@/utils/api';
+import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -48,6 +49,15 @@ export default function Signup() {
 
         // Track successful signup
         trackEmailSignup(email, 'Sisu Speak Waitlist', 'signup');
+
+        // Send welcome email
+        try {
+          await sendWelcomeEmailWithFallback(email);
+          console.log('Welcome email sent to:', email);
+        } catch (emailError) {
+          console.error('Failed to send welcome email:', emailError);
+          // Don't fail the signup if email fails
+        }
 
         setEmail('');
         setIsValidEmail(false);
