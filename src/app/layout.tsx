@@ -7,6 +7,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: 'swap',
+  preload: true,
 });
 
 const poppins = Poppins({
@@ -14,6 +15,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
   display: 'swap',
+  preload: true,
 });
 
 const baloo = Baloo_2({
@@ -21,6 +23,7 @@ const baloo = Baloo_2({
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-baloo",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {

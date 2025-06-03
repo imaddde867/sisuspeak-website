@@ -81,7 +81,7 @@ const Features = () => {
             Why Choose Sisu Speak
           </div>
 
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl font-heading mb-4 px-4 sm:px-0">
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-4 sm:px-0" style={{ fontFamily: 'var(--font-poppins)' }}>
             <span className="block">AI-Powered Learning</span>
             <span className="block gradient-text">That Actually Works</span>
           </h2>

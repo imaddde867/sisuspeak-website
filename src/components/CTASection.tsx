@@ -60,7 +60,7 @@ const CTASection = () => {
               Join the Revolution
             </div>
 
-            <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl font-heading leading-tight mb-6">
+            <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
               <span className="block">Ready to learn Finnish</span>
               <span className="block text-yellow-300">the natural way?</span>
             </h2>

@@ -129,7 +129,7 @@ const FAQPage = () => {
               >
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full px-4 sm:px-6 py-4 sm:py-4 text-left flex items-center justify-between focus-ring rounded-xl min-h-[64px] active:scale-[0.99]"
+                  className="w-full px-4 sm:px-6 py-4 sm:py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-xl min-h-[64px] active:scale-[0.99]"
                   aria-expanded={openItems.includes(index)}
                 >
                   <span className="font-semibold text-gray-900 pr-4 text-sm sm:text-base leading-relaxed">{item.question}</span>
@@ -174,7 +174,7 @@ const FAQPage = () => {
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors duration-200 focus-ring min-h-[48px] active:scale-95"
+                className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-[48px] active:scale-95"
               >
                 Contact Support
               </a>

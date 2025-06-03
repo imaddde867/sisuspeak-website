@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center py-8 sm:py-12">
       {/* Simplified background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-purple-100/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-blue-50/20"></div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
@@ -20,7 +20,7 @@ const Hero = () => {
                 AI-Powered Finnish Learning
               </div>
 
-              <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading leading-tight mb-6">
+              <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
                 <span className="block">Learn Finnish</span>
                 <span className="block gradient-text">Through Conversation</span>
               </h1>
@@ -32,7 +32,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start px-4 sm:px-0">
                 <Link
                   href="/signup"
-                  className="relative inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-4 text-base sm:text-lg font-semibold rounded-2xl text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 focus-ring button-press group overflow-hidden min-h-[56px] w-full sm:w-auto"
+                  className="relative inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-4 text-base sm:text-lg font-semibold rounded-2xl text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 button-press group overflow-hidden min-h-[56px] w-full sm:w-auto"
                   aria-label="Join our waitlist to get early access to Sisu Speak"
                 >
                   <span className="relative z-10 flex items-center gap-2">
@@ -46,7 +46,7 @@ const Hero = () => {
                 </Link>
                 <Link
                   href="#how-it-works"
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-4 text-base sm:text-lg font-semibold rounded-2xl text-blue-700 bg-blue-50 hover:bg-blue-100 border-2 border-blue-200 hover:border-blue-300 transition-all duration-200 focus-ring button-press group min-h-[56px] w-full sm:w-auto"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-4 text-base sm:text-lg font-semibold rounded-2xl text-blue-700 bg-blue-50 hover:bg-blue-100 border-2 border-blue-200 hover:border-blue-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 button-press group min-h-[56px] w-full sm:w-auto"
                   aria-label="Learn how Sisu Speak works"
                   onClick={(e) => {
                     e.preventDefault();
