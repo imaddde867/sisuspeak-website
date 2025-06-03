@@ -5,95 +5,95 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-100">
+    <footer className="bg-slate-900">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="inline-block">
-              <span className="font-baloo text-3xl font-bold text-blue-600 tracking-tight select-none">sisu speak</span>
+              <span className="font-baloo text-3xl font-bold gradient-text tracking-tight select-none">
+                sisu speak
+              </span>
             </Link>
-            <p className="mt-4 text-sm text-gray-600 max-w-md">
+            <p className="mt-4 text-sm text-slate-300 max-w-md">
               Sisu Speak uses AI-driven conversations to teach Finnish naturally and effectively. Practice with our virtual tutors anytime, anywhere.
             </p>
             <div className="mt-6 flex space-x-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500 transition-colors">
-                <span className="sr-only">Twitter</span>
-                <FaTwitter className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500 transition-colors">
-                <span className="sr-only">LinkedIn</span>
-                <FaLinkedin className="h-5 w-5" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500 transition-colors">
-                <span className="sr-only">Instagram</span>
-                <FaInstagram className="h-5 w-5" />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-500 transition-colors">
-                <span className="sr-only">Facebook</span>
-                <FaFacebook className="h-5 w-5" />
-              </a>
+              {[
+                { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
+                { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+                { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
+                { icon: FaFacebook, href: "https://facebook.com", label: "Facebook" }
+              ].map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-slate-400 hover:text-blue-400 transition-colors duration-200"
+                >
+                  <span className="sr-only">{label}</span>
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick links */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-800 tracking-wider uppercase">Learn More</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <Link href="/#features" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href="/#how-it-works" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link href="/#about" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  Blog
-                </Link>
-              </li>
+            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Learn More</h3>
+            <ul className="space-y-2">
+              {[
+                { href: "/#features", label: "Features" },
+                { href: "/#how-it-works", label: "How It Works" },
+                { href: "/#about", label: "About Us" },
+                { href: "/blog", label: "Blog" }
+              ].map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Support */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-800 tracking-wider uppercase">Support</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <Link href="/contact" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-sm text-gray-600 hover:text-blue-500 transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
+            <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Support</h3>
+            <ul className="space-y-2">
+              {[
+                { href: "/contact", label: "Contact Us" },
+                { href: "/faq", label: "FAQ" },
+                { href: "/privacy", label: "Privacy Policy" },
+                { href: "/terms", label: "Terms of Service" }
+              ].map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t border-gray-200 pt-8">
-          <p className="text-sm text-gray-500 text-center">
-            &copy; {currentYear} Sisu Speak. All rights reserved.
-          </p>
+
+        {/* Bottom section */}
+        <div className="mt-12 pt-8 border-t border-slate-700">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-slate-400 text-center md:text-left">
+              &copy; {currentYear} Sisu Speak. All rights reserved.
+            </p>
+            <div className="mt-4 md:mt-0">
+              <span className="text-sm text-slate-400">Made with ❤️ for Finnish learners</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

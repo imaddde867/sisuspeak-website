@@ -6,67 +6,70 @@ import { motion } from '@/utils/motion';
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
-          <svg
-            className="absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
-            fill="currentColor"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon points="50,0 100,0 50,100 0,100" />
-          </svg>
+    <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center">
+      {/* Simplified background pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-purple-100/20"></div>
 
-          <div className="relative px-4 pt-16 sm:px-6 sm:pt-24 lg:px-8 lg:pt-32">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
-            >
-              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl font-heading">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+          <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6">
+            <div className="text-center lg:text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                AI-Powered Finnish Learning
+              </div>
+
+              <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl font-heading leading-tight mb-6">
                 <span className="block">Learn Finnish</span>
-                <span className="block text-blue-500">Through Conversation</span>
+                <span className="block gradient-text">Through Conversation</span>
               </h1>
-              <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+
+              <p className="text-lg text-slate-600 sm:text-xl lg:text-left text-center max-w-lg mx-auto lg:mx-0 leading-relaxed mb-10">
                 Meet the Sisu family, your AI language tutors who teach Finnish through natural conversations, not boring flashcards.
               </p>
-              <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
+
+              <div className="flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start">
                 <Link
                   href="/signup"
-                  className="w-full flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-xl text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 md:px-10 md:py-4 md:text-lg"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
-                  Join Waitlist
+                  <span className="flex items-center gap-2">
+                    Join Waitlist
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </Link>
                 <Link
                   href="#how-it-works"
-                  className="w-full flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-xl text-blue-600 bg-blue-100 hover:bg-blue-200 transition-colors md:px-10 md:py-4 md:text-lg mt-3 sm:mt-0 sm:ml-4"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-blue-700 bg-blue-50 hover:bg-blue-100 border-2 border-blue-200 hover:border-blue-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
-                  How It Works
+                  <span className="flex items-center gap-2">
+                    How It Works
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
                 </Link>
               </div>
-            </motion.div>
+            </div>
+          </div>
+          <div className="lg:col-span-6 mt-12 lg:mt-0">
+            <div className="relative flex items-center justify-center">
+              <div className="relative">
+                <Image
+                  src="/images/sisu-deer.svg"
+                  alt="Sisu Speak mascot"
+                  width={500}
+                  height={500}
+                  className="max-w-sm sm:max-w-md lg:max-w-lg drop-shadow-xl"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full flex items-center justify-center"
-        >
-          <Image
-            src="/images/sisu-deer.svg"
-            alt="Sisu Speak mascot"
-            width={500}
-            height={500}
-            className="max-w-md lg:max-w-lg"
-            priority
-          />
-        </motion.div>
       </div>
     </div>
   );

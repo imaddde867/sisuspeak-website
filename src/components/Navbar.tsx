@@ -13,41 +13,33 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center">
-            <span className="font-baloo text-3xl font-bold text-blue-600 tracking-tight select-none">sisu speak</span>
+            <span className="font-baloo text-3xl font-bold gradient-text tracking-tight select-none">
+              sisu speak
+            </span>
           </Link>
 
           {/* Desktop menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              <Link 
-                href="/#features" 
-                className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Features
-              </Link>
-              <Link 
-                href="/#how-it-works" 
-                className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                How It Works
-              </Link>
-              <Link 
-                href="/#about" 
-                className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                About
-              </Link>
-              <Link 
-                href="/contact" 
-                className="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Contact
-              </Link>
+            <div className="ml-10 flex items-center space-x-1">
+              {[
+                { href: "/#features", label: "Features" },
+                { href: "/#how-it-works", label: "How It Works" },
+                { href: "/#about", label: "About" },
+                { href: "/contact", label: "Contact" }
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-slate-700 hover:text-blue-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-blue-50"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -55,9 +47,14 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-base font-semibold rounded-xl text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold rounded-xl text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Join Waitlist
+              <span className="flex items-center gap-2">
+                Join Waitlist
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
           </div>
 
@@ -66,7 +63,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -87,45 +84,34 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden"
+            transition={{ duration: 0.2 }}
+            className="md:hidden overflow-hidden bg-white border-t border-gray-200"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
-              <Link
-                href="/#features"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-colors"
-                onClick={toggleMenu}
-              >
-                Features
-              </Link>
-              <Link
-                href="/#how-it-works"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-colors"
-                onClick={toggleMenu}
-              >
-                How It Works
-              </Link>
-              <Link
-                href="/#about"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-colors"
-                onClick={toggleMenu}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-colors"
-                onClick={toggleMenu}
-              >
-                Contact
-              </Link>
-              <Link
-                href="/signup"
-                className="block w-full text-center px-4 py-2 mt-4 rounded-full font-medium text-white bg-blue-500 hover:bg-blue-600 transition-colors"
-                onClick={toggleMenu}
-              >
-                Join Waitlist
-              </Link>
+            <div className="px-4 pt-4 pb-6 space-y-2">
+              {[
+                { href: "/#features", label: "Features" },
+                { href: "/#how-it-works", label: "How It Works" },
+                { href: "/#about", label: "About" },
+                { href: "/contact", label: "Contact" }
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="pt-4">
+                <Link
+                  href="/signup"
+                  className="block w-full text-center px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-all duration-200"
+                  onClick={toggleMenu}
+                >
+                  Join Waitlist
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
