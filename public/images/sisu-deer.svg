@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <path d="M200 375C282.843 375 350 307.843 350 225C350 142.157 282.843 75 200 75C117.157 75 50 142.157 50 225C50 307.843 117.157 375 200 375Z" fill="#3B82F6" fill-opacity="0.2"/>
+  <path d="M170 140C170 140 162.5 125 150 125C137.5 125 130 140 130 140" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M270 140C270 140 262.5 125 250 125C237.5 125 230 140 230 140" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="150" cy="180" r="15" fill="#3B82F6"/>
+  <circle cx="250" cy="180" r="15" fill="#3B82F6"/>
+  <path d="M175 220C175 220 187.5 240 200 240C212.5 240 225 220 225 220" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M110 100C110 100 120 80 130 70C140 60 150 50 160 50C170 50 175 60 180 70C185 80 190 90 200 90C210 90 215 80 220 70C225 60 230 50 240 50C250 50 260 60 270 70C280 80 290 100 290 100" stroke="#3B82F6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M200 240V280" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M180 280H220" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M160 300C160 300 180 320 200 320C220 320 240 300 240 300" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+</svg>

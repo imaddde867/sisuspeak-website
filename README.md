@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sisu Speak - AI-Powered Finnish Language Learning
+
+Sisu Speak is an innovative language learning platform leveraging AI and Natural Language Processing (NLP) to offer a natural, conversation-based approach to learning Finnish. Forget boring flashcards; practice real-life conversations with our virtual AI tutors – the Sisu family.
+
+## Features
+
+- **Conversational Learning**: Practice Finnish through natural dialogues with AI tutors
+- **Pronunciation Feedback**: Receive instant, personalized feedback on your pronunciation
+- **Adaptive Learning**: Content adapts to your skill level and learning pace
+- **Real-world Scenarios**: Learn practical Finnish for everyday situations
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **UI Components**: Headless UI, React Icons
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `/src/components` - Reusable UI components
+- `/src/app` - Next.js App Router pages
+- `/public/images` - Website images and assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## About Sisu Speak
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The Sisu Speak platform revolutionizes language learning through immersive, conversational AI. Our AI tutors, the Sisu family, adapt to your learning style and provide instant feedback, making learning Finnish effective and enjoyable. Each member specializes in a different area:
 
-## Deploy on Vercel
+- **Sisu Senior:** Your guide for professional and academic Finnish.
+- **Sisu Äiti:** Perfect for practicing everyday and family conversations.
+- **Sisu Junior:** Learn street Finnish, slang, and social media language.
+- **Baby Sisu:** Ideal for beginners and elementary Finnish.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more information, please reach out to us at info@sisuspeak.com
