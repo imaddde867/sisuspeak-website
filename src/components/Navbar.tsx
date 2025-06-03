@@ -42,8 +42,8 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'h-14' : 'h-16'
-        }`}>
+          isScrolled ? 'h-14 md:h-14' : 'h-16 md:h-16'
+        } px-2 sm:px-0`}>
           {/* Logo */}
           <Link
             href="/"
@@ -108,14 +108,15 @@ const Navbar = () => {
             <button
               type="button"
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
-              aria-expanded="false"
+              className="inline-flex items-center justify-center p-3 rounded-xl text-slate-600 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 min-h-[48px] min-w-[48px]"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{isOpen ? "Close" : "Open"} main menu</span>
               {isOpen ? (
-                <RiCloseLine className="block h-6 w-6" aria-hidden="true" />
+                <RiCloseLine className="block h-7 w-7" aria-hidden="true" />
               ) : (
-                <RiMenu4Line className="block h-6 w-6" aria-hidden="true" />
+                <RiMenu4Line className="block h-7 w-7" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -129,34 +130,78 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden bg-white border-t border-gray-200"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg"
           >
-            <div className="px-4 pt-4 pb-6 space-y-2">
+            <div className="px-6 pt-6 pb-8 space-y-3 max-h-[80vh] overflow-y-auto">
               {[
-                { href: "/#features", label: "Features" },
-                { href: "/#how-it-works", label: "How It Works" },
-                { href: "/#about", label: "About" },
-                { href: "/contact", label: "Contact" }
-              ].map((item) => (
-                <Link
+                { href: "/#features", label: "Features", icon: "⭐" },
+                { href: "/#how-it-works", label: "How It Works", icon: "🔧" },
+                { href: "/#about", label: "About", icon: "ℹ️" },
+                { href: "/contact", label: "Contact", icon: "📧" }
+              ].map((item, index) => (
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
-                  onClick={toggleMenu}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    href={item.href}
+                    className="flex items-center px-4 py-4 rounded-xl text-lg font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 min-h-[56px] active:scale-95"
+                    onClick={toggleMenu}
+                  >
+                    <span className="mr-3 text-xl">{item.icon}</span>
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
-              <div className="pt-4">
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+                className="pt-6 border-t border-gray-200"
+              >
                 <Link
                   href="/signup"
-                  className="block w-full text-center px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-all duration-200"
+                  className="flex items-center justify-center w-full px-6 py-4 rounded-2xl font-bold text-lg text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg shadow-blue-500/25 transition-all duration-200 min-h-[56px] active:scale-95"
                   onClick={toggleMenu}
                 >
+                  <span className="mr-2">🚀</span>
                   Join Waitlist
                 </Link>
-              </div>
+              </motion.div>
+
+              {/* Mobile-only quick links */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+                className="pt-4 flex justify-center space-x-6"
+              >
+                <Link
+                  href="/faq"
+                  className="text-sm text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                  onClick={toggleMenu}
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                  onClick={toggleMenu}
+                >
+                  Privacy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="text-sm text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                  onClick={toggleMenu}
+                >
+                  Terms
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

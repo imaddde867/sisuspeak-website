@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from 'react';
-import { motion } from '@/utils/motion';
+
 import { 
   FaMicrophone, 
   FaCommentDots, 
@@ -16,35 +16,31 @@ interface FeatureProps {
   delay: number;
 }
 
-const FeatureCard = ({ icon, title, description, delay }: FeatureProps) => {
+const FeatureCard = ({ icon, title, description }: Omit<FeatureProps, 'delay'>) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      viewport={{ once: true }}
-      className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-200 hover:-translate-y-1 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2"
+    <div
+      className="group bg-white rounded-2xl p-6 sm:p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-200 hover:-translate-y-1 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 min-h-[200px] sm:min-h-[180px] active:scale-95"
       tabIndex={0}
       role="article"
       aria-labelledby={`feature-${title.replace(/\s+/g, '-').toLowerCase()}`}
     >
       {/* Icon container */}
-      <div className="h-12 w-12 bg-blue-100 group-hover:bg-blue-500 group-focus-within:bg-blue-500 rounded-xl flex items-center justify-center text-blue-600 group-hover:text-white group-focus-within:text-white mb-4 transition-all duration-200">
-        <div className="text-lg" aria-hidden="true">
+      <div className="h-14 w-14 sm:h-12 sm:w-12 bg-blue-100 group-hover:bg-blue-500 group-focus-within:bg-blue-500 rounded-xl flex items-center justify-center text-blue-600 group-hover:text-white group-focus-within:text-white mb-4 sm:mb-4 transition-all duration-200 mx-auto sm:mx-0">
+        <div className="text-xl sm:text-lg" aria-hidden="true">
           {icon}
         </div>
       </div>
 
       <h3
         id={`feature-${title.replace(/\s+/g, '-').toLowerCase()}`}
-        className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-700 group-focus-within:text-blue-700 transition-colors duration-200"
+        className="text-lg sm:text-lg font-semibold text-slate-900 mb-3 sm:mb-2 group-hover:text-blue-700 group-focus-within:text-blue-700 transition-colors duration-200 text-center sm:text-left"
       >
         {title}
       </h3>
-      <p className="text-slate-600 leading-relaxed">
+      <p className="text-slate-600 leading-relaxed text-sm sm:text-base text-center sm:text-left">
         {description}
       </p>
-    </motion.div>
+    </div>
   );
 };
 
@@ -77,28 +73,33 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gray-50">
+    <section id="features" className="py-16 sm:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
             Why Choose Sisu Speak
           </div>
 
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl font-heading mb-4">
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl font-heading mb-4 px-4 sm:px-0">
             <span className="block">AI-Powered Learning</span>
             <span className="block gradient-text">That Actually Works</span>
           </h2>
 
-          <p className="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed px-4 sm:px-0">
             Our AI-powered approach makes learning Finnish effective, enjoyable, and tailored to you.
             Experience the future of language learning today.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
           ))}
         </div>
       </div>

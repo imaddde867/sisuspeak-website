@@ -203,6 +203,75 @@ body {
   opacity: 1;
 }
 
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, a, input, textarea, select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better text readability */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+
+  /* Improve spacing */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Better button spacing */
+  .button-group {
+    gap: 0.75rem;
+  }
+
+  /* Optimize modal and overlay positioning */
+  .modal, .overlay {
+    margin: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  /* Even larger touch targets */
+  button, a[role="button"] {
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Improve text hierarchy */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+
+  /* Better form spacing */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Reduce vertical spacing in landscape */
+  .hero-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Optimize navigation height */
+  .navbar {
+    height: 3rem;
+  }
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,

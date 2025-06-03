@@ -77,7 +77,7 @@ export default function Signup() {
                           value={formData.firstName}
                           onChange={handleChange}
                           required
-                          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                          className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base min-h-[48px]"
                         />
                       </div>
                       <div>
@@ -91,7 +91,7 @@ export default function Signup() {
                           value={formData.lastName}
                           onChange={handleChange}
                           required
-                          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                          className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base min-h-[48px]"
                         />
                       </div>
                     </div>
@@ -107,7 +107,7 @@ export default function Signup() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base min-h-[48px]"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -121,7 +121,7 @@ export default function Signup() {
                         name="experience"
                         value={formData.experience}
                         onChange={handleChange}
-                        className="mt-1 block w-full pl-3 pr-10 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="mt-1 block w-full pl-4 pr-10 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base min-h-[48px]"
                       >
                         <option value="beginner">Complete Beginner</option>
                         <option value="elementary">Elementary (A1-A2)</option>
@@ -140,7 +140,7 @@ export default function Signup() {
                         value={formData.learningGoals}
                         onChange={handleChange}
                         rows={4}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base resize-none"
                         placeholder="I want to learn Finnish to..."
                       />
                     </div>
@@ -148,7 +148,7 @@ export default function Signup() {
                     <div className="pt-4">
                       <button
                         type="submit"
-                        className="w-full flex justify-center py-3.5 px-6 border border-transparent rounded-xl shadow-md hover:shadow-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+                        className="w-full flex justify-center py-4 px-6 border border-transparent rounded-xl shadow-md hover:shadow-lg text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 min-h-[56px]"
                       >
                         Join Waitlist
                       </button>

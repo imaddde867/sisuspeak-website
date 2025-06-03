@@ -18,7 +18,7 @@ const Footer = () => {
             <p className="mt-4 text-sm text-slate-300 max-w-md">
               Sisu Speak uses AI-driven conversations to teach Finnish naturally and effectively. Practice with our virtual tutors anytime, anywhere.
             </p>
-            <div className="mt-6 flex space-x-4">
+            <div className="mt-6 flex space-x-2 sm:space-x-4 justify-center md:justify-start">
               {[
                 { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
                 { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
@@ -30,7 +30,8 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-slate-400 hover:text-blue-400 transition-colors duration-200"
+                  className="p-3 text-slate-400 hover:text-blue-400 transition-colors duration-200 rounded-lg hover:bg-slate-800 min-h-[48px] min-w-[48px] flex items-center justify-center active:scale-95"
+                  aria-label={`Follow us on ${label}`}
                 >
                   <span className="sr-only">{label}</span>
                   <Icon className="h-5 w-5" />
@@ -40,9 +41,9 @@ const Footer = () => {
           </div>
 
           {/* Quick links */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Learn More</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { href: "/#features", label: "Features" },
                 { href: "/#how-it-works", label: "How It Works" },
@@ -52,7 +53,7 @@ const Footer = () => {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200"
+                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-slate-800 inline-block min-h-[44px] flex items-center active:scale-95"
                   >
                     {label}
                   </Link>
@@ -62,9 +63,9 @@ const Footer = () => {
           </div>
 
           {/* Support */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Support</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { href: "/contact", label: "Contact Us" },
                 { href: "/faq", label: "FAQ" },
@@ -74,7 +75,7 @@ const Footer = () => {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200"
+                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-slate-800 inline-block min-h-[44px] flex items-center active:scale-95"
                   >
                     {label}
                   </Link>

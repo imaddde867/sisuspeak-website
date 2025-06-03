@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import PageLayout from '@/components/PageLayout';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -29,16 +28,12 @@ export default function Contact() {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="bg-gray-50 min-h-screen pt-16 pb-24">
+    <PageLayout
+      title="Contact Us"
+      description="Have questions about Sisu Speak? We'd love to hear from you and answer any questions about our AI-powered Finnish learning platform."
+    >
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">Contact Us</h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Have questions about Sisu Speak? We&apos;d love to hear from you!
-            </p>
-          </div>
 
           <div className="bg-white rounded-lg shadow-sm">
             {submitted ? (
@@ -73,7 +68,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base min-h-[48px]"
                     />
                   </div>
 
@@ -88,7 +83,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base min-h-[48px]"
                     />
                   </div>
 
@@ -103,7 +98,7 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base min-h-[48px]"
                     />
                   </div>
 
@@ -118,7 +113,7 @@ export default function Contact() {
                       onChange={handleChange}
                       rows={6}
                       required
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base resize-none"
                       placeholder="Your message..."
                     />
                   </div>
@@ -126,7 +121,7 @@ export default function Contact() {
                   <div className="pt-4">
                     <button
                       type="submit"
-                      className="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                      className="w-full flex justify-center py-4 px-6 border border-transparent rounded-xl shadow-sm text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 min-h-[56px] active:scale-95 transition-all duration-200"
                     >
                       Send Message
                     </button>
@@ -155,7 +150,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3 className="text-lg font-medium text-gray-900 mb-1">Location</h3>
-              <p className="text-gray-600">Helsinki, Finland</p>
+              <p className="text-gray-600">Turku, Finland</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -169,8 +164,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
-    </>
+      </section>
+    </PageLayout>
   );
 }
