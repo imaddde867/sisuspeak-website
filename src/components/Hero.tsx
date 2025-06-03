@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAssetPath } from '@/utils/paths';
 
 const Hero = () => {
   return (
@@ -88,7 +89,7 @@ const Hero = () => {
             <div className="relative flex items-center justify-center">
               <div className="relative">
                 <Image
-                  src="/images/sisu-deer.svg"
+                  src={getAssetPath('/images/sisu-deer.svg')}
                   alt="Sisu Speak mascot - A friendly deer character representing our AI Finnish language tutor"
                   width={500}
                   height={500}

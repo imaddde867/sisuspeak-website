@@ -214,7 +214,7 @@ export default function Contact() {
                               onFocus={handleFocus}
                               onBlur={handleBlur}
                               required
-                              className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] ${
+                              className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
                                 errors.name
                                   ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                   : focusedField === 'name'
@@ -253,7 +253,7 @@ export default function Contact() {
                               onFocus={handleFocus}
                               onBlur={handleBlur}
                               required
-                              className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] ${
+                              className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
                                 errors.email
                                   ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                   : focusedField === 'email'
@@ -292,7 +292,7 @@ export default function Contact() {
                             value={formData.company}
                             onChange={handleChange}
                             onFocus={handleFocus}
-                            className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] ${
+                            className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
                               focusedField === 'company'
                                 ? 'border-blue-500 focus:border-blue-500 focus:ring-blue-500'
                                 : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
@@ -312,7 +312,7 @@ export default function Contact() {
                             value={formData.phone}
                             onChange={handleChange}
                             onFocus={handleFocus}
-                            className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] ${
+                            className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
                               focusedField === 'phone'
                                 ? 'border-blue-500 focus:border-blue-500 focus:ring-blue-500'
                                 : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
@@ -332,7 +332,7 @@ export default function Contact() {
                           id="subject"
                           value={formData.subject}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl transition-all duration-200 text-base min-h-[52px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20 focus:border-blue-500"
+                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20 focus:border-blue-500"
                         >
                           <option value="">Select a topic</option>
                           <option value="general">General Inquiry</option>
@@ -360,7 +360,7 @@ export default function Contact() {
                             onBlur={handleBlur}
                             rows={5}
                             required
-                            className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base resize-none ${
+                            className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base resize-none text-gray-900 bg-white ${
                               errors.message
                                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                 : focusedField === 'message'

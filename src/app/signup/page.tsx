@@ -147,7 +147,7 @@ export default function Signup() {
                       value={email}
                       onChange={handleEmailChange}
                       required
-                      className={`w-full px-4 py-4 border-2 rounded-xl text-lg transition-all duration-200 min-h-[56px] ${
+                      className={`w-full px-4 py-4 border-2 rounded-xl text-lg transition-all duration-200 min-h-[56px] text-gray-900 bg-white ${
                         errors.email
                           ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
                           : isValidEmail
