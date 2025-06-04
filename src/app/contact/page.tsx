@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import { trackContactSubmission, trackFormStart, trackFormAbandon } from '@/utils/analytics';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,17 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [focusedField, setFocusedField] = useState<string>('');
+  const [formStarted, setFormStarted] = useState(false);
+  const [fieldsCompleted, setFieldsCompleted] = useState(0);
+
+  // Track form abandonment when component unmounts
+  useEffect(() => {
+    return () => {
+      if (formStarted && !submitted && fieldsCompleted > 0) {
+        trackFormAbandon('contact_form', 'contact', fieldsCompleted);
+      }
+    };
+  }, [formStarted, submitted, fieldsCompleted]);
 
   const validateField = (name: string, value: string) => {
     switch (name) {
@@ -37,6 +49,17 @@ export default function Contact() {
       ...prev,
       [name]: value,
     }));
+
+    // Track form start on first input
+    if (!formStarted && value.length > 0) {
+      setFormStarted(true);
+      trackFormStart('contact_form', 'contact');
+    }
+
+    // Count completed fields
+    const newFormData = { ...formData, [name]: value };
+    const completed = Object.values(newFormData).filter(val => val.trim().length > 0).length;
+    setFieldsCompleted(completed);
 
     // Clear error when user starts typing
     if (errors[name]) {
@@ -110,6 +133,20 @@ export default function Contact() {
 
       if (response.ok) {
         setSubmitted(true);
+
+        // Track successful contact form submission
+        trackContactSubmission(
+          formData.email,
+          formData.name,
+          formData.subject || 'General Inquiry',
+          {
+            company: formData.company,
+            phone: formData.phone,
+            messageLength: formData.message.length,
+            fieldsCompleted
+          }
+        );
+
         setFormData({
           name: '',
           email: '',

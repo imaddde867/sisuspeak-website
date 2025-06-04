@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
+import { trackEmailSignup } from '@/utils/analytics';
 
 const CTASection = () => {
   const [email, setEmail] = useState('');
@@ -55,6 +56,12 @@ const CTASection = () => {
 
       if (response.ok) {
         setSubmitted(true);
+
+        // Track successful email signup
+        trackEmailSignup(email, 'Sisu Speak CTA', 'homepage', {
+          formType: 'cta_waitlist',
+          location: 'homepage_cta_section'
+        });
 
         // Send welcome email
         try {

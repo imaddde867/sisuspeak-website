@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import { getAnalyticsSummary } from '@/utils/analytics';
 
 interface AnalyticsEvent {
   event: string;
@@ -9,17 +10,32 @@ interface AnalyticsEvent {
   source?: string;
   page?: string;
   timestamp: string;
+  sessionId?: string;
+  userAgent?: string;
+  referrer?: string;
+  url?: string;
+  data?: Record<string, unknown>;
+  id?: string;
 }
 
 export default function AdminDashboard() {
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
+  const [summary, setSummary] = useState<{
+    total: { events: number; emailSignups: number; contactForms: number; pageViews: number; interactions: number; uniqueSessions: number };
+    daily: { events: number; emailSignups: number; contactForms: number; pageViews: number; interactions: number; uniqueSessions: number };
+    weekly: { events: number; emailSignups: number; contactForms: number; pageViews: number; interactions: number; uniqueSessions: number };
+  } | null>(null);
 
   useEffect(() => {
     if (isAuthenticated) {
       const storedEvents = JSON.parse(localStorage.getItem('sisu_analytics') || '[]');
       setEvents(storedEvents.reverse()); // Show newest first
+
+      // Get analytics summary
+      const analyticsSummary = getAnalyticsSummary();
+      setSummary(analyticsSummary);
     }
   }, [isAuthenticated]);
 
@@ -84,22 +100,39 @@ export default function AdminDashboard() {
   return (
     <PageLayout title="Analytics Dashboard" description="Sisu Speak signup and engagement tracking">
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {/* Enhanced Stats Overview */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Signups</h3>
-            <p className="text-3xl font-bold text-[#7388a5]">{emailSignups.length}</p>
+            <p className="text-3xl font-bold text-[#7388a5]">{summary?.total.emailSignups || emailSignups.length}</p>
             <p className="text-sm text-gray-500">Total waitlist subscribers</p>
+            {summary && (
+              <p className="text-xs text-green-600 mt-1">+{summary.daily.emailSignups} today</p>
+            )}
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Contact Forms</h3>
-            <p className="text-3xl font-bold text-[#a3c2c8]">{contactForms.length}</p>
+            <p className="text-3xl font-bold text-[#a3c2c8]">{summary?.total.contactForms || contactForms.length}</p>
             <p className="text-sm text-gray-500">Contact submissions</p>
+            {summary && (
+              <p className="text-xs text-green-600 mt-1">+{summary.daily.contactForms} today</p>
+            )}
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Page Views</h3>
-            <p className="text-3xl font-bold text-[#7388a5]">{pageViews.length}</p>
+            <p className="text-3xl font-bold text-[#7388a5]">{summary?.total.pageViews || pageViews.length}</p>
             <p className="text-sm text-gray-500">Total page views</p>
+            {summary && (
+              <p className="text-xs text-green-600 mt-1">+{summary.daily.pageViews} today</p>
+            )}
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Unique Sessions</h3>
+            <p className="text-3xl font-bold text-[#7388a5]">{summary?.total.uniqueSessions || 0}</p>
+            <p className="text-sm text-gray-500">Unique visitors</p>
+            {summary && (
+              <p className="text-xs text-green-600 mt-1">+{summary.daily.uniqueSessions} today</p>
+            )}
           </div>
         </div>
 
@@ -125,24 +158,47 @@ export default function AdminDashboard() {
                   <th className="text-left py-2">Email</th>
                   <th className="text-left py-2">Source</th>
                   <th className="text-left py-2">Page</th>
+                  <th className="text-left py-2">Session</th>
+                  <th className="text-left py-2">Details</th>
                 </tr>
               </thead>
               <tbody>
                 {events.slice(0, 50).map((event, index) => (
-                  <tr key={index} className="border-b hover:bg-gray-50">
+                  <tr key={event.id || index} className="border-b hover:bg-gray-50">
                     <td className="py-2">{new Date(event.timestamp).toLocaleString()}</td>
                     <td className="py-2">
                       <span className={`px-2 py-1 rounded text-xs ${
                         event.event === 'email_signup' ? 'bg-[#7388a5]/20 text-[#7388a5]' :
                         event.event === 'contact_form_submit' ? 'bg-[#a3c2c8]/20 text-[#7388a5]' :
+                        event.event === 'page_view' ? 'bg-blue-100 text-blue-800' :
+                        event.event === 'user_interaction' ? 'bg-purple-100 text-purple-800' :
+                        event.event === 'form_start' ? 'bg-yellow-100 text-yellow-800' :
+                        event.event === 'form_abandon' ? 'bg-red-100 text-red-800' :
                         'bg-gray-100 text-gray-800'
                       }`}>
-                        {event.event}
+                        {event.event.replace('_', ' ')}
                       </span>
                     </td>
                     <td className="py-2">{event.email || '-'}</td>
                     <td className="py-2">{event.source || '-'}</td>
                     <td className="py-2">{event.page || '-'}</td>
+                    <td className="py-2">
+                      <span className="text-xs text-gray-500">
+                        {event.sessionId ? event.sessionId.slice(-8) : '-'}
+                      </span>
+                    </td>
+                    <td className="py-2">
+                      {event.data && Object.keys(event.data).length > 0 && (
+                        <details className="text-xs">
+                          <summary className="cursor-pointer text-blue-600 hover:text-blue-800">
+                            View
+                          </summary>
+                          <pre className="mt-1 text-xs bg-gray-50 p-2 rounded max-w-xs overflow-auto">
+                            {JSON.stringify(event.data, null, 2)}
+                          </pre>
+                        </details>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
