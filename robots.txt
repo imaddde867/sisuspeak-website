@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and debug pages
+Disallow: /admin/
+Disallow: /debug/
+
+# Sitemap
+Sitemap: https://imadlab.me/sisuspeak-website/sitemap.xml
