@@ -89,8 +89,8 @@ const Hero = () => {
             <div className="relative flex items-center justify-center">
               <div className="relative">
                 <Image
-                  src={getAssetPath('/images/sisu-deer.svg')}
-                  alt="Sisu Speak mascot - A friendly deer character representing our AI Finnish language tutor"
+                  src={getAssetPath('/images/family.PNG')}
+                  alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
                   width={500}
                   height={500}
                   className="max-w-sm sm:max-w-md lg:max-w-lg w-full h-auto"

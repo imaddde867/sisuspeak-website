@@ -57,10 +57,10 @@ const About = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Image 
-              src="/images/sisu-deer.svg" 
-              alt="Sisu Family" 
-              width={300} 
+            <Image
+              src="/images/family.PNG"
+              alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
+              width={300}
               height={300}
               className="max-w-xs sm:max-w-sm"
             />
