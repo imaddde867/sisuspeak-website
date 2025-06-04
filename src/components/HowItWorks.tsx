@@ -1,35 +1,34 @@
 "use client";
 
 import { motion } from '@/utils/motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
+
   const steps = [
     {
       number: '01',
-      title: 'Speak naturally',
-      description:
-        'Practice Finnish by having natural conversations with our AI tutors. Speak into your device and get real-time feedback.',
+      title: t('howItWorks.step1.title'),
+      description: t('howItWorks.step1.description'),
       delay: 0.1,
     },
     {
       number: '02',
-      title: 'Receive instant feedback',
-      description:
-        'Our AI analyzes your pronunciation, grammar, and conversational flow, providing specific guidance on how to improve.',
+      title: t('howItWorks.step2.title'),
+      description: t('howItWorks.step2.description'),
       delay: 0.3,
     },
     {
       number: '03',
-      title: 'Track your progress',
-      description:
-        'Watch your Finnish skills develop over time with detailed progress tracking and personalized learning recommendations.',
+      title: t('howItWorks.step3.title'),
+      description: t('howItWorks.step3.description'),
       delay: 0.5,
     },
     {
       number: '04',
-      title: 'Master Finnish',
-      description:
-        'Gradually build your confidence and fluency through regular practice with different scenarios and difficulty levels.',
+      title: t('howItWorks.step4.title'),
+      description: t('howItWorks.step4.description'),
       delay: 0.7,
     },
   ];
@@ -58,10 +57,10 @@ const HowItWorks = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            How Sisu Speak Works
+            {t('howItWorks.title')}
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            A simple process designed to make language learning effective and engaging.
+            {t('howItWorks.subtitle')}
           </p>
         </motion.div>
 
@@ -98,13 +97,13 @@ const HowItWorks = () => {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600 mb-6">
-            Ready to experience a new way of learning Finnish?
+            {t('howItWorks.readyText')}
           </p>
           <a
             href="/signup"
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-500 hover:bg-blue-600 transition-colors"
           >
-            Get Started Now
+            {t('howItWorks.getStarted')}
           </a>
         </motion.div>
       </div>

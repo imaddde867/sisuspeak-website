@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
 import { trackEmailSignup } from '@/utils/analytics';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CTASection = () => {
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -27,7 +29,7 @@ const CTASection = () => {
     e.preventDefault();
 
     if (!validateEmail(email)) {
-      setError('Please enter a valid email address');
+      setError(t('cta.emailError') || 'Please enter a valid email address');
       return;
     }
 
@@ -95,17 +97,16 @@ const CTASection = () => {
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6 border border-white/30">
               <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
-              Join the Revolution
+              {t('cta.badge')}
             </div>
 
             <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-              <span className="block">Ready to learn Finnish</span>
-              <span className="block text-yellow-300">the natural way?</span>
+              <span className="block">{t('cta.title')}</span>
+              <span className="block text-yellow-300">{t('cta.titleHighlight')}</span>
             </h2>
 
             <p className="text-lg text-blue-100 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Join our waitlist to be among the first to experience Sisu Speak when we launch.
-              Early subscribers will get exclusive access and special offers.
+              {t('cta.subtitle')}
             </p>
           </div>
 
@@ -118,24 +119,24 @@ const CTASection = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Welcome to the family!</h3>
-                  <p className="text-blue-100 mb-4">We&apos;ll keep you updated on our progress and notify you when we launch.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{t('cta.successTitle')}</h3>
+                  <p className="text-blue-100 mb-4">{t('cta.successMessage')}</p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="text-yellow-300 hover:text-yellow-200 font-medium transition-colors duration-200 underline"
                   >
-                    Sign up with another email
+                    {t('cta.anotherEmail')}
                   </button>
                 </div>
               ) : (
                 <>
                   <h3 className="text-xl font-bold text-white mb-6 text-center">
-                    Join the Waitlist
+                    {t('cta.formTitle')}
                   </h3>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="relative">
                       <label htmlFor="email" className="block text-sm font-medium text-blue-100 mb-2">
-                        Email Address
+                        {t('cta.emailLabel')}
                       </label>
                       <div className="relative">
                         <input
@@ -152,7 +153,7 @@ const CTASection = () => {
                                 ? 'border-green-400 focus:ring-green-400'
                                 : 'border-white/30 focus:ring-yellow-400'
                           } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
-                          placeholder="you@example.com"
+                          placeholder={t('cta.emailPlaceholder')}
                           required
                         />
                         {/* Email validation indicator */}
@@ -194,15 +195,15 @@ const CTASection = () => {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Joining<span className="loading-dots"></span>
+                          {t('cta.submitting')}<span className="loading-dots"></span>
                         </span>
                       ) : (
-                        'Join Waitlist'
+                        t('cta.submitButton')
                       )}
                     </button>
                   </form>
                   <p className="text-sm text-blue-200 mt-4 text-center">
-                    🔒 We respect your privacy. Unsubscribe at any time.
+                    {t('cta.privacy')}
                   </p>
                 </>
               )}

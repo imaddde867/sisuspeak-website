@@ -3,32 +3,35 @@
 import Image from 'next/image';
 import { motion } from '@/utils/motion';
 import { FaBriefcase, FaHeart, FaCommentDots, FaStar } from 'react-icons/fa';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { getAssetPath } from '@/utils/paths';
 
 const About = () => {
+  const { t } = useLanguage();
+
   const sisuFamily = [
     {
-      name: 'Sisu Senior',
-      role: 'Professional & Academic Guide',
-      description: 'Teaches Finnish for work, studies, and formal settings, focusing on advanced vocabulary and structures.',
+      name: t('about.sisuSenior.name'),
+      role: t('about.sisuSenior.role'),
+      description: t('about.sisuSenior.description'),
       icon: <FaBriefcase className="h-6 w-6 text-blue-600" />,
     },
     {
-      name: 'Sisu Äiti',
-      role: 'Everyday & Family Conversation Partner',
-      description: 'Specializes in conversational Finnish for daily life, partners, and family interactions, building practical fluency.',
+      name: t('about.sisuAiti.name'),
+      role: t('about.sisuAiti.role'),
+      description: t('about.sisuAiti.description'),
       icon: <FaHeart className="h-6 w-6 text-blue-600" />,
     },
     {
-      name: 'Sisu Junior',
-      role: 'Street & Social Finnish Coach',
-      description: 'Helps you navigate informal Finnish, including slang, social media language, and casual conversations.',
+      name: t('about.sisuNuori.name'),
+      role: t('about.sisuNuori.role'),
+      description: t('about.sisuNuori.description'),
       icon: <FaCommentDots className="h-6 w-6 text-blue-600" />,
     },
     {
-      name: 'Baby Sisu',
-      role: 'Basic & Elementary Tutor',
-      description: 'Makes learning the foundations of Finnish fun and easy, perfect for beginners and young learners.',
+      name: t('about.sisuLapsi.name'),
+      role: t('about.sisuLapsi.role'),
+      description: t('about.sisuLapsi.description'),
       icon: <FaStar className="h-6 w-6 text-blue-600" />,
     },
   ];
@@ -44,10 +47,10 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Meet the Sisu Family
+            {t('about.title')}
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Your personal Finnish language tutors, designed to make learning engaging and effective
+            {t('about.subtitle')}
           </p>
         </motion.div>
 

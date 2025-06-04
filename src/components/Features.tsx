@@ -2,12 +2,13 @@
 
 import { ReactNode } from 'react';
 
-import { 
-  FaMicrophone, 
-  FaCommentDots, 
-  FaChartLine, 
-  FaGamepad 
+import {
+  FaMicrophone,
+  FaCommentDots,
+  FaChartLine,
+  FaGamepad
 } from 'react-icons/fa';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FeatureProps {
   icon: ReactNode;
@@ -45,29 +46,31 @@ const FeatureCard = ({ icon, title, description }: Omit<FeatureProps, 'delay'>) 
 };
 
 const Features = () => {
+  const { t } = useLanguage();
+
   const features = [
     {
       icon: <FaCommentDots className="h-6 w-6" />,
-      title: "Conversational Learning",
-      description: "Learn Finnish naturally through engaging conversations with the Sisu family AI tutors, tailored to your level and interests.",
+      title: t('features.conversational.title'),
+      description: t('features.conversational.description'),
       delay: 0.1
     },
     {
       icon: <FaMicrophone className="h-6 w-6" />,
-      title: "Pronunciation Feedback",
-      description: "Receive instant, personalized feedback on your pronunciation to sound more like a native Finnish speaker.",
+      title: t('features.pronunciation.title'),
+      description: t('features.pronunciation.description'),
       delay: 0.2
     },
     {
       icon: <FaChartLine className="h-6 w-6" />,
-      title: "Adaptive Curriculum",
-      description: "Our AI adapts to your progress, focusing on areas where you need more practice while keeping you challenged.",
+      title: t('features.adaptive.title'),
+      description: t('features.adaptive.description'),
       delay: 0.3
     },
     {
       icon: <FaGamepad className="h-6 w-6" />,
-      title: "Engaging Scenarios",
-      description: "Practice Finnish in realistic scenarios like ordering food, asking for directions, or having casual conversations.",
+      title: t('features.scenarios.title'),
+      description: t('features.scenarios.description'),
       delay: 0.4
     }
   ];
@@ -78,7 +81,7 @@ const Features = () => {
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-            Why Choose Sisu Speak
+            {t('features.title')}
           </div>
 
           <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-4 sm:px-0" style={{ fontFamily: 'var(--font-poppins)' }}>
@@ -87,8 +90,7 @@ const Features = () => {
           </h2>
 
           <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed px-4 sm:px-0">
-            Our AI-powered approach makes learning Finnish effective, enjoyable, and tailored to you.
-            Experience the future of language learning today.
+            {t('features.subtitle')}
           </p>
         </div>
 

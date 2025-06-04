@@ -1,7 +1,12 @@
+"use client";
+
 import Link from 'next/link';
 import { FaTwitter, FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -16,7 +21,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="mt-4 text-sm text-slate-300 max-w-md">
-              Sisu Speak uses AI-driven conversations to teach Finnish naturally and effectively. Practice with our virtual tutors anytime, anywhere.
+              {t('footer.description')}
             </p>
             <div className="mt-6 flex space-x-2 sm:space-x-4 justify-center md:justify-start">
               {[
@@ -88,10 +93,11 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-slate-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-slate-400 text-center md:text-left">
-              &copy; {currentYear} Sisu Speak. All rights reserved.
+              &copy; {currentYear} Sisu Speak. {t('footer.copyright')}
             </p>
-            <div className="mt-4 md:mt-0">
-              <span className="text-sm text-slate-400">Made with ❤️ for Finnish learners</span>
+            <div className="mt-4 md:mt-0 flex items-center space-x-4">
+              <LanguageSwitcher variant="footer" />
+              <span className="text-sm text-slate-400">{t('footer.madeWith')}</span>
             </div>
           </div>
         </div>

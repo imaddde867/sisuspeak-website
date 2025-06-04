@@ -138,6 +138,10 @@ const getTranslations = () => {
         progress: {
           title: "Progress Tracking",
           description: "Monitor your improvement with detailed analytics and celebrate milestones as you advance in your Finnish journey."
+        },
+        scenarios: {
+          title: "Engaging Scenarios",
+          description: "Practice Finnish in realistic scenarios like ordering food, asking for directions, or having casual conversations."
         }
       },
 
@@ -156,7 +160,13 @@ const getTranslations = () => {
         step3: {
           title: "Track your progress",
           description: "Watch your Finnish skills develop over time with detailed progress tracking and personalized learning recommendations."
-        }
+        },
+        step4: {
+          title: "Master Finnish",
+          description: "Gradually build your confidence and fluency through regular practice with different scenarios and difficulty levels."
+        },
+        readyText: "Ready to experience a new way of learning Finnish?",
+        getStarted: "Get Started Now"
       },
 
       // About Section
@@ -200,6 +210,26 @@ const getTranslations = () => {
         successMessage: "We'll keep you updated on our progress and notify you when we launch.",
         anotherEmail: "Sign up with another email",
         privacy: "🔒 We respect your privacy. Unsubscribe at any time."
+      },
+
+      // Footer Section
+      footer: {
+        description: "Sisu Speak uses AI-driven conversations to teach Finnish naturally and effectively. Practice with our virtual tutors anytime, anywhere.",
+        quickLinks: "Quick Links",
+        company: "Company",
+        support: "Support",
+        legal: "Legal",
+        home: "Home",
+        features: "Features",
+        pricing: "Pricing",
+        about: "About Us",
+        contact: "Contact",
+        help: "Help Center",
+        faq: "FAQ",
+        privacy: "Privacy Policy",
+        terms: "Terms of Service",
+        copyright: "All rights reserved.",
+        madeWith: "Made with ❤️ for Finnish learners"
       }
     },
     fi: {
@@ -251,6 +281,10 @@ const getTranslations = () => {
         progress: {
           title: "Edistymisen Seuranta",
           description: "Seuraa kehittymistäsi yksityiskohtaisilla analyyseilla ja juhli virstanpylväitä edetessäsi suomen matkallasi."
+        },
+        scenarios: {
+          title: "Kiinnostavat Skenaariot",
+          description: "Harjoittele suomea realistisissa tilanteissa kuten ruoan tilaaminen, reitin kysyminen tai rennot keskustelut."
         }
       },
 
@@ -269,7 +303,13 @@ const getTranslations = () => {
         step3: {
           title: "Seuraa edistymistäsi",
           description: "Katso suomen taitojesi kehittyvän ajan myötä yksityiskohtaisen edistymisen seurannan ja henkilökohtaisten oppimissuositusten avulla."
-        }
+        },
+        step4: {
+          title: "Hallitse Suomi",
+          description: "Rakenna vähitellen itsevarmuuttasi ja sujuvuuttasi säännöllisen harjoittelun kautta eri skenaarioiden ja vaikeusasteiden kanssa."
+        },
+        readyText: "Valmis kokemaan uuden tavan oppia suomea?",
+        getStarted: "Aloita Nyt"
       },
 
       // About Section
@@ -313,6 +353,26 @@ const getTranslations = () => {
         successMessage: "Pidämme sinut ajan tasalla edistymisestämme ja ilmoitamme kun lanseeraamme.",
         anotherEmail: "Rekisteröidy toisella sähköpostilla",
         privacy: "🔒 Kunnioitamme yksityisyyttäsi. Peruuta tilaus milloin tahansa."
+      },
+
+      // Footer Section
+      footer: {
+        description: "Sisu Speak käyttää AI-pohjaisia keskusteluja opettaakseen suomea luonnollisesti ja tehokkaasti. Harjoittele virtuaaliopettajiemme kanssa milloin ja missä tahansa.",
+        quickLinks: "Pikalinkit",
+        company: "Yritys",
+        support: "Tuki",
+        legal: "Juridiset",
+        home: "Koti",
+        features: "Ominaisuudet",
+        pricing: "Hinnoittelu",
+        about: "Tietoa Meistä",
+        contact: "Ota Yhteyttä",
+        help: "Tukikeskus",
+        faq: "UKK",
+        privacy: "Tietosuojakäytäntö",
+        terms: "Käyttöehdot",
+        copyright: "Kaikki oikeudet pidätetään.",
+        madeWith: "Tehty ❤️:lla suomen oppijoille"
       }
     }
   };
