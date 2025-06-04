@@ -3,8 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAssetPath } from '@/utils/paths';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center py-8 sm:py-12">
       {/* Simplified background pattern */}
@@ -21,12 +24,12 @@ const Hero = () => {
               </div>
 
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-                <span className="block">Learn Finnish</span>
-                <span className="block gradient-text">Through Conversation</span>
+                <span className="block">{t('hero.title')}</span>
+                <span className="block gradient-text">{t('hero.titleHighlight')}</span>
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
-                Meet the Sisu family, your AI language tutors who teach Finnish through natural conversations, not boring flashcards.
+                {t('hero.subtitle')}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start px-4 sm:px-0">
@@ -36,7 +39,7 @@ const Hero = () => {
                   aria-label="Join our waitlist to get early access to Sisu Speak"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    Join Waitlist
+                    {t('hero.cta')}
                     <svg className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -54,7 +57,7 @@ const Hero = () => {
                   }}
                 >
                   <span className="flex items-center gap-2">
-                    How It Works
+                    {t('hero.watchDemo')}
                     <svg className="w-5 h-5 transition-transform duration-200 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>

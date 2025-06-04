@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 import PageTracker from '@/components/PageTracker';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -87,9 +88,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}
       >
-        <PageTracker>
-          {children}
-        </PageTracker>
+        <LanguageProvider>
+          <PageTracker>
+            {children}
+          </PageTracker>
+        </LanguageProvider>
       </body>
     </html>
   );
