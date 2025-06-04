@@ -82,21 +82,31 @@ export default function Contact() {
     }
 
     try {
+      console.log('Submitting contact form...', formData);
+
       // Send contact form to Formspree (configured to send to imadeddine200507@gmail.com)
       const response = await fetch('https://formspree.io/f/mwpbkgao', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || 'General Inquiry',
+          message: formData.message,
+          company: formData.company || '',
+          phone: formData.phone || '',
           source: 'Sisu Speak Contact Form',
           timestamp: new Date().toISOString(),
           page: 'contact',
-          _replyto: formData.email, // Ensure reply-to is set to sender's email
+          _replyto: formData.email,
           _subject: `New Contact Form Submission: ${formData.subject || 'General Inquiry'}`,
         }),
       });
+
+      console.log('Response status:', response.status);
 
       if (response.ok) {
         setSubmitted(true);
@@ -110,7 +120,9 @@ export default function Contact() {
         });
         console.log('Contact form submitted successfully');
       } else {
-        throw new Error('Failed to submit');
+        const errorText = await response.text();
+        console.error('Response error:', errorText);
+        throw new Error(`Failed to submit: ${response.status}`);
       }
     } catch (error) {
       console.error('Submission error:', error);

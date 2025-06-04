@@ -21,34 +21,44 @@ export const submitFormData = async (
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
+      console.log(`API attempt ${attempt}:`, data);
+
       const response = await fetch(FORMSPREE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(data),
       });
 
+      console.log(`API Response status (attempt ${attempt}):`, response.status);
+
       if (response.ok) {
+        console.log('API submission successful');
         return true;
       }
 
+      // Log response details for debugging
+      const responseText = await response.text();
+      console.error(`API Response error (attempt ${attempt}):`, responseText);
+
       // If it's the last attempt, throw an error
       if (attempt === maxRetries) {
-        throw new Error(`Failed after ${maxRetries} attempts`);
+        throw new Error(`Failed after ${maxRetries} attempts. Last error: ${response.status} - ${responseText}`);
       }
 
       // Wait before retrying (exponential backoff)
       await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
-      
+
     } catch (error) {
       console.error(`Attempt ${attempt} failed:`, error);
-      
+
       // If it's the last attempt, throw the error
       if (attempt === maxRetries) {
         throw error;
       }
-      
+
       // Wait before retrying
       await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
     }

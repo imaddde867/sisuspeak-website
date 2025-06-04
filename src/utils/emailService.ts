@@ -21,34 +21,20 @@ export const initEmailJS = () => {
  */
 export const sendWelcomeEmail = async (email: string, name?: string): Promise<boolean> => {
   try {
+    console.log('Initializing EmailJS...');
     // Initialize EmailJS if not already done
     initEmailJS();
 
     const templateParams = {
+      user_email: email,
+      user_name: name || 'Friend',
       to_email: email,
       to_name: name || 'Friend',
       from_name: 'Sisu Speak Team',
-      subject: 'Welcome to Sisu Speak Waitlist! 🇫🇮',
-      message: `
-        Tervetuloa! Welcome to the Sisu Speak family!
-
-        Thank you for joining our waitlist. You're now part of an exclusive group of Finnish language enthusiasts who will be the first to experience our revolutionary AI-powered learning platform.
-
-        What happens next?
-        • You'll receive early access when we launch
-        • Exclusive updates on our development progress
-        • Special launch pricing just for waitlist members
-        • Tips and resources for Finnish language learning
-
-        We're working hard to bring you the most effective and engaging way to learn Finnish through AI conversation. Your journey to fluency starts here!
-
-        Kiitos ja nähdään pian! (Thank you and see you soon!)
-
-        The Sisu Speak Team
-        https://sisuspeak.com
-      `,
       reply_to: 'hello@sisuspeak.com'
     };
+
+    console.log('Sending welcome email with params:', templateParams);
 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
