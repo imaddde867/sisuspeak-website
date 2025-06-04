@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from '@/utils/motion';
 import { FaBriefcase, FaHeart, FaCommentDots, FaStar } from 'react-icons/fa';
+import { getAssetPath } from '@/utils/paths';
 
 const About = () => {
   const sisuFamily = [
@@ -58,7 +59,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/family.PNG"
+              src={getAssetPath('/images/family.PNG')}
               alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
               width={300}
               height={300}
