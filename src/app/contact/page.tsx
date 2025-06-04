@@ -83,7 +83,7 @@ export default function Contact() {
 
     try {
       // Send contact form to Formspree (configured to send to imadeddine200507@gmail.com)
-      const response = await fetch('https://formspree.io/f/xdkogqpb', {
+      const response = await fetch('https://formspree.io/f/mwpbkgao', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

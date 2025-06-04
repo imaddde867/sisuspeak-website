@@ -5,9 +5,9 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
-const EMAILJS_SERVICE_ID = 'service_sisuspeak';
-const EMAILJS_TEMPLATE_ID_WELCOME = 'template_welcome';
-const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY'; // This should be set in environment variables
+const EMAILJS_SERVICE_ID = 'service_usc26od';
+const EMAILJS_TEMPLATE_ID_WELCOME = 'template_9dxuoup';
+const EMAILJS_PUBLIC_KEY = '20_z-xj2NzRCRugP9';
 
 /**
  * Initialize EmailJS
@@ -70,7 +70,7 @@ export const sendWelcomeEmail = async (email: string, name?: string): Promise<bo
  */
 export const sendWelcomeEmailFallback = async (email: string): Promise<boolean> => {
   try {
-    const response = await fetch('https://formspree.io/f/xdkogqpb', {
+    const response = await fetch('https://formspree.io/f/mwpbkgao', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ export const submitFormData = async (
   data: FormSubmissionData,
   maxRetries: number = 3
 ): Promise<boolean> => {
-  const FORMSPREE_URL = 'https://formspree.io/f/xdkogqpb';
+  const FORMSPREE_URL = 'https://formspree.io/f/mwpbkgao';
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {

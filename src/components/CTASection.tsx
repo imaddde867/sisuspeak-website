@@ -35,7 +35,7 @@ const CTASection = () => {
 
     try {
       // Send email to Formspree
-      const response = await fetch('https://formspree.io/f/xdkogqpb', {
+      const response = await fetch('https://formspree.io/f/mwpbkgao', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
