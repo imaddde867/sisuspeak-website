@@ -15,9 +15,6 @@ export interface AnalyticsEvent {
  */
 export const trackEvent = (eventData: AnalyticsEvent) => {
   try {
-    // Log to console for development
-    console.log('Analytics Event:', eventData);
-    
     // Store in localStorage for basic tracking
     const events = JSON.parse(localStorage.getItem('sisu_analytics') || '[]');
     events.push({
@@ -35,8 +32,8 @@ export const trackEvent = (eventData: AnalyticsEvent) => {
     // In production, you could send to Google Analytics, Mixpanel, etc.
     // Example: gtag('event', eventData.event, { ...eventData });
     
-  } catch (error) {
-    console.error('Analytics tracking error:', error);
+  } catch {
+    // Silently fail in production
   }
 };
 

@@ -30,19 +30,23 @@ export const metadata: Metadata = {
   title: "Sisu Speak | AI-Powered Finnish Language Learning",
   description: "Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized language learning experiences.",
   keywords: ["Finnish language", "language learning", "AI tutor", "NLP", "pronunciation", "conversation practice"],
+  icons: {
+    icon: '/sisuspeak-website/favicon.svg',
+    apple: '/sisuspeak-website/favicon.svg',
+  },
   openGraph: {
     title: "Sisu Speak | Learn Finnish Through AI Conversation",
     description: "Learn Finnish naturally through engaging conversations with AI tutors. More effective than traditional language learning methods.",
-    url: "https://sisuspeak.com",
+    url: "https://imadlab.me/sisuspeak-website",
     siteName: "Sisu Speak",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://sisuspeak.com/images/sisu-og-image.jpg",
+        url: "https://imadlab.me/sisuspeak-website/images/family.PNG",
         width: 1200,
         height: 630,
-        alt: "Sisu Speak - AI Finnish Language Learning",
+        alt: "Sisu Speak - Meet the AI Finnish Language Learning Family",
       },
     ],
   },
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
     title: "Sisu Speak | AI-Powered Finnish Language Learning",
     description: "Learn Finnish naturally through conversation with AI tutors",
     creator: "@sisuspeak",
-    images: ["https://sisuspeak.com/images/sisu-twitter-image.jpg"],
+    images: ["https://imadlab.me/sisuspeak-website/images/family.PNG"],
   },
   robots: {
     index: true,
@@ -73,6 +77,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://formspree.io" />
+        <link rel="dns-prefetch" href="https://api.emailjs.com" />
+      </head>
       <body
         className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}
       >

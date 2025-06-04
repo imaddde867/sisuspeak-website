@@ -21,8 +21,6 @@ export const submitFormData = async (
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      console.log(`API attempt ${attempt}:`, data);
-
       const response = await fetch(FORMSPREE_URL, {
         method: 'POST',
         headers: {
@@ -32,16 +30,12 @@ export const submitFormData = async (
         body: JSON.stringify(data),
       });
 
-      console.log(`API Response status (attempt ${attempt}):`, response.status);
-
       if (response.ok) {
-        console.log('API submission successful');
         return true;
       }
 
-      // Log response details for debugging
+      // If it's the last attempt, throw an error
       const responseText = await response.text();
-      console.error(`API Response error (attempt ${attempt}):`, responseText);
 
       // If it's the last attempt, throw an error
       if (attempt === maxRetries) {
@@ -52,8 +46,6 @@ export const submitFormData = async (
       await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
 
     } catch (error) {
-      console.error(`Attempt ${attempt} failed:`, error);
-
       // If it's the last attempt, throw the error
       if (attempt === maxRetries) {
         throw error;
@@ -96,8 +88,8 @@ export class FormSubmissionQueue {
         queuedAt: new Date().toISOString()
       });
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(queue));
-    } catch (error) {
-      console.error('Failed to queue form submission:', error);
+    } catch {
+      // Silently fail in production
     }
   }
   
@@ -119,8 +111,7 @@ export class FormSubmissionQueue {
       try {
         await submitFormData(item);
         processed.push(item);
-      } catch (error) {
-        console.error('Failed to process queued item:', error);
+      } catch {
         break; // Stop processing if one fails
       }
     }

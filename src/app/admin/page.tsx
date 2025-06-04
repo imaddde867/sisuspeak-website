@@ -13,8 +13,8 @@ interface AnalyticsEvent {
 
 export default function AdminDashboard() {
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
-  const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (isAuthenticated) {

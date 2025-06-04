@@ -20,10 +20,10 @@ const Footer = () => {
             </p>
             <div className="mt-6 flex space-x-2 sm:space-x-4 justify-center md:justify-start">
               {[
-                { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
-                { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-                { icon: FaFacebook, href: "https://facebook.com", label: "Facebook" }
+                { icon: FaTwitter, href: "https://twitter.com/sisuspeak", label: "Twitter" },
+                { icon: FaLinkedin, href: "https://linkedin.com/company/sisuspeak", label: "LinkedIn" },
+                { icon: FaInstagram, href: "https://instagram.com/sisuspeak", label: "Instagram" },
+                { icon: FaFacebook, href: "https://facebook.com/sisuspeak", label: "Facebook" }
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}

@@ -1,6 +1,10 @@
-# Sisu Speak - AI-Powered Finnish Language Learning
+# 🇫🇮 Sisu Speak - AI-Powered Finnish Language Learning
 
 Sisu Speak is an innovative language learning platform leveraging AI and Natural Language Processing (NLP) to offer a natural, conversation-based approach to learning Finnish. Forget boring flashcards; practice real-life conversations with our virtual AI tutors – the Sisu family.
+
+## 🚀 Live Website
+
+Visit our website: [https://imadlab.me/sisuspeak-website](https://imadlab.me/sisuspeak-website)
 
 ## Features
 
@@ -53,4 +57,4 @@ The Sisu Speak platform revolutionizes language learning through immersive, conv
 
 ## Contact
 
-For more information, please reach out to us at info@sisuspeak.com
+For more information, please reach out to us at [info@sisuspeak.com](mailto:info@sisuspeak.com)
