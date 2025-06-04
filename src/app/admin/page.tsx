@@ -63,14 +63,14 @@ export default function AdminDashboard() {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7388a5] focus:border-[#7388a5] bg-white text-gray-900 placeholder-gray-500"
                   placeholder="Enter admin password"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+                className="w-full bg-[#7388a5] text-white py-3 px-4 rounded-lg hover:bg-[#7388a5]/90 transition-colors"
               >
                 Login
               </button>
@@ -88,17 +88,17 @@ export default function AdminDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Signups</h3>
-            <p className="text-3xl font-bold text-blue-600">{emailSignups.length}</p>
+            <p className="text-3xl font-bold text-[#7388a5]">{emailSignups.length}</p>
             <p className="text-sm text-gray-500">Total waitlist subscribers</p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Contact Forms</h3>
-            <p className="text-3xl font-bold text-green-600">{contactForms.length}</p>
+            <p className="text-3xl font-bold text-[#a3c2c8]">{contactForms.length}</p>
             <p className="text-sm text-gray-500">Contact submissions</p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Page Views</h3>
-            <p className="text-3xl font-bold text-purple-600">{pageViews.length}</p>
+            <p className="text-3xl font-bold text-[#7388a5]">{pageViews.length}</p>
             <p className="text-sm text-gray-500">Total page views</p>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function AdminDashboard() {
         <div className="mb-6">
           <button
             onClick={exportData}
-            className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors"
+            className="bg-[#7388a5] text-white px-6 py-3 rounded-lg hover:bg-[#7388a5]/90 transition-colors"
           >
             Export Data (JSON)
           </button>
@@ -133,8 +133,8 @@ export default function AdminDashboard() {
                     <td className="py-2">{new Date(event.timestamp).toLocaleString()}</td>
                     <td className="py-2">
                       <span className={`px-2 py-1 rounded text-xs ${
-                        event.event === 'email_signup' ? 'bg-blue-100 text-blue-800' :
-                        event.event === 'contact_form_submit' ? 'bg-green-100 text-green-800' :
+                        event.event === 'email_signup' ? 'bg-[#7388a5]/20 text-[#7388a5]' :
+                        event.event === 'contact_form_submit' ? 'bg-[#a3c2c8]/20 text-[#7388a5]' :
                         'bg-gray-100 text-gray-800'
                       }`}>
                         {event.event}
