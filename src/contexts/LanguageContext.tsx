@@ -247,8 +247,8 @@ const getTranslations = () => {
       // Hero Section
       hero: {
         title: "Opi Suomea",
-        titleHighlight: "AI-Keskustelulla",
-        subtitle: "Hallitse suomi Tehokaasti AI-opettajiemme - Sisu-perheen - kanssa. Harjoittele oikeita keskusteluja, saa välitöntä palautetta ja rakenna itsevarmuutta suomen kielen käytössä.",
+        titleHighlight: "Tekoälyn avustuksella",
+        subtitle: "Hallitse suomea tehokaasti Sisu-perheen opettajien kanssa. Harjoittele oikean elämän keskusteluja, saa välitöntä palautetta ja vahvista suomen kielen itsevarmuutta",
         cta: "Liity Jonotuslistalle",
         watchDemo: "Katso Demo",
         trustedBy: "Kieltenoppijoiden luottama maailmanlaajuisesti"
@@ -265,7 +265,7 @@ const getTranslations = () => {
       // Features Section
       features: {
         title: "Miksi Valita Sisu Speak?",
-        subtitle: "AI-pohjainen lähestymistapamme tekee suomen oppimisesta tehokasta, nautinnollista ja sinulle räätälöityä. Koe kieltenoppimisen tulevaisuus tänään.",
+        subtitle: "Tekoäly pohjainen lähestymistapamme tekee suomen oppimisesta tehokasta, nautinnollista ja sinulle räätälöityä. Koe kieltenoppimisen tulevaisuus tänään.",
         conversational: {
           title: "Keskusteleva Oppiminen",
           description: "Opi suomea luonnollisesti kiinnostavien keskustelujen kautta Sisu-perheen AI-opettajien kanssa, räätälöitynä tasollesi ja kiinnostuksen kohteillesi."
@@ -315,24 +315,24 @@ const getTranslations = () => {
       // About Section
       about: {
         title: "Tutustu Sisu-Perheeseen",
-        subtitle: "AI-pohjaiset suomen opettajasi, joilla jokaisella on oma persoonallisuus ja asiantuntemus",
+        subtitle: "Tekoäly pohjaiset suomen kielen opettajasi, joilla jokaisella on oma persoonallisuus ja asiantuntemus",
         sisuSenior: {
-          name: "Sisu Senior",
+          name: "Isä Sisu",
           role: "Ammatillinen & Akateeminen Opas",
           description: "Opettaa suomea työhön, opintoihin ja virallisiin tilanteisiin, keskittyen edistyneeseen sanastoon ja rakenteisiin."
         },
         sisuAiti: {
-          name: "Sisu Äiti",
+          name: "Äiti Sisu",
           role: "Arkipäivän & Perheen Keskustelukumppani",
           description: "Erikoistunut arkipäivän suomeen, kumppani- ja perhevuorovaikutukseen, rakentaen käytännöllistä sujuvuutta."
         },
         sisuNuori: {
-          name: "Sisu Nuori",
+          name: "Teini Sisu",
           role: "Kulttuurinen & Sosiaalinen Kumppani",
           description: "Keskittyy moderniin suomalaiseen kulttuuriin, slangiin ja sosiaalisiin vuorovaikutuksiin, täydellinen yhteyden luomiseen suomalaisten nuorten kanssa."
         },
         sisuLapsi: {
-          name: "Sisu Lapsi",
+          name: "Lapsi Sisu",
           role: "Leikkisä Oppimiskaveri",
           description: "Tekee oppimisesta hauskaa pelien, tarinoiden ja lapsiystävällisten lähestymistapojen avulla, ihanteellinen aloittelijoille ja nuorille oppijoille."
         }
@@ -357,7 +357,7 @@ const getTranslations = () => {
 
       // Footer Section
       footer: {
-        description: "Sisu Speak käyttää AI-pohjaisia keskusteluja opettaakseen suomea luonnollisesti ja tehokkaasti. Harjoittele virtuaaliopettajiemme kanssa milloin ja missä tahansa.",
+        description: "Sisu Speak käyttää Tekoäly pohjaisia keskusteluja opettaakseen suomea luonnollisesti ja tehokkaasti. Harjoittele virtuaaliopettajiemme kanssa milloin ja missä tahansa.",
         quickLinks: "Pikalinkit",
         company: "Yritys",
         support: "Tuki",
