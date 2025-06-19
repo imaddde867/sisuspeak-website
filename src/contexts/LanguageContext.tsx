@@ -248,7 +248,7 @@ const getTranslations = () => {
       hero: {
         title: "Opi Suomea",
         titleHighlight: "AI-Keskustelulla",
-        subtitle: "Hallitse suomi luonnollisesti AI-opettajiemme - Sisu-perheen - kanssa. Harjoittele oikeita keskusteluja, saa välitöntä palautetta ja rakenna itsevarmuutta suomen puhumisessa.",
+        subtitle: "Hallitse suomi Tehokaasti AI-opettajiemme - Sisu-perheen - kanssa. Harjoittele oikeita keskusteluja, saa välitöntä palautetta ja rakenna itsevarmuutta suomen kielen käytössä.",
         cta: "Liity Jonotuslistalle",
         watchDemo: "Katso Demo",
         trustedBy: "Kieltenoppijoiden luottama maailmanlaajuisesti"
@@ -280,11 +280,11 @@ const getTranslations = () => {
         },
         progress: {
           title: "Edistymisen Seuranta",
-          description: "Seuraa kehittymistäsi yksityiskohtaisilla analyyseilla ja juhli virstanpylväitä edetessäsi suomen matkallasi."
+          description: "Seuraa kehittymistäsi yksityiskohtaisilla analyyseilla ja juhli saavutuksistasi edetessäsi suomen matkallasi."
         },
         scenarios: {
           title: "Kiinnostavat Skenaariot",
-          description: "Harjoittele suomea realistisissa tilanteissa kuten ruoan tilaaminen, reitin kysyminen tai rennot keskustelut."
+          description: "Harjoittele suomea arkisissa tilanteissa, kuten ruokaa tilatessa, reittiä kysyessä tai rentoja keskusteluja käydessä."
         }
       },
 
@@ -302,7 +302,7 @@ const getTranslations = () => {
         },
         step3: {
           title: "Seuraa edistymistäsi",
-          description: "Katso suomen taitojesi kehittyvän ajan myötä yksityiskohtaisen edistymisen seurannan ja henkilökohtaisten oppimissuositusten avulla."
+          description: "Katso suomen kielen taitojesi kehittyvän ajan myötä yksityiskohtaisen edistymisen seurannan ja henkilökohtaisten oppimissuositusten avulla."
         },
         step4: {
           title: "Hallitse Suomi",
