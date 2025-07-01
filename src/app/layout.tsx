@@ -33,8 +33,20 @@ export const metadata: Metadata = {
   description: "Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized language learning experiences.",
   keywords: ["Finnish language", "language learning", "AI tutor", "NLP", "pronunciation", "conversation practice"],
   icons: {
-    icon: '/sisuspeak-website/favicon.svg',
-    apple: '/sisuspeak-website/favicon.svg',
+    icon: [
+      {
+        url: process.env.NODE_ENV === 'production' ? '/sisuspeak-website/favicon.ico' : '/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      }
+    ],
+    apple: [
+      {
+        url: process.env.NODE_ENV === 'production' ? '/sisuspeak-website/favicon.ico' : '/favicon.ico',
+        sizes: '180x180',
+        type: 'image/x-icon',
+      }
+    ],
   },
   openGraph: {
     title: "Sisu Speak | Learn Finnish Through AI Conversation",
