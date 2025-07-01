@@ -21,7 +21,6 @@ export const initEmailJS = () => {
  */
 export const sendWelcomeEmail = async (email: string, name?: string): Promise<boolean> => {
   try {
-    console.log('Initializing EmailJS...');
     // Initialize EmailJS if not already done
     initEmailJS();
 
@@ -34,15 +33,12 @@ export const sendWelcomeEmail = async (email: string, name?: string): Promise<bo
       reply_to: 'hello@sisuspeak.com'
     };
 
-    console.log('Sending welcome email with params:', templateParams);
-
-    const response = await emailjs.send(
+    await emailjs.send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID_WELCOME,
       templateParams
     );
 
-    console.log('Welcome email sent successfully:', response);
     return true;
   } catch (error) {
     console.error('Failed to send welcome email:', error);
@@ -108,6 +104,5 @@ export const sendWelcomeEmailWithFallback = async (email: string, name?: string)
   }
 
   // Fallback to Formspree
-  console.log('EmailJS failed, trying fallback method...');
   return await sendWelcomeEmailFallback(email);
 };

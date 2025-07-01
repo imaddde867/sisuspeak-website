@@ -8,13 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build",
-    "export": "next build",
-    "deploy": "npm run build && gh-pages -d out"
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@headlessui/react": "^2.2.4",
     "framer-motion": "^12.16.0",
     "next": "^15.3.3",
     "react": "^19.0.0",

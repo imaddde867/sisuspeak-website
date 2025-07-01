@@ -53,7 +53,6 @@ export default function Signup() {
         // Send welcome email
         try {
           await sendWelcomeEmailWithFallback(email);
-          console.log('Welcome email sent to:', email);
         } catch (emailError) {
           console.error('Failed to send welcome email:', emailError);
           // Don't fail the signup if email fails
@@ -61,8 +60,6 @@ export default function Signup() {
 
         setEmail('');
         setIsValidEmail(false);
-
-        console.log('Waitlist signup successful:', email);
       } else {
         throw new Error('Failed to submit');
       }

@@ -105,8 +105,6 @@ export default function Contact() {
     }
 
     try {
-      console.log('Submitting contact form...', formData);
-
       // Send contact form to Formspree (configured to send to imadeddine200507@gmail.com)
       const response = await fetch('https://formspree.io/f/mwpbkgao', {
         method: 'POST',
@@ -128,8 +126,6 @@ export default function Contact() {
           _subject: `New Contact Form Submission: ${formData.subject || 'General Inquiry'}`,
         }),
       });
-
-      console.log('Response status:', response.status);
 
       if (response.ok) {
         setSubmitted(true);
@@ -155,7 +151,6 @@ export default function Contact() {
           company: '',
           phone: ''
         });
-        console.log('Contact form submitted successfully');
       } else {
         const errorText = await response.text();
         console.error('Response error:', errorText);

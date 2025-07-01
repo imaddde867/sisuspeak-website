@@ -37,8 +37,6 @@ const CTASection = () => {
     setError('');
 
     try {
-      console.log('Submitting CTA signup...', email);
-
       // Send email to Formspree
       const response = await fetch('https://formspree.io/f/mwpbkgao', {
         method: 'POST',
@@ -54,8 +52,6 @@ const CTASection = () => {
         }),
       });
 
-      console.log('CTA Response status:', response.status);
-
       if (response.ok) {
         setSubmitted(true);
 
@@ -68,7 +64,6 @@ const CTASection = () => {
         // Send welcome email
         try {
           await sendWelcomeEmailWithFallback(email);
-          console.log('Welcome email sent to:', email);
         } catch (emailError) {
           console.error('Failed to send welcome email:', emailError);
           // Don't fail the signup if email fails
@@ -76,7 +71,6 @@ const CTASection = () => {
 
         setEmail('');
         setIsValidEmail(false);
-        console.log('CTA signup successful:', email);
       } else {
         const errorText = await response.text();
         console.error('CTA Response error:', errorText);
