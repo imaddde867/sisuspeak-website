@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from '@/utils/motion';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
-import { FiGlobe, FiChevronDown } from 'react-icons/fi';
+import { FiGlobe } from 'react-icons/fi';
 
 interface LanguageOption {
   code: Language;
@@ -39,8 +39,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
 
   // Close dropdown when clicking outside
   useEffect(() => {
