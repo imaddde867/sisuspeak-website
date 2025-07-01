@@ -36,10 +36,16 @@ export const metadata: Metadata = {
     icon: [
       {
         url: process.env.NODE_ENV === 'production' ? '/sisuspeak-website/favicon.ico' : '/favicon.ico',
+        sizes: '16x16',
+        type: 'image/x-icon',
+      },
+      {
+        url: process.env.NODE_ENV === 'production' ? '/sisuspeak-website/favicon.ico' : '/favicon.ico',
         sizes: '32x32',
         type: 'image/x-icon',
       }
     ],
+    shortcut: process.env.NODE_ENV === 'production' ? '/sisuspeak-website/favicon.ico' : '/favicon.ico',
     apple: [
       {
         url: process.env.NODE_ENV === 'production' ? '/sisuspeak-website/favicon.ico' : '/favicon.ico',
