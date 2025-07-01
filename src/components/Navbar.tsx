@@ -2,9 +2,11 @@
 
 import { useState, useEffect, memo, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AnimatePresence, motion } from '@/utils/motion';
 import { RiMenu4Line, RiCloseLine } from 'react-icons/ri';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getAssetPath } from '@/utils/paths';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = memo(() => {
@@ -54,7 +56,14 @@ const Navbar = memo(() => {
             aria-label="Sisu Speak - Home"
           >
             <div className="flex items-center space-x-2">
-              <span className="text-2xl">🇫🇮</span>
+              <Image
+                src={getAssetPath('/logo_24x24.svg')}
+                alt="Sisu Speak Logo"
+                width={24}
+                height={24}
+                className="w-6 h-6"
+                priority
+              />
               <span className="font-baloo text-2xl font-bold gradient-text tracking-tight select-none">
                 sisu speak
               </span>
