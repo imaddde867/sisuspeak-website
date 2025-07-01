@@ -2,7 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from '@/utils/motion';
+import { getAssetPath } from '@/utils/paths';
 
 export default function NotFound() {
 
@@ -50,9 +52,9 @@ export default function NotFound() {
             404
           </h1>
 
-          {/* Simple Finnish Element */}
+          {/* Simple Logo Element */}
           <motion.div
-            className="text-3xl mb-6"
+            className="flex justify-center mb-6"
             animate={{
               y: [0, -8, 0],
             }}
@@ -62,7 +64,13 @@ export default function NotFound() {
               ease: "easeInOut",
             }}
           >
-            🇫🇮
+            <Image
+              src={getAssetPath('/logo_24x24.svg')}
+              alt="Sisu Speak Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12"
+            />
           </motion.div>
         </motion.div>
 
