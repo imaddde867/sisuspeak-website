@@ -112,7 +112,7 @@ const CTASection = () => {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">Thank you for joining!</h3>
-                  <p className="text-blue-100 mb-4">You're now on our early access list. We'll notify you when Sisu Speak is ready.</p>
+                  <p className="text-blue-100 mb-4">You&apos;re now on our early access list. We&apos;ll notify you when Sisu Speak is ready.</p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="text-yellow-300 hover:text-yellow-200 font-medium transition-colors duration-200 underline"

@@ -50,7 +50,7 @@ const SolutionSection = () => {
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Instead of memorizing grammar rules, you'll have natural conversations with AI tutors 
+            Instead of memorizing grammar rules, you&apos;ll have natural conversations with AI tutors 
             who understand context, provide instant feedback, and adapt to your unique learning style.
           </p>
         </motion.div>
