@@ -179,7 +179,7 @@ const TutorsCarousel = () => {
                       className="w-80 h-80 object-contain rounded-2xl"
                     />
                     <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                      <span className="text-xl">🦌</span>
+                      <span className="text-xl">🇫🇮</span>
                     </div>
                   </div>
                 </div>
