@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
 import { trackEmailSignup } from '@/utils/analytics';
 
-const logDevError = (...args: any[]) => {
+const logDevError = (...args: unknown[]) => {
   if (process.env.NODE_ENV === 'development') {
     console.error(...args);
   }

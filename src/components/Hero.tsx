@@ -145,8 +145,7 @@ const Hero = () => {
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                   style={{
                     filter: 'none',
-                    boxShadow: 'none',
-                    background: 'transparent'
+                    boxShadow: 'none'
                   }}
                 />
               </div>

@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { trackContactSubmission, trackFormStart, trackFormAbandon } from '@/utils/analytics';
-import { devLog } from '@/utils/logger';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -154,11 +153,11 @@ export default function Contact() {
         });
       } else {
         const errorText = await response.text();
-        devLog('Response error:', errorText);
+        console.error('Response error:', errorText);
         throw new Error(`Failed to submit: ${response.status}`);
       }
     } catch (error) {
-      devLog('Submission error:', error);
+      console.error('Submission error:', error);
       setErrors({ submit: 'Something went wrong. Please try again.' });
     } finally {
       setIsSubmitting(false);
