@@ -82,8 +82,8 @@ const FinalCTASection = () => {
                   }}
                 />
                 <div className="absolute -top-2 -right-2">
-                  <div className="bg-yellow-400 text-blue-900 rounded-full p-2 animate-bounce">
-                    <span className="text-xl">👋</span>
+                  <div className="bg-white text-blue-900 rounded-full p-2 animate-bounce">
+                    <span className="text-xl">💙</span>
                   </div>
                 </div>
               </div>
