@@ -4,14 +4,63 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getAssetPath } from '@/utils/paths';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useEffect } from 'react';
 
 const Hero = () => {
   const { t } = useLanguage();
 
+  useEffect(() => {
+    const createStar = () => {
+      const star = document.createElement('div');
+      const sizes = ['star-small', 'star-small', 'star-medium', 'star-large']; // More small stars
+      const size = sizes[Math.floor(Math.random() * sizes.length)];
+      
+      star.className = `star ${size}`;
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = (Math.random() * 4 + 3) + 's';
+      star.style.animationDelay = Math.random() * 1 + 's';
+      
+      const starsContainer = document.querySelector('.falling-stars');
+      if (starsContainer) {
+        starsContainer.appendChild(star);
+        
+        // Remove star after animation completes
+        setTimeout(() => {
+          if (star.parentNode) {
+            star.parentNode.removeChild(star);
+          }
+        }, 8000);
+      }
+    };
+
+    // Create initial burst of stars
+    for (let i = 0; i < 15; i++) {
+      setTimeout(createStar, i * 100);
+    }
+
+    // Create continuous stars - more frequent
+    const interval = setInterval(createStar, 300);
+    
+    // Create additional bursts every few seconds
+    const burstInterval = setInterval(() => {
+      for (let i = 0; i < 3; i++) {
+        setTimeout(createStar, i * 150);
+      }
+    }, 2000);
+    
+    return () => {
+      clearInterval(interval);
+      clearInterval(burstInterval);
+    };
+  }, []);
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center py-8 sm:py-12">
+      {/* Falling stars effect */}
+      <div className="falling-stars z-0"></div>
+      
       {/* Simplified background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-blue-50/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-blue-50/20 z-0"></div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
