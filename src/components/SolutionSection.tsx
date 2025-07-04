@@ -36,8 +36,8 @@ const SolutionSection = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true, margin: "-20px" }}
           className="text-center mb-12"
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
@@ -61,13 +61,22 @@ const SolutionSection = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-white/50 hover:shadow-lg hover:scale-105 transition-all duration-200 text-center"
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              viewport={{ once: true, margin: "-20px" }}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-white/50 text-center hover:shadow-lg hover:border-blue-200"
             >
-              <div className="w-14 h-14 bg-blue-100 rounded-2xl mb-4 flex items-center justify-center text-blue-600 mx-auto">
+              <motion.div 
+                className="w-14 h-14 bg-blue-100 rounded-2xl mb-4 flex items-center justify-center text-blue-600 mx-auto"
+                whileHover={{ backgroundColor: "#3b82f6", color: "#ffffff" }}
+                transition={{ duration: 0.2 }}
+              >
                 {benefit.icon}
-              </div>
+              </motion.div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {benefit.title}
               </h3>
@@ -81,8 +90,8 @@ const SolutionSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true, margin: "-20px" }}
           className="text-center mt-12"
         >
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-100 text-green-800 text-sm font-medium">
