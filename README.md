@@ -1,64 +1,65 @@
-# Sisu Speak - AI-Powered Finnish Learning Platform
+# Sisu Speak
 
-🇫🇮 **Sisu Speak** is an innovative Finnish learning platform that leverages cutting-edge AI and Natural Language Processing (NLP) to provide a natural, conversation-based approach to language learning. Say goodbye to boring flashcards and hello to engaging conversations with our virtual AI tutors – the Sisu family.
+An AI-powered Finnish learning platform that provides conversational language learning through virtual tutors. Built with Next.js and modern web technologies.
 
-## 🚀 Live Website
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12-FF0080?style=flat&logo=framer&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
+![License](https://img.shields.io/badge/License-Proprietary-red?style=flat)
 
-🌐 **Visit our website**: [https://imadlab.me/sisuspeak-website](https://imadlab.me/sisuspeak-website)
+## Live Website
 
-## ✨ Key Features
+Visit the live site: [https://imadlab.me/sisuspeak-website](https://imadlab.me/sisuspeak-website)
 
-- 🗣️ **Conversational Learning**: Practice Finnish through natural dialogues with AI tutors
-- 🎯 **Pronunciation Feedback**: Receive instant, personalized feedback on your pronunciation
-- 🧠 **Adaptive Learning**: Content that adapts to your skill level and learning pace
-- 🌍 **Real-world Scenarios**: Learn practical Finnish for everyday situations
-- 👨‍👩‍👧‍👦 **Sisu Family Tutors**: Specialized AI tutors for different learning contexts
-- 📱 **Responsive Design**: Seamless experience across all devices
-- ⚡ **Fast Performance**: Optimized for speed and accessibility
+## Features
 
-## 🛠️ Technology Stack
+- **Conversational Learning**: Practice Finnish through natural dialogues with AI tutors
+- **Pronunciation Feedback**: Real-time feedback on pronunciation and speaking skills
+- **Adaptive Learning**: Personalized content that adapts to individual skill levels
+- **Real-world Scenarios**: Practical Finnish for everyday situations
+- **Specialized Tutors**: Multiple AI tutors for different learning contexts
+- **Responsive Design**: Optimized for all devices and screen sizes
 
-- **Frontend**: Next.js 15 with App Router
+## Technology Stack
+
+- **Framework**: Next.js 15 with App Router
 - **Styling**: Tailwind CSS 4
 - **Animations**: Framer Motion 12
 - **Icons**: React Icons 5
-- **Email Service**: EmailJS
-- **TypeScript**: Full type safety
-- **Deployment**: GitHub Pages with custom domain
+- **Email**: EmailJS
+- **Language**: TypeScript
+- **Deployment**: GitHub Pages
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18 or higher
 - npm or yarn package manager
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/sisuspeak-website.git
 cd sisuspeak-website
 ```
 
-2. **Install dependencies**
+2. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
 ```
 
-3. **Run the development server**
+3. Start the development server:
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-4. **Open your browser**
-Navigate to [http://localhost:3000](http://localhost:3000) to see the website.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Available Scripts
+### Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
@@ -68,75 +69,44 @@ Navigate to [http://localhost:3000](http://localhost:3000) to see the website.
 - `npm run predeploy` - Build and prepare for deployment
 - `npm run deploy` - Deploy to GitHub Pages
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 sisuspeak-website/
-├── public/                 # Static assets
-│   ├── images/            # Website images
-│   ├── favicon.ico        # Site favicon
-│   └── sitemap.xml        # SEO sitemap
+├── public/                # Static assets
+│   ├── images/           # Website images
+│   └── favicon.ico       # Site favicon
 ├── src/
-│   ├── app/               # Next.js App Router pages
-│   │   ├── layout.tsx     # Root layout
-│   │   ├── page.tsx       # Homepage
-│   │   ├── contact/       # Contact page
-│   │   ├── faq/          # FAQ page
-│   │   └── ...           # Other pages
-│   ├── components/        # Reusable UI components
-│   │   ├── Hero.tsx      # Homepage hero section
-│   │   ├── Navbar.tsx    # Navigation bar
-│   │   ├── Footer.tsx    # Site footer
-│   │   └── ...          # Other components
-│   └── utils/            # Utility functions
-│       ├── analytics.ts  # Google Analytics
-│       ├── paths.ts      # Asset path helpers
-│       └── ...          # Other utilities
-├── scripts/              # Build scripts
-└── package.json         # Dependencies and scripts
+│   ├── app/              # Next.js App Router pages
+│   ├── components/       # Reusable UI components
+│   └── utils/           # Utility functions
+├── scripts/             # Build scripts
+└── package.json        # Dependencies and scripts
 ```
 
-## 🎯 The Sisu Family
+## AI Tutors
 
-Meet our specialized AI tutors, each designed for different learning contexts:
+The platform features specialized AI tutors:
 
-- **Sisu Senior**: Your professional and academic Finnish guide
-- **Sisu Äiti**: Perfect for everyday and family conversations  
-- **Sisu Nuori**: Learn modern, youth, and social media Finnish
-- **Sisu Lapsi**: Ideal for beginners and elementary learning
-
-Each tutor provides personalized feedback and adapts to your learning style and pace.
-
-## Key Pages
-
-- **Homepage**: Introduction to Sisu Speak with features overview
-- **FAQ**: Frequently asked questions about the platform
-- **Contact**: Get in touch with our team
-- **Signup**: Register for early access
-- **Privacy**: Privacy policy and data protection
-- **Terms**: Terms of service
+- **Sisu Senior**: Professional and academic Finnish
+- **Sisu Äiti**: Everyday and family conversations
+- **Sisu Nuori**: Modern and youth Finnish
+- **Sisu Lapsi**: Beginner-level learning
 
 ## Deployment
 
-This website is configured for deployment on GitHub Pages:
+Build and deploy to GitHub Pages:
 
-1. **Build the project**
 ```bash
 npm run predeploy
-```
-
-2. **Deploy to GitHub Pages**
-```bash
 npm run deploy
 ```
 
-The site will be available at your GitHub Pages URL.
 
+## Contact
 
-## 📄 License
+For inquiries: [info@sisuspeak.com](mailto:info@sisuspeak.com)
 
-This project is proprietary. All rights reserved.
+## License
 
----
-
-**Built with ❤️ for Finnish language learners worldwide** 🇫🇮
+All rights reserved.
