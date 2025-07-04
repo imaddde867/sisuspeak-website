@@ -2,54 +2,11 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FaExclamationTriangle, FaClock, FaRobot, FaCommentSlash, FaChartLine } from 'react-icons/fa';
-import { useEffect } from 'react';
 
 const ProblemSection = () => {
   const { t } = useLanguage();
   
-  useEffect(() => {
-    const createStar = () => {
-      const star = document.createElement('div');
-      const sizes = ['star-tiny', 'star-tiny', 'star-small', 'star-small', 'star-medium', 'star-large'];
-      const size = sizes[Math.floor(Math.random() * sizes.length)];
-      
-      star.className = `star ${size}`;
-      star.style.left = Math.random() * 100 + '%';
-      star.style.animationDuration = (Math.random() * 6 + 6) + 's';
-      star.style.animationDelay = '0s'; // No delay for immediate appearance
-      
-      const starsContainer = document.querySelector('.problem-falling-stars');
-      if (starsContainer) {
-        starsContainer.appendChild(star);
-        
-        setTimeout(() => {
-          if (star.parentNode) {
-            star.parentNode.removeChild(star);
-          }
-        }, 15000);
-      }
-    };
-
-    // Create immediate burst of stars
-    for (let i = 0; i < 10; i++) {
-      createStar(); // Call directly without setTimeout
-    }
-
-    // Create continuous stars
-    const interval = setInterval(createStar, 400);
-    
-    // Create additional bursts frequently
-    const burstInterval = setInterval(() => {
-      for (let i = 0; i < 3; i++) {
-        createStar(); // Call directly without setTimeout
-      }
-    }, 2000);
-    
-    return () => {
-      clearInterval(interval);
-      clearInterval(burstInterval);
-    };
-  }, []);
+  // Removed useEffect for creating stars in the problem section
 
   const problems = [
     {
@@ -83,9 +40,6 @@ const ProblemSection = () => {
     <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 to-indigo-100 relative overflow-hidden">
       {/* Static star field background */}
       <div className="star-field"></div>
-      
-      {/* Falling stars effect */}
-      <div className="problem-falling-stars z-0"></div>
       
       {/* Simplified background pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-blue-50/20 z-0"></div>

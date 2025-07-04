@@ -171,8 +171,7 @@ body {
 }
 
 /* Falling Stars Effect */
-.falling-stars,
-.problem-falling-stars {
+.falling-stars {
   position: absolute;
   top: 0;
   left: 0;
@@ -182,6 +181,8 @@ body {
   pointer-events: none;
   z-index: 1;
 }
+
+/* Removed problem-falling-stars to stop stars in problem section */
 
 .star {
   position: absolute;
