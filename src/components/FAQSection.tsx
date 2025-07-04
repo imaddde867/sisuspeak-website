@@ -12,10 +12,10 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "Is this like Duolingo?",
-      answer: "Not at all! While Duolingo focuses on vocabulary and grammar exercises, Sisu Speak is all about real conversations. You'll speak with AI tutors who respond naturally, give instant feedback, and adapt to your interests—like having a language friend to practice with anytime."
+      answer: "Not at all! While Duolingo focuses on vocabulary and grammar exercises, Sisu Speak is all about real conversations. You'll speak with AI tutors who respond naturally, give instant feedback, and adapt to your interests—like having a Finnish friend to practice with anytime."
     },
     {
-      question: "Do I need to know language already?",
+      question: "Do I need to know Finnish already?",
       answer: "Absolutely not! Sisu Lapsi is perfect for complete beginners. Our AI tutors meet you exactly where you are—whether you're saying your first 'Hei' or preparing for advanced business meetings. Each tutor adapts to your level automatically."
     },
     {
@@ -23,12 +23,12 @@ const FAQSection = () => {
       answer: "Primarily voice! We believe you learn to speak by speaking. You'll have natural voice conversations with our AI tutors, though you can also type if needed. Our advanced speech recognition understands your pronunciation and helps you improve."
     },
     {
-      question: "How is this different from other language apps?",
-      answer: "Most apps teach language like a textbook—lots of rules, little conversation. Sisu Speak teaches language like you'd learn from a friend. Real conversations, instant feedback, personalized to your goals, and four unique personalities to keep it interesting."
+      question: "How is this different from other Finnish apps?",
+      answer: "Most apps teach Finnish like a textbook—lots of rules, little conversation. Sisu Speak teaches Finnish like you'd learn from a friend. Real conversations, instant feedback, personalized to your goals, and four unique personalities to keep it interesting."
     },
     {
-      question: "Can I really learn language just by talking?",
-      answer: "Yes! Speaking is how children learn their first language, and it's the most natural way to learn language too. Our AI tutors provide grammar guidance within conversations, so you learn structure naturally while building real communication skills."
+      question: "Can I really learn Finnish just by talking?",
+      answer: "Yes! Speaking is how children learn their first language, and it's the most natural way to learn Finnish too. Our AI tutors provide grammar guidance within conversations, so you learn structure naturally while building real communication skills."
     },
     {
       question: "What if I'm too shy to speak?",
@@ -60,7 +60,7 @@ const FAQSection = () => {
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Everything you need to know about learning language with Sisu Speak
+            Everything you need to know about learning Finnish with Sisu Speak
           </p>
         </motion.div>
 

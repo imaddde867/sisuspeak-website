@@ -66,13 +66,13 @@ export const sendWelcomeEmailFallback = async (email: string): Promise<boolean> 
         _autoresponse: `
           Tervetuloa! Welcome to the Sisu Speak family!
 
-          Thank you for joining our waitlist. You're now part of an exclusive group of language language enthusiasts who will be the first to experience our revolutionary AI-powered learning platform.
+          Thank you for joining our waitlist. You're now part of an exclusive group of Finnish language enthusiasts who will be the first to experience our revolutionary AI-powered learning platform.
 
           What happens next?
           • You'll receive early access when we launch
           • Exclusive updates on our development progress
           • Special launch pricing just for waitlist members
-          • Tips and resources for language language learning
+          • Tips and resources for Finnish language learning
 
           We're working hard to bring you the most effective and engaging way to learn language through AI conversation. Your journey to fluency starts here!
 

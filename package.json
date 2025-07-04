@@ -1,14 +1,15 @@
 {
   "name": "sisuspeak-website",
   "version": "1.0.0",
-  "description": "Official website for Sisu Speak - AI-Powered Language Learning",
+  "description": "Official website for Sisu Speak - AI-Powered Finnish Learning",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "deploy": "next build && node ./scripts/post-build.js && gh-pages -d out"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

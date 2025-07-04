@@ -25,7 +25,7 @@ const PrivacyPolicyPage = () => {
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                   At Sisu Speak, we are committed to protecting your privacy and ensuring the security of your personal information. 
                   This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our 
-                  AI-powered language language learning platform.
+                  AI-powered Finnish language learning platform.
                 </p>
               </section>
 
@@ -52,7 +52,7 @@ const PrivacyPolicyPage = () => {
               <section>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">How We Use Your Information</h2>
                 <ul className="list-disc pl-5 sm:pl-6 text-gray-600 space-y-1 sm:space-y-2 text-sm sm:text-base">
-                  <li>Provide and improve our AI language learning services</li>
+                  <li>Provide and improve our AI Finnish learning services</li>
                   <li>Personalize your learning experience and track progress</li>
                   <li>Send important updates about our service</li>
                   <li>Respond to your questions and provide customer support</li>

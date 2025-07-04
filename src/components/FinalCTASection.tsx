@@ -55,7 +55,7 @@ const FinalCTASection = () => {
               </div>
               <div className="flex items-center gap-2">
                 <FaHeart className="h-4 w-4 text-pink-400" />
-                Built for language learners worldwide
+                Built for Finnish learners worldwide
               </div>
             </div>
           </motion.div>

@@ -19,13 +19,13 @@ const TutorsCarousel = () => {
       icon: <FaBriefcase className="h-8 w-8 text-blue-600" />,
       color: "from-blue-500 to-blue-600",
       image: "/images/Sisu_Senior.PNG",
-      specialties: ["Business language", "Academic Writing", "Professional Meetings", "Formal Presentations"],
+      specialties: ["Business Finnish", "Academic Writing", "Professional Meetings", "Formal Presentations"],
       personality: "Experienced, patient, and detail-oriented"
     },
     {
       name: "Sisu Äiti",
       role: "Everyday & Family Conversation Partner",
-      description: "Specializes in conversational language for daily life, partners, and family interactions, building practical fluency.",
+      description: "Specializes in conversational Finnish for daily life, partners, and family interactions, building practical fluency.",
       icon: <FaHeart className="h-8 w-8 text-pink-600" />,
       color: "from-pink-500 to-pink-600",
       image: "/images/Sisu_Äiti.PNG",
@@ -173,7 +173,7 @@ const TutorsCarousel = () => {
                   <div className="relative">
                     <Image
                       src={getAssetPath(tutors[currentTutor].image)}
-                      alt={`${tutors[currentTutor].name} - AI language tutor`}
+                      alt={`${tutors[currentTutor].name} - AI Finnish tutor`}
                       width={350}
                       height={350}
                       className="w-80 h-80 object-contain rounded-2xl"

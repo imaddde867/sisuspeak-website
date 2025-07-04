@@ -167,7 +167,7 @@ export default function Contact() {
   return (
     <PageLayout
       title="Contact Us"
-      description="Have questions about Sisu Speak? We&apos;d love to hear from you and answer any questions about our AI-powered language learning platform."
+      description="Have questions about Sisu Speak? We&apos;d love to hear from you and answer any questions about our AI-powered Finnish learning platform."
     >
       <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,7 +178,7 @@ export default function Contact() {
               <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
-                  Ready to start your language learning journey? Have questions about our AI tutors?
+                  Ready to start your Finnish learning journey? Have questions about our AI tutors?
                   We&apos;re here to help you every step of the way.
                 </p>
 
@@ -206,7 +206,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-gray-900">Location</h3>
                       <p className="text-gray-600">Turku, our team</p>
-                      <p className="text-sm text-gray-500 mt-1">The heart of language innovation</p>
+                      <p className="text-sm text-gray-500 mt-1">The heart of Finnish innovation</p>
                     </div>
                   </div>
 
@@ -430,7 +430,7 @@ export default function Contact() {
                                   ? 'border-blue-500 focus:border-blue-500 focus:ring-blue-500'
                                   : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
                             } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
-                            placeholder="Tell us about your language learning goals, questions about our AI tutors, or how we can help you..."
+                            placeholder="Tell us about your Finnish learning goals, questions about our AI tutors, or how we can help you..."
                           />
                           <div className="absolute bottom-3 right-3 text-xs text-gray-400">
                             {formData.message.length}/500

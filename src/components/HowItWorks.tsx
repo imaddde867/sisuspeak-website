@@ -16,7 +16,7 @@ const HowItWorks = () => {
     {
       number: '02',
       title: 'Start talking',
-      description: 'Jump right into natural conversations. No scripts, no awkward exercises—just real language speaking practice.',
+      description: 'Jump right into natural conversations. No scripts, no awkward exercises—just real Finnish speaking practice.',
       delay: 0.3,
     },
     {
@@ -54,7 +54,7 @@ const HowItWorks = () => {
             How Sisu-Speak Works
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Start speaking language in three simple steps
+            Start speaking Finnish in three simple steps
           </p>
         </motion.div>
 
@@ -91,7 +91,7 @@ const HowItWorks = () => {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600 mb-6">
-            Ready to experience a new way of learning language?
+            Ready to experience a new way of learning Finnish?
           </p>
           <a
             href="/signup"

@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
       name: "Maria S.",
       role: "International Student",
       location: "Helsinki",
-      quote: "Finally! I can practice language without feeling embarrassed. Sisu Senior helped me ace my university interviews in just 3 months.",
+      quote: "Finally! I can practice Finnish without feeling embarrassed. Sisu Senior helped me ace my university interviews in just 3 months.",
       rating: 5,
       avatar: "👩‍🎓"
     },
@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
       name: "James K.",
       role: "Software Developer",
       location: "Tampere",
-      quote: "I tried Duolingo for years but never could have a real conversation. With Sisu Speak, I'm actually talking to my language colleagues now!",
+      quote: "I tried Duolingo for years but never could have a real conversation. With Sisu Speak, I'm actually talking to my Finnish colleagues now!",
       rating: 5,
       avatar: "👨‍💻"
     },
@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       name: "Anna L.",
       role: "New Mother",
       location: "Turku",
-      quote: "Sisu Äiti made learning language feel natural and stress-free. Perfect for busy parents who want to integrate into language society.",
+      quote: "Sisu Äiti made learning Finnish feel natural and stress-free. Perfect for busy parents who want to integrate into Finnish society.",
       rating: 5,
       avatar: "👩‍👶"
     }
@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
         >
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-100 text-green-800 text-sm font-medium">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-            Join thousands of successful language learners
+            Join thousands of successful Finnish learners
           </div>
         </motion.div>
       </div>

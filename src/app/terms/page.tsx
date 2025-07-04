@@ -31,7 +31,7 @@ const TermsOfServicePage = () => {
               <section>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Description of Service</h2>
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                  Sisu Speak is an AI-powered language language learning platform that provides interactive conversation practice, 
+                  Sisu Speak is an AI-powered Finnish language learning platform that provides interactive conversation practice, 
                   pronunciation training, and personalized learning experiences. Our service includes web-based applications, 
                   mobile applications, and related educational content.
                 </p>

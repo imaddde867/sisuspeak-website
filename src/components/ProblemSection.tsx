@@ -52,10 +52,10 @@ const ProblemSection = () => {
           </div>
           
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-            Why is language <span className="gradient-text">still so hard to learn?</span>
+            Why is Finnish <span className="gradient-text">still so hard to learn?</span>
           </h2>
           <p className="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
-            Most language learning methods fail because they treat language like a puzzle to solve, 
+            Most language learning methods fail because they treat Finnish like a puzzle to solve, 
             not a language to speak. Sound familiar?
           </p>
         </div>

@@ -20,7 +20,7 @@ const About = () => {
     {
       name: "Sisu Äiti",
       role: "Everyday & Family Conversation Partner",
-      description: "Specializes in conversational language for daily life, partners, and family interactions, building practical fluency.",
+      description: "Specializes in conversational Finnish for daily life, partners, and family interactions, building practical fluency.",
       icon: <FaHeart className="h-6 w-6 text-pink-600" />,
       image: "/images/Sisu_Äiti.PNG",
     },
@@ -67,7 +67,7 @@ const About = () => {
           >
             <Image
               src={getAssetPath('/images/Family-Pose.png')}
-              alt="Meet the Sisu Family - Four deer characters representing our AI language language tutors"
+              alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
               width={400}
               height={400}
               className="max-w-sm sm:max-w-md"
@@ -88,7 +88,7 @@ const About = () => {
               <div className="mb-4">
                 <Image
                   src={getAssetPath(member.image)}
-                  alt={`${member.name} - AI language tutor`}
+                  alt={`${member.name} - AI Finnish tutor`}
                   width={180}
                   height={180}
                   className="rounded-lg"

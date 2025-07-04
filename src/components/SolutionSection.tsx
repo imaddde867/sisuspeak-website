@@ -11,7 +11,7 @@ const SolutionSection = () => {
     {
       icon: <FaCommentDots className="h-6 w-6" />,
       title: "Real Conversations",
-      description: "Practice with AI tutors that respond naturally, just like talking to a language friend"
+      description: "Practice with AI tutors that respond naturally, just like talking to a Finnish friend"
     },
     {
       icon: <FaBolt className="h-6 w-6" />,
@@ -46,7 +46,7 @@ const SolutionSection = () => {
           </div>
           
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-            Meet Sisu-Speak: <span className="gradient-text">language Tutors That Talk Back</span>
+            Meet Sisu-Speak: <span className="gradient-text">Finnish Tutors That Talk Back</span>
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
@@ -87,7 +87,7 @@ const SolutionSection = () => {
         >
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-100 text-green-800 text-sm font-medium">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-            Learning language has never been this natural
+            Learning Finnish has never been this natural
           </div>
         </motion.div>
       </div>

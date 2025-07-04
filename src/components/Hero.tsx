@@ -68,7 +68,7 @@ const Hero = () => {
           <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6 text-center lg:text-left">
             <div className="text-center lg:text-left">
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-                Finally—<span className="gradient-text">Learn by Speaking</span>, Not Memorizing
+                Learn Finnish by <span className="gradient-text">Speaking</span>, Not Memorizing
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
@@ -82,7 +82,7 @@ const Hero = () => {
                   aria-label="Join our waitlist to get early access to Sisu Speak"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    🎙️ Start Speaking Free →
+                    🎙️ Start Speaking Free
                     <svg className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -136,7 +136,7 @@ const Hero = () => {
               <div className="relative">
                 <Image
                   src={getAssetPath('/images/Family-Pose.png')}
-                  alt="Meet the Sisu Family - Four deer characters representing our AI language tutors"
+                  alt="Meet the Sisu Family - Four deer characters representing our AI Finnish tutors"
                   width={400}
                   height={400}
                   className="max-w-[280px] sm:max-w-xs lg:max-w-sm w-full h-auto"
