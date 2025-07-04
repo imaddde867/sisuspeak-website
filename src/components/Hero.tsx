@@ -32,19 +32,19 @@ const Hero = () => {
     };
 
     // Create immediate burst of stars
-    for (let i = 0; i < 20; i++) {
-      createStar(); // Call directly without setTimeout
+    for (let i = 0; i < 30; i++) {
+      setTimeout(() => createStar(), i * 50); // Stagger slightly for natural effect
     }
 
     // Create continuous stars - more frequent
-    const interval = setInterval(createStar, 300);
+    const interval = setInterval(createStar, 200);
     
     // Create additional bursts every few seconds
     const burstInterval = setInterval(() => {
-      for (let i = 0; i < 4; i++) {
-        createStar(); // Call directly without setTimeout
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => createStar(), i * 100);
       }
-    }, 1500);
+    }, 1200);
     
     return () => {
       clearInterval(interval);
