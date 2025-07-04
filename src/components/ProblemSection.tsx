@@ -36,25 +36,30 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-red-50/30">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-            Why is Finnish <span className="text-red-600">still so hard to learn?</span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
+            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+            The Challenge
+          </div>
+          
+          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
+            Why is Finnish <span className="gradient-text">still so hard to learn?</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
             Most language learning methods fail because they treat Finnish like a puzzle to solve, 
             not a language to speak. Sound familiar?
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {problems.map((problem, index) => (
             <motion.div
               key={index}
@@ -62,33 +67,20 @@ const ProblemSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl shadow-sm border border-red-100 hover:shadow-md transition-shadow duration-200"
+              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-blue-100 hover:border-blue-200 transition-all duration-200 hover:-translate-y-1 flex flex-col h-full"
             >
-              <div className="w-12 h-12 bg-red-100 rounded-lg mb-4 flex items-center justify-center text-red-600">
+              <div className="h-14 w-14 bg-blue-100 hover:bg-blue-500 rounded-xl flex items-center justify-center text-blue-600 hover:text-white mb-4 transition-colors duration-200">
                 {problem.icon}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 {problem.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {problem.description}
               </p>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-red-100 text-red-800 text-sm font-medium">
-            <FaExclamationTriangle className="h-4 w-4 mr-2" />
-            There has to be a better way...
-          </div>
-        </motion.div>
       </div>
     </section>
   );
