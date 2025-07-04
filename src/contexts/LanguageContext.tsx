@@ -103,9 +103,10 @@ const getTranslations = () => {
       
       // Hero Section
       hero: {
-        title: "Learn Finnish Through",
-        titleHighlight: "AI Conversation",
-        subtitle: "Master Finnish naturally with our AI tutors - the Sisu family. Practice real conversations, get instant feedback, and build confidence speaking Finnish.",
+        title: "Learn Finnish by",
+        titleHighlight: "Speaking It",
+        titleEnd: ", Not Memorizing It",
+        subtitle: "Tired of grammar drills and boring apps? sisu speak uses real conversations with adaptive AI tutors. Speak naturally, get instant feedback, and enjoy learning Finnish.",
         cta: "Join the Waitlist",
         watchDemo: "Watch Demo",
         trustedBy: "Trusted by language learners worldwide"
@@ -246,8 +247,9 @@ const getTranslations = () => {
       
       // Hero Section
       hero: {
-        title: "Opi Suomea",
-        titleHighlight: "Tekoälyn avustuksella",
+        title: "Viimeinkin—Opi suomea",
+        titleHighlight: "puhumalla sitä",
+        titleEnd: ", ei ulkoa opettelemalla",
         subtitle: "Hallitse suomea tehokaasti Sisu-perheen opettajien kanssa. Harjoittele oikean elämän keskusteluja, saa välitöntä palautetta ja vahvista suomen kielen itsevarmuutta",
         cta: "Liity Jonotuslistalle",
         watchDemo: "Katso Demo",

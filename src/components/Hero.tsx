@@ -24,8 +24,7 @@ const Hero = () => {
               </div>
 
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-                <span className="block">{t('hero.title')}</span>
-                <span className="block gradient-text">{t('hero.titleHighlight')}</span>
+                {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span>{t('hero.titleEnd')}
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
@@ -92,11 +91,11 @@ const Hero = () => {
             <div className="relative flex items-center justify-center">
               <div className="relative">
                 <Image
-                  src={getAssetPath('/images/family.PNG')}
+                  src={getAssetPath('/images/Family-Pose.png')}
                   alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
-                  width={500}
-                  height={500}
-                  className="max-w-sm sm:max-w-md lg:max-w-lg w-full h-auto"
+                  width={400}
+                  height={400}
+                  className="max-w-[280px] sm:max-w-xs lg:max-w-sm w-full h-auto"
                   priority
                   style={{
                     filter: 'none',
