@@ -12,13 +12,13 @@ const Hero = () => {
   useEffect(() => {
     const createStar = () => {
       const star = document.createElement('div');
-      const sizes = ['star-small', 'star-small', 'star-medium', 'star-large']; // More small stars
+      const sizes = ['star-tiny', 'star-tiny', 'star-small', 'star-small', 'star-medium', 'star-large']; // More variety with tiny stars
       const size = sizes[Math.floor(Math.random() * sizes.length)];
       
       star.className = `star ${size}`;
       star.style.left = Math.random() * 100 + '%';
-      star.style.animationDuration = (Math.random() * 4 + 3) + 's';
-      star.style.animationDelay = Math.random() * 1 + 's';
+      star.style.animationDuration = (Math.random() * 6 + 6) + 's'; // Much slower: 6-12 seconds
+      star.style.animationDelay = Math.random() * 3 + 's';
       
       const starsContainer = document.querySelector('.falling-stars');
       if (starsContainer) {
@@ -29,7 +29,7 @@ const Hero = () => {
           if (star.parentNode) {
             star.parentNode.removeChild(star);
           }
-        }, 8000);
+        }, 15000); // Increased timeout to match slower animation
       }
     };
 
@@ -56,6 +56,9 @@ const Hero = () => {
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center py-8 sm:py-12">
+      {/* Static star field background */}
+      <div className="star-field"></div>
+      
       {/* Falling stars effect */}
       <div className="falling-stars z-0"></div>
       
