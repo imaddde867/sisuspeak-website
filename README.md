@@ -43,7 +43,7 @@ Visit the live site: [https://imadlab.me/sisuspeak-website](https://imadlab.me/s
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/sisuspeak-website.git
+git clone https://github.com/imaddde867/sisuspeak-website.git
 cd sisuspeak-website
 ```
 
