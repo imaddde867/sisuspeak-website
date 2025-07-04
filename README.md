@@ -105,7 +105,8 @@ npm run deploy
 
 ## Contact
 
-For inquiries: [info@sisuspeak.com](mailto:info@sisuspeak.com)
+Reach out on linkedIn or leave an email : imadeddine200507@gmail.com
+www.linkedin.com/in/imad-eddine-el-mouss-986741262
 
 ## License
 
