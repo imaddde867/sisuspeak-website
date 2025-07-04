@@ -247,10 +247,10 @@ const getTranslations = () => {
       
       // Hero Section
       hero: {
-        title: "Viimeinkin—Opi suomea",
-        titleHighlight: "puhumalla sitä",
-        titleEnd: ", ei ulkoa opettelemalla",
-        subtitle: "Hallitse suomea tehokaasti Sisu-perheen opettajien kanssa. Harjoittele oikean elämän keskusteluja, saa välitöntä palautetta ja vahvista suomen kielen itsevarmuutta",
+        title: "Opi suomea",
+        titleHighlight: "puhumalla",
+        titleEnd: ", älä ulkoa opettelemalla",
+        subtitle: "Kyllästynyt kielioppiharjoituksiin ja tylsiin sovelluksiin? Sisu Speak käyttää aitoja keskusteluja ja mukautuvia tekoälyopettajia. Puhu luontevasti, saa välitöntä palautetta ja nauti suomen oppimisesta.",
         cta: "Liity Jonotuslistalle",
         watchDemo: "Katso Demo",
         trustedBy: "Kieltenoppijoiden luottama maailmanlaajuisesti"
