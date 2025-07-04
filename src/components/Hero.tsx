@@ -18,7 +18,7 @@ const Hero = () => {
       star.className = `star ${size}`;
       star.style.left = Math.random() * 100 + '%';
       star.style.animationDuration = (Math.random() * 6 + 6) + 's'; // Much slower: 6-12 seconds
-      star.style.animationDelay = Math.random() * 3 + 's';
+      star.style.animationDelay = '0s'; // No delay for immediate appearance
       
       const starsContainer = document.querySelector('.falling-stars');
       if (starsContainer) {
@@ -33,9 +33,9 @@ const Hero = () => {
       }
     };
 
-    // Create initial burst of stars
-    for (let i = 0; i < 15; i++) {
-      setTimeout(createStar, i * 100);
+    // Create immediate burst of stars
+    for (let i = 0; i < 20; i++) {
+      createStar(); // Call directly without setTimeout
     }
 
     // Create continuous stars - more frequent
@@ -43,10 +43,10 @@ const Hero = () => {
     
     // Create additional bursts every few seconds
     const burstInterval = setInterval(() => {
-      for (let i = 0; i < 3; i++) {
-        setTimeout(createStar, i * 150);
+      for (let i = 0; i < 4; i++) {
+        createStar(); // Call directly without setTimeout
       }
-    }, 2000);
+    }, 1500);
     
     return () => {
       clearInterval(interval);

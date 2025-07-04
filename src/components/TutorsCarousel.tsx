@@ -174,12 +174,12 @@ const TutorsCarousel = () => {
                     <Image
                       src={getAssetPath(tutors[currentTutor].image)}
                       alt={`${tutors[currentTutor].name} - AI Finnish tutor`}
-                      width={280}
-                      height={280}
-                      className="w-64 h-64 object-contain rounded-2xl"
+                      width={350}
+                      height={350}
+                      className="w-80 h-80 object-contain rounded-2xl"
                     />
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                      <span className="text-lg">🦌</span>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                      <span className="text-xl">🦌</span>
                     </div>
                   </div>
                 </div>
