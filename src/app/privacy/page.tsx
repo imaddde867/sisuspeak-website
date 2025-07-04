@@ -25,7 +25,7 @@ const PrivacyPolicyPage = () => {
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                   At Sisu Speak, we are committed to protecting your privacy and ensuring the security of your personal information. 
                   This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our 
-                  AI-powered Finnish language learning platform.
+                  AI-powered language language learning platform.
                 </p>
               </section>
 
@@ -109,7 +109,7 @@ const PrivacyPolicyPage = () => {
                 <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-gray-50 rounded-lg">
                   <p className="text-gray-700 text-sm sm:text-base">
                     <strong>Email:</strong> privacy@sisuspeak.com<br />
-                    <strong>Address:</strong> Turku, Finland
+                    <strong>Address:</strong> Turku, our team
                   </p>
                 </div>
               </section>

@@ -26,10 +26,10 @@ const StatsSection = () => {
               </div>
 
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-                Learning Finnish with Sisu Speak
+                Learning language with Sisu Speak
               </h2>
               <p className="max-w-2xl mx-auto text-lg text-blue-100 leading-relaxed">
-                Our AI-powered approach is revolutionizing how people learn Finnish,
+                Our AI-powered approach is revolutionizing how people learn language,
                 making it more effective and enjoyable than traditional methods.
               </p>
             </div>

@@ -5,14 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AnimatePresence, motion } from '@/utils/motion';
 import { RiMenu4Line, RiCloseLine } from 'react-icons/ri';
-import { useLanguage } from '@/contexts/LanguageContext';
+
 import { getAssetPath } from '@/utils/paths';
-import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { t } = useLanguage();
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,10 +73,10 @@ const Navbar = memo(() => {
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
               {[
-                { href: "/#features", label: t('nav.features') },
-                { href: "/#how-it-works", label: t('nav.howItWorks') },
-                { href: "/#about", label: t('nav.about') },
-                { href: "/contact", label: t('nav.contact') }
+                { href: "/#features", label: "Features" },
+                { href: "/#how-it-works", label: "How It Works" },
+                { href: "/#about", label: "About" },
+                { href: "/contact", label: "Contact" }
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -97,15 +96,14 @@ const Navbar = memo(() => {
             </div>
           </div>
 
-          {/* Language Switcher & CTA Button */}
+          {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-3">
-            <LanguageSwitcher variant="navbar" />
             <Link
               href="/signup"
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               aria-label="Join our waitlist to get early access"
             >
-              {t('nav.signup')}
+              
             </Link>
           </div>
 
@@ -141,10 +139,10 @@ const Navbar = memo(() => {
           >
             <div className="px-6 pt-6 pb-6 space-y-4">
               {[
-                { href: "/#features", label: t('nav.features') },
-                { href: "/#how-it-works", label: t('nav.howItWorks') },
-                { href: "/#about", label: t('nav.about') },
-                { href: "/contact", label: t('nav.contact') }
+                { href: "/#features", label: "Features" },
+                { href: "/#how-it-works", label: "How It Works" },
+                { href: "/#about", label: "About" },
+                { href: "/contact", label: "Contact" }
               ].map((item, index) => (
                 <motion.div
                   key={item.href}
@@ -173,19 +171,11 @@ const Navbar = memo(() => {
                   className="block w-full px-4 py-3 text-center text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
                   onClick={toggleMenu}
                 >
-                  {t('nav.signup')}
+                  
                 </Link>
               </motion.div>
 
-              {/* Language Switcher */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 }}
-                className="pt-4 flex justify-center"
-              >
-                <LanguageSwitcher variant="mobile" />
-              </motion.div>
+
             </div>
           </motion.div>
         )}

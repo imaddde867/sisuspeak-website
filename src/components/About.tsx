@@ -3,38 +3,38 @@
 import Image from 'next/image';
 import { motion } from '@/utils/motion';
 import { FaBriefcase, FaHeart, FaCommentDots, FaStar } from 'react-icons/fa';
-import { useLanguage } from '@/contexts/LanguageContext';
+
 import { getAssetPath } from '@/utils/paths';
 
 const About = () => {
-  const { t } = useLanguage();
+  
 
   const sisuFamily = [
     {
-      name: t('about.sisuSenior.name'),
-      role: t('about.sisuSenior.role'),
-      description: t('about.sisuSenior.description'),
+      name: "Sisu Senior",
+      role: "Professional & Academic Guide",
+      description: "Teaches for work, studies, and formal settings, focusing on advanced vocabulary and structures.",
       icon: <FaBriefcase className="h-6 w-6 text-blue-600" />,
       image: "/images/Sisu_Senior.PNG",
     },
     {
-      name: t('about.sisuAiti.name'),
-      role: t('about.sisuAiti.role'),
-      description: t('about.sisuAiti.description'),
+      name: "Sisu Äiti",
+      role: "Everyday & Family Conversation Partner",
+      description: "Specializes in conversational language for daily life, partners, and family interactions, building practical fluency.",
       icon: <FaHeart className="h-6 w-6 text-pink-600" />,
       image: "/images/Sisu_Äiti.PNG",
     },
     {
-      name: t('about.sisuNuori.name'),
-      role: t('about.sisuNuori.role'),
-      description: t('about.sisuNuori.description'),
+      name: "Sisu Nuori",
+      role: "Cultural & Social Companion",
+      description: "Focuses on modern culture, slang, and social interactions, perfect for connecting with young people.",
       icon: <FaCommentDots className="h-6 w-6 text-purple-600" />,
       image: "/images/Sisu_Nuori.PNG",
     },
     {
-      name: t('about.sisuLapsi.name'),
-      role: t('about.sisuLapsi.role'),
-      description: t('about.sisuLapsi.description'),
+      name: "Sisu Lapsi",
+      role: "Playful Learning Buddy",
+      description: "Makes learning fun with games, stories, and child-friendly approaches, ideal for beginners and young learners.",
       icon: <FaStar className="h-6 w-6 text-yellow-600" />,
       image: "/images/Sisu_ Lapsi.PNG",
     },
@@ -51,10 +51,10 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            {t('about.title')}
+            
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            {t('about.subtitle')}
+            
           </p>
         </motion.div>
 
@@ -67,7 +67,7 @@ const About = () => {
           >
             <Image
               src={getAssetPath('/images/Family-Pose.png')}
-              alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
+              alt="Meet the Sisu Family - Four deer characters representing our AI language language tutors"
               width={400}
               height={400}
               className="max-w-sm sm:max-w-md"
@@ -88,7 +88,7 @@ const About = () => {
               <div className="mb-4">
                 <Image
                   src={getAssetPath(member.image)}
-                  alt={`${member.name} - AI Finnish tutor`}
+                  alt={`${member.name} - AI language tutor`}
                   width={180}
                   height={180}
                   className="rounded-lg"

@@ -1,14 +1,12 @@
 "use client";
 
 import { motion } from '@/utils/motion';
-import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAssetPath } from '@/utils/paths';
 import { FaArrowRight, FaHeart } from 'react-icons/fa';
 
 const FinalCTASection = () => {
-  const { t } = useLanguage();
 
   return (
     <section className="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
@@ -31,12 +29,12 @@ const FinalCTASection = () => {
             </div>
             
             <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl mb-6 leading-tight" style={{ fontFamily: 'var(--font-poppins)' }}>
-              Ready to Speak Finnish <span className="text-yellow-300">With Confidence?</span>
+              Ready to Speak <span className="text-yellow-300">With Confidence?</span>
             </h2>
             
             <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
               Join thousands of learners who chose conversation over memorization. 
-              Start speaking Finnish naturally from day one.
+              Start speaking naturally from day one.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -45,7 +43,7 @@ const FinalCTASection = () => {
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl text-blue-900 bg-yellow-400 hover:bg-yellow-300 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-blue-700 group"
               >
                 <span className="mr-2">🗣️</span>
-                Start Speaking Finnish Now
+                Start Speaking Now
                 <FaArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </div>
@@ -57,7 +55,7 @@ const FinalCTASection = () => {
               </div>
               <div className="flex items-center gap-2">
                 <FaHeart className="h-4 w-4 text-pink-400" />
-                Built in Finland for international learners
+                Built for language learners worldwide
               </div>
             </div>
           </motion.div>
@@ -75,7 +73,7 @@ const FinalCTASection = () => {
               <div className="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8">
                 <Image
                   src={getAssetPath('/images/Family-Pose.png')}
-                  alt="The Sisu Family waving goodbye - Four friendly AI Finnish tutors"
+                  alt="The Sisu Family waving goodbye - Four friendly AI tutors"
                   width={300}
                   height={300}
                   className="max-w-xs w-full h-auto"

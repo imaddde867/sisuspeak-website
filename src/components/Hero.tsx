@@ -3,11 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAssetPath } from '@/utils/paths';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { useEffect } from 'react';
 
 const Hero = () => {
-  const { t } = useLanguage();
 
   useEffect(() => {
     const createStar = () => {
@@ -70,7 +68,7 @@ const Hero = () => {
           <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6 text-center lg:text-left">
             <div className="text-center lg:text-left">
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-                Finally—<span className="gradient-text">Learn Finnish by Speaking It</span>, Not Memorizing It
+                Finally—<span className="gradient-text">Learn by Speaking</span>, Not Memorizing
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
@@ -138,7 +136,7 @@ const Hero = () => {
               <div className="relative">
                 <Image
                   src={getAssetPath('/images/Family-Pose.png')}
-                  alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
+                  alt="Meet the Sisu Family - Four deer characters representing our AI language tutors"
                   width={400}
                   height={400}
                   className="max-w-[280px] sm:max-w-xs lg:max-w-sm w-full h-auto"

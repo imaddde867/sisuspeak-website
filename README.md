@@ -1,6 +1,6 @@
-# 🇫🇮 Sisu Speak - AI-Powered Finnish Language Learning
+# Sisu Speak - AI-Powered Language Learning
 
-Sisu Speak is an innovative language learning platform leveraging AI and Natural Language Processing (NLP) to offer a natural, conversation-based approach to learning Finnish. Forget boring flashcards; practice real-life conversations with our virtual AI tutors – the Sisu family.
+Sisu Speak is an innovative language learning platform leveraging AI and Natural Language Processing (NLP) to offer a natural, conversation-based approach to learning. Forget boring flashcards; practice real-life conversations with our virtual AI tutors – the Sisu family.
 
 ## 🚀 Live Website
 
@@ -8,10 +8,10 @@ Visit our website: [https://imadlab.me/sisuspeak-website](https://imadlab.me/sis
 
 ## Features
 
-- **Conversational Learning**: Practice Finnish through natural dialogues with AI tutors
+- **Conversational Learning**: Practice language through natural dialogues with AI tutors
 - **Pronunciation Feedback**: Receive instant, personalized feedback on your pronunciation
 - **Adaptive Learning**: Content adapts to your skill level and learning pace
-- **Real-world Scenarios**: Learn practical Finnish for everyday situations
+- **Real-world Scenarios**: Learn practical language for everyday situations
 
 ## Getting Started
 
@@ -48,12 +48,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## About Sisu Speak
 
-The Sisu Speak platform revolutionizes language learning through immersive, conversational AI. Our AI tutors, the Sisu family, adapt to your learning style and provide instant feedback, making learning Finnish effective and enjoyable. Each member specializes in a different area:
+The Sisu Speak platform revolutionizes language learning through immersive, conversational AI. Our AI tutors, the Sisu family, adapt to your learning style and provide instant feedback, making learning effective and enjoyable. Each member specializes in a different area:
 
-- **Sisu Senior:** Your guide for professional and academic Finnish.
+- **Sisu Senior:** Your guide for professional and academic language.
 - **Sisu Äiti:** Perfect for practicing everyday and family conversations.
-- **Sisu Junior:** Learn street Finnish, slang, and social media language.
-- **Baby Sisu:** Ideal for beginners and elementary Finnish.
+- **Sisu Junior:** Learn street language, slang, and social media language.
+- **Baby Sisu:** Ideal for beginners and elementary learning.
 
 ## Contact
 

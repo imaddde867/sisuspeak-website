@@ -17,7 +17,7 @@ export default function Loading() {
           <div className="w-8 h-8 border-2 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
         </div>
 
-        {/* Finnish greeting */}
+        {/* language greeting */}
         <p className="text-sm text-gray-500">Tervetuloa!</p>
       </div>
     </div>

@@ -2,30 +2,30 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from '@/utils/motion';
-import { useLanguage } from '@/contexts/LanguageContext';
+
 import Image from 'next/image';
 import { getAssetPath } from '@/utils/paths';
 import { FaChevronLeft, FaChevronRight, FaBriefcase, FaHeart, FaCommentDots, FaStar } from 'react-icons/fa';
 
 const TutorsCarousel = () => {
-  const { t } = useLanguage();
+  
   const [currentTutor, setCurrentTutor] = useState(0);
 
   const tutors = [
     {
-      name: t('about.sisuSenior.name'),
-      role: t('about.sisuSenior.role'),
-      description: t('about.sisuSenior.description'),
+      name: "Sisu Senior",
+      role: "Professional & Academic Guide",
+      description: "Teaches for work, studies, and formal settings, focusing on advanced vocabulary and structures.",
       icon: <FaBriefcase className="h-8 w-8 text-blue-600" />,
       color: "from-blue-500 to-blue-600",
       image: "/images/Sisu_Senior.PNG",
-      specialties: ["Business Finnish", "Academic Writing", "Professional Meetings", "Formal Presentations"],
+      specialties: ["Business language", "Academic Writing", "Professional Meetings", "Formal Presentations"],
       personality: "Experienced, patient, and detail-oriented"
     },
     {
-      name: t('about.sisuAiti.name'),
-      role: t('about.sisuAiti.role'),
-      description: t('about.sisuAiti.description'),
+      name: "Sisu Äiti",
+      role: "Everyday & Family Conversation Partner",
+      description: "Specializes in conversational language for daily life, partners, and family interactions, building practical fluency.",
       icon: <FaHeart className="h-8 w-8 text-pink-600" />,
       color: "from-pink-500 to-pink-600",
       image: "/images/Sisu_Äiti.PNG",
@@ -33,9 +33,9 @@ const TutorsCarousel = () => {
       personality: "Warm, encouraging, and practical"
     },
     {
-      name: t('about.sisuNuori.name'),
-      role: t('about.sisuNuori.role'),
-      description: t('about.sisuNuori.description'),
+      name: "Sisu Nuori",
+      role: "Cultural & Social Companion",
+      description: "Focuses on modern culture, slang, and social interactions, perfect for connecting with young people.",
       icon: <FaCommentDots className="h-8 w-8 text-green-700" />,
       color: "from-green-600 to-green-800",
       image: "/images/Sisu_Nuori.PNG",
@@ -43,9 +43,9 @@ const TutorsCarousel = () => {
       personality: "Fun, trendy, and relatable"
     },
     {
-      name: t('about.sisuLapsi.name'),
-      role: t('about.sisuLapsi.role'),
-      description: t('about.sisuLapsi.description'),
+      name: "Sisu Lapsi",
+      role: "Playful Learning Buddy",
+      description: "Makes learning fun with games, stories, and child-friendly approaches, ideal for beginners and young learners.",
       icon: <FaStar className="h-8 w-8 text-yellow-600" />,
       color: "from-yellow-500 to-yellow-600",
       image: "/images/Sisu_Lapsi.PNG",
@@ -173,7 +173,7 @@ const TutorsCarousel = () => {
                   <div className="relative">
                     <Image
                       src={getAssetPath(tutors[currentTutor].image)}
-                      alt={`${tutors[currentTutor].name} - AI Finnish tutor`}
+                      alt={`${tutors[currentTutor].name} - AI language tutor`}
                       width={350}
                       height={350}
                       className="w-80 h-80 object-contain rounded-2xl"

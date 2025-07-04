@@ -8,7 +8,6 @@ import {
   FaChartLine,
   FaGamepad
 } from 'react-icons/fa';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FeatureProps {
   icon: ReactNode;
@@ -46,31 +45,29 @@ const FeatureCard = ({ icon, title, description }: Omit<FeatureProps, 'delay'>) 
 };
 
 const Features = () => {
-  const { t } = useLanguage();
-
   const features = [
     {
       icon: <FaCommentDots className="h-6 w-6" />,
-      title: t('features.conversational.title'),
-      description: t('features.conversational.description'),
+      title: "Natural Conversations",
+      description: "Practice speaking with AI tutors that respond like humans and adapt to your level",
       delay: 0.1
     },
     {
       icon: <FaMicrophone className="h-6 w-6" />,
-      title: t('features.pronunciation.title'),
-      description: t('features.pronunciation.description'),
+      title: "Pronunciation Feedback",
+      description: "Get instant, helpful feedback on your pronunciation and accent",
       delay: 0.2
     },
     {
       icon: <FaChartLine className="h-6 w-6" />,
-      title: t('features.adaptive.title'),
-      description: t('features.adaptive.description'),
+      title: "Adaptive Learning",
+      description: "Our AI adjusts to your progress, focusing on what you need most",
       delay: 0.3
     },
     {
       icon: <FaGamepad className="h-6 w-6" />,
-      title: t('features.scenarios.title'),
-      description: t('features.scenarios.description'),
+      title: "Real-life Scenarios",
+      description: "Practice common situations you'll actually encounter in daily life",
       delay: 0.4
     }
   ];
@@ -81,7 +78,7 @@ const Features = () => {
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-            {t('features.title')}
+            Key Features
           </div>
 
           <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-4 sm:px-0" style={{ fontFamily: 'var(--font-poppins)' }}>
@@ -90,7 +87,7 @@ const Features = () => {
           </h2>
 
           <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed px-4 sm:px-0">
-            {t('features.subtitle')}
+            Discover how our innovative features make speaking practice more effective and enjoyable
           </p>
         </div>
 

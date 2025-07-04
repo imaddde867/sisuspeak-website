@@ -93,7 +93,7 @@ export default function Signup() {
             Join the <span className="text-yellow-300">Sisu</span> Waitlist
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed mb-8">
-            Be among the first to experience AI-powered Finnish learning. Get notified when we launch.
+            Be among the first to experience AI-powered language learning. Get notified when we launch.
           </p>
         </div>
       </div>
@@ -162,7 +162,7 @@ export default function Signup() {
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Get Early Access</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Join thousands of language learners waiting for the future of Finnish education.
+                  Join thousands of language learners waiting for the future of language education.
                 </p>
               </div>
 

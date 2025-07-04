@@ -3,7 +3,6 @@ import { Inter, Poppins } from "next/font/google";
 import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 import PageTracker from '@/components/PageTracker';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,9 +28,9 @@ const baloo = Baloo_2({
 });
 
 export const metadata: Metadata = {
-  title: "Sisu Speak | AI-Powered Finnish Language Learning",
-  description: "Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized language learning experiences.",
-  keywords: ["Finnish language", "language learning", "AI tutor", "NLP", "pronunciation", "conversation practice"],
+  title: "Sisu Speak | AI-Powered Language Learning",
+  description: "Learn languages naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized language learning experiences.",
+  keywords: ["language learning", "AI tutor", "NLP", "pronunciation", "conversation practice"],
   icons: {
     icon: [
       {
@@ -55,8 +54,8 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Sisu Speak | Learn Finnish Through AI Conversation",
-    description: "Learn Finnish naturally through engaging conversations with AI tutors. More effective than traditional language learning methods.",
+    title: "Sisu Speak | Learn Languages Through AI Conversation",
+    description: "Learn languages naturally through engaging conversations with AI tutors. More effective than traditional language learning methods.",
     url: "https://imadlab.me/sisuspeak-website",
     siteName: "Sisu Speak",
     locale: "en_US",
@@ -66,14 +65,14 @@ export const metadata: Metadata = {
         url: "https://imadlab.me/sisuspeak-website/images/family.PNG",
         width: 1200,
         height: 630,
-        alt: "Sisu Speak - Meet the AI Finnish Language Learning Family",
+        alt: "Sisu Speak - Meet the AI Language Learning Family",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sisu Speak | AI-Powered Finnish Language Learning",
-    description: "Learn Finnish naturally through conversation with AI tutors",
+    title: "Sisu Speak | AI-Powered Language Learning",
+    description: "Learn languages naturally through conversation with AI tutors",
     creator: "@sisuspeak",
     images: ["https://imadlab.me/sisuspeak-website/images/family.PNG"],
   },
@@ -106,11 +105,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}
       >
-        <LanguageProvider>
-          <PageTracker>
-            {children}
-          </PageTracker>
-        </LanguageProvider>
+        <PageTracker>
+          {children}
+        </PageTracker>
       </body>
     </html>
   );

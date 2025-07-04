@@ -14,16 +14,16 @@ const faqData: FAQItem[] = [
   {
     category: "Getting Started",
     question: "What is Sisu Speak?",
-    answer: "Sisu Speak is an AI-powered Finnish language learning platform that teaches through natural conversations. Our virtual tutors help you learn Finnish in a more engaging and effective way than traditional methods."
+    answer: "Sisu Speak is an AI-powered language language learning platform that teaches through natural conversations. Our virtual tutors help you learn language in a more engaging and effective way than traditional methods."
   },
   {
     category: "Getting Started",
     question: "How does the AI conversation system work?",
-    answer: "Our AI tutors use advanced natural language processing to have realistic conversations with you in Finnish. They adapt to your skill level, correct mistakes gently, and provide contextual learning opportunities."
+    answer: "Our AI tutors use advanced natural language processing to have realistic conversations with you in language. They adapt to your skill level, correct mistakes gently, and provide contextual learning opportunities."
   },
   {
     category: "Getting Started",
-    question: "Do I need any prior Finnish knowledge?",
+    question: "Do I need any prior language knowledge?",
     answer: "Not at all! Sisu Speak is designed for learners of all levels, from complete beginners to advanced speakers looking to improve their conversational skills."
   },
   {
@@ -34,7 +34,7 @@ const faqData: FAQItem[] = [
   {
     category: "Features",
     question: "Can I practice pronunciation?",
-    answer: "Yes! Our platform includes advanced speech recognition technology that helps you practice Finnish pronunciation and provides instant feedback on your accent and clarity."
+    answer: "Yes! Our platform includes advanced speech recognition technology that helps you practice language pronunciation and provides instant feedback on your accent and clarity."
   },
   {
     category: "Features",
@@ -49,7 +49,7 @@ const faqData: FAQItem[] = [
   {
     category: "Pricing",
     question: "Will there be a free trial?",
-    answer: "Yes! We plan to offer a free trial period so you can experience the power of AI-driven Finnish learning before committing to a subscription."
+    answer: "Yes! We plan to offer a free trial period so you can experience the power of AI-driven language learning before committing to a subscription."
   },
   {
     category: "Technical",
@@ -84,7 +84,7 @@ const FAQPage = () => {
   return (
     <PageLayout
       title="Frequently Asked Questions"
-      description="Find answers to common questions about Sisu Speak and our AI-powered Finnish learning platform."
+      description="Find answers to common questions about Sisu Speak and our AI-powered language learning platform."
     >
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
