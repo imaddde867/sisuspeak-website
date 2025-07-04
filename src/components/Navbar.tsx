@@ -75,7 +75,7 @@ const Navbar = memo(() => {
               {[
                 { href: "/#features", label: "Features" },
                 { href: "/#how-it-works", label: "How It Works" },
-                { href: "/#about", label: "About" },
+                { href: "/faq", label: "FAQ" },
                 { href: "/contact", label: "Contact" }
               ].map((item) => (
                 <Link
@@ -141,7 +141,7 @@ const Navbar = memo(() => {
               {[
                 { href: "/#features", label: "Features" },
                 { href: "/#how-it-works", label: "How It Works" },
-                { href: "/#about", label: "About" },
+                { href: "/faq", label: "FAQ" },
                 { href: "/contact", label: "Contact" }
               ].map((item, index) => (
                 <motion.div
