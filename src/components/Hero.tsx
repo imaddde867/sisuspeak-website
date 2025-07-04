@@ -70,11 +70,11 @@ const Hero = () => {
           <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6 text-center lg:text-left">
             <div className="text-center lg:text-left">
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-                {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span>{t('hero.titleEnd')}
+                Finally—<span className="gradient-text">Learn Finnish by Speaking It</span>, Not Memorizing It
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
-                {t('hero.subtitle')}
+                Speak naturally with AI tutors that adapt to you. No more boring grammar drills or dead-end apps.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start px-4 sm:px-0">
@@ -84,7 +84,7 @@ const Hero = () => {
                   aria-label="Join our waitlist to get early access to Sisu Speak"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    {t('hero.cta')}
+                    🎙️ Start Speaking Free →
                     <svg className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -102,7 +102,7 @@ const Hero = () => {
                   }}
                 >
                   <span className="flex items-center gap-2">
-                    {t('hero.watchDemo')}
+                    Watch Demo
                     <svg className="w-5 h-5 transition-transform duration-200 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>

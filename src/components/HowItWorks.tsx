@@ -9,27 +9,21 @@ const HowItWorks = () => {
   const steps = [
     {
       number: '01',
-      title: t('howItWorks.step1.title'),
-      description: t('howItWorks.step1.description'),
+      title: 'Choose your tutor',
+      description: 'Pick from our Sisu family based on your goals—Senior for business, Äiti for daily life, Nuori for culture, or Lapsi for beginners.',
       delay: 0.1,
     },
     {
       number: '02',
-      title: t('howItWorks.step2.title'),
-      description: t('howItWorks.step2.description'),
+      title: 'Start talking',
+      description: 'Jump right into natural conversations. No scripts, no awkward exercises—just real Finnish speaking practice.',
       delay: 0.3,
     },
     {
       number: '03',
-      title: t('howItWorks.step3.title'),
-      description: t('howItWorks.step3.description'),
+      title: 'Improve naturally',
+      description: 'Get instant feedback on pronunciation and grammar while building confidence through real conversation.',
       delay: 0.5,
-    },
-    {
-      number: '04',
-      title: t('howItWorks.step4.title'),
-      description: t('howItWorks.step4.description'),
-      delay: 0.7,
     },
   ];
 
@@ -57,10 +51,10 @@ const HowItWorks = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            {t('howItWorks.title')}
+            How Sisu-Speak Works
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            {t('howItWorks.subtitle')}
+            Start speaking Finnish in three simple steps
           </p>
         </motion.div>
 
@@ -69,7 +63,7 @@ const HowItWorks = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-8 md:grid-cols-3"
         >
           {steps.map((step, index) => (
             <motion.div
@@ -97,13 +91,13 @@ const HowItWorks = () => {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600 mb-6">
-            {t('howItWorks.readyText')}
+            Ready to experience a new way of learning Finnish?
           </p>
           <a
             href="/signup"
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-500 hover:bg-blue-600 transition-colors"
           >
-            {t('howItWorks.getStarted')}
+            🎙️ Start Speaking Free →
           </a>
         </motion.div>
       </div>

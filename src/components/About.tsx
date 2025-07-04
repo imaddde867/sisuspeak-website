@@ -15,24 +15,28 @@ const About = () => {
       role: t('about.sisuSenior.role'),
       description: t('about.sisuSenior.description'),
       icon: <FaBriefcase className="h-6 w-6 text-blue-600" />,
+      image: "/images/Sisu_Senior.PNG",
     },
     {
       name: t('about.sisuAiti.name'),
       role: t('about.sisuAiti.role'),
       description: t('about.sisuAiti.description'),
-      icon: <FaHeart className="h-6 w-6 text-blue-600" />,
+      icon: <FaHeart className="h-6 w-6 text-pink-600" />,
+      image: "/images/Sisu_Äiti.PNG",
     },
     {
       name: t('about.sisuNuori.name'),
       role: t('about.sisuNuori.role'),
       description: t('about.sisuNuori.description'),
-      icon: <FaCommentDots className="h-6 w-6 text-blue-600" />,
+      icon: <FaCommentDots className="h-6 w-6 text-purple-600" />,
+      image: "/images/Sisu_Nuori.PNG",
     },
     {
       name: t('about.sisuLapsi.name'),
       role: t('about.sisuLapsi.role'),
       description: t('about.sisuLapsi.description'),
-      icon: <FaStar className="h-6 w-6 text-blue-600" />,
+      icon: <FaStar className="h-6 w-6 text-yellow-600" />,
+      image: "/images/Sisu_ Lapsi.PNG",
     },
   ];
 
@@ -62,11 +66,11 @@ const About = () => {
             viewport={{ once: true }}
           >
             <Image
-              src={getAssetPath('/images/family.PNG')}
+              src={getAssetPath('/images/Family-Pose.png')}
               alt="Meet the Sisu Family - Four deer characters representing our AI Finnish language tutors"
-              width={300}
-              height={300}
-              className="max-w-xs sm:max-w-sm"
+              width={400}
+              height={400}
+              className="max-w-sm sm:max-w-md"
             />
           </motion.div>
         </div>
@@ -79,16 +83,25 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center"
+              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-200"
             >
-              <div className="w-14 h-14 bg-blue-100 rounded-full mb-4 flex items-center justify-center">
+              <div className="mb-4">
+                <Image
+                  src={getAssetPath(member.image)}
+                  alt={`${member.name} - AI Finnish tutor`}
+                  width={180}
+                  height={180}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="w-10 h-10 bg-blue-100 rounded-full mb-3 flex items-center justify-center">
                 {member.icon}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {member.name}
               </h3>
               <p className="text-blue-600 font-medium mb-3">{member.role}</p>
-              <p className="text-gray-600">{member.description}</p>
+              <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
             </motion.div>
           ))}
         </div>
