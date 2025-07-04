@@ -17,12 +17,6 @@ const Hero = () => {
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
           <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6 text-center lg:text-left">
             <div className="text-center lg:text-left">
-              {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                AI-Powered Finnish Learning
-              </div>
-
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
                 {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span>{t('hero.titleEnd')}
               </h1>
