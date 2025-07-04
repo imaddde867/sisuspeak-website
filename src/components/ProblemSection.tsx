@@ -4,10 +4,6 @@ import { motion } from '@/utils/motion';
 import { FaExclamationTriangle, FaClock, FaRobot, FaCommentSlash, FaChartLine } from 'react-icons/fa';
 
 const ProblemSection = () => {
-  
-  
-  // Removed useEffect for creating stars in the problem section
-
   const problems = [
     {
       icon: <FaRobot className="h-6 w-6" />,

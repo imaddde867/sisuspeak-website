@@ -10,13 +10,13 @@ const Hero = () => {
   useEffect(() => {
     const createStar = () => {
       const star = document.createElement('div');
-      const sizes = ['star-tiny', 'star-tiny', 'star-small', 'star-small', 'star-medium', 'star-large']; // More variety with tiny stars
+      const sizes = ['star-tiny', 'star-tiny', 'star-small', 'star-small', 'star-medium', 'star-large'];
       const size = sizes[Math.floor(Math.random() * sizes.length)];
       
       star.className = `star ${size}`;
       star.style.left = Math.random() * 100 + '%';
-      star.style.animationDuration = (Math.random() * 6 + 6) + 's'; // Much slower: 6-12 seconds
-      star.style.animationDelay = '0s'; // No delay for immediate appearance
+      star.style.animationDuration = (Math.random() * 6 + 6) + 's';
+      star.style.animationDelay = '0s';
       
       const starsContainer = document.querySelector('.falling-stars');
       if (starsContainer) {
@@ -27,19 +27,19 @@ const Hero = () => {
           if (star.parentNode) {
             star.parentNode.removeChild(star);
           }
-        }, 15000); // Increased timeout to match slower animation
+        }, 15000);
       }
     };
 
     // Create immediate burst of stars
     for (let i = 0; i < 30; i++) {
-      setTimeout(() => createStar(), i * 50); // Stagger slightly for natural effect
+      setTimeout(() => createStar(), i * 50);
     }
 
-    // Create continuous stars - more frequent
+    // Create continuous stars
     const interval = setInterval(createStar, 200);
     
-    // Create additional bursts every few seconds
+    // Create additional bursts
     const burstInterval = setInterval(() => {
       for (let i = 0; i < 6; i++) {
         setTimeout(() => createStar(), i * 100);
@@ -141,6 +141,8 @@ const Hero = () => {
                   height={400}
                   className="max-w-[280px] sm:max-w-xs lg:max-w-sm w-full h-auto"
                   priority
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                   style={{
                     filter: 'none',
                     boxShadow: 'none',

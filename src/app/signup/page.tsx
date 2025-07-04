@@ -54,8 +54,10 @@ export default function Signup() {
         try {
           await sendWelcomeEmailWithFallback(email);
         } catch (emailError) {
-          console.error('Failed to send welcome email:', emailError);
-          // Don't fail the signup if email fails
+          // Silently handle email errors in production
+          if (process.env.NODE_ENV === 'development') {
+            console.error('Failed to send welcome email:', emailError);
+          }
         }
 
         setEmail('');
@@ -64,7 +66,9 @@ export default function Signup() {
         throw new Error('Failed to submit');
       }
     } catch (error) {
-      console.error('Signup error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Signup error:', error);
+      }
 
       // Queue for later if offline
       FormSubmissionQueue.add({

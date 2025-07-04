@@ -4,6 +4,12 @@ import { useState } from 'react';
 import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
 import { trackEmailSignup } from '@/utils/analytics';
 
+const logDevError = (...args: any[]) => {
+  if (process.env.NODE_ENV === 'development') {
+    console.error(...args);
+  }
+};
+
 const CTASection = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -63,19 +69,19 @@ const CTASection = () => {
         try {
           await sendWelcomeEmailWithFallback(email);
         } catch (emailError) {
-          console.error('Failed to send welcome email:', emailError);
-          // Don't fail the signup if email fails
+          // Silently handle email errors in production
+          logDevError('Failed to send welcome email:', emailError);
         }
 
         setEmail('');
         setIsValidEmail(false);
       } else {
         const errorText = await response.text();
-        console.error('CTA Response error:', errorText);
+        logDevError('CTA Response error:', errorText);
         throw new Error(`Failed to submit: ${response.status}`);
       }
     } catch (error) {
-      console.error('CTA Submission error:', error);
+      logDevError('CTA Submission error:', error);
       setError('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
