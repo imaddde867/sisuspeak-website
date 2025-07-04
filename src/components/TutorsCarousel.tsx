@@ -36,8 +36,8 @@ const TutorsCarousel = () => {
       name: t('about.sisuNuori.name'),
       role: t('about.sisuNuori.role'),
       description: t('about.sisuNuori.description'),
-      icon: <FaCommentDots className="h-8 w-8 text-purple-600" />,
-      color: "from-purple-500 to-purple-600",
+      icon: <FaCommentDots className="h-8 w-8 text-green-700" />,
+      color: "from-green-600 to-green-800",
       image: "/images/Sisu_Nuori.PNG",
       specialties: ["Modern Slang", "Youth Culture", "Social Media", "Casual Conversations"],
       personality: "Fun, trendy, and relatable"
