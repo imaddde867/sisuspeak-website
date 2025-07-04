@@ -59,7 +59,7 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Scripts
+### Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
@@ -86,7 +86,7 @@ sisuspeak-website/
 
 ## AI Tutors
 
-The platform features specialized AI tutors:
+The platform features specialized AI tutors designed for different learning contexts:
 
 - **Sisu Senior**: Professional and academic Finnish
 - **Sisu Äiti**: Everyday and family conversations
@@ -102,11 +102,11 @@ npm run predeploy
 npm run deploy
 ```
 
-
 ## Contact
 
-Reach out on linkedIn or leave an email : imadeddine200507@gmail.com
-www.linkedin.com/in/imad-eddine-el-mouss-986741262
+**Imad Eddine El Mouss**
+- Email: imadeddine200507@gmail.com
+- LinkedIn: [linkedin.com/in/imad-eddine-el-mouss-986741262](https://www.linkedin.com/in/imad-eddine-el-mouss-986741262)
 
 ## License
 
