@@ -42,7 +42,7 @@ export default function AdminDashboard() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple password protection (in production, use proper authentication)
-    if (password === 'sisuspeak2024') {
+    if (password === 'sisuspeak2005') {
       setIsAuthenticated(true);
     } else {
       alert('Incorrect password');

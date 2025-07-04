@@ -103,7 +103,7 @@ const Navbar = memo(() => {
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               aria-label="Join our waitlist to get early access"
             >
-              
+              Join Waitlist
             </Link>
           </div>
 
@@ -171,7 +171,7 @@ const Navbar = memo(() => {
                   className="block w-full px-4 py-3 text-center text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
                   onClick={toggleMenu}
                 >
-                  
+                  Join Waitlist
                 </Link>
               </motion.div>
 
