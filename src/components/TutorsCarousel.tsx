@@ -1,10 +1,6 @@
 "use client";
 
 import { useState, useCallback } from 'react';
-
-// Extracted blurDataURL for maintainability
-const BLUR_DATA_URL =
-  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiEiYXGRkf/aAAwDAQACEQMRAD8A0XGARNElV4eUNgGSyoTojVeU/9k=";
 import { motion, AnimatePresence } from '@/utils/motion';
 import Image from 'next/image';
 import { getAssetPath } from '@/utils/paths';
@@ -199,8 +195,6 @@ const TutorsCarousel = () => {
                       height={300}
                       className="relative w-72 h-72 object-contain rounded-2xl"
                       priority={currentTutor === 0}
-                      placeholder="blur"
-                      blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="absolute -top-3 -right-3 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-gray-100">
                       <span className="text-2xl">🇫🇮</span>

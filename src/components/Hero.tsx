@@ -155,8 +155,6 @@ const Hero = () => {
                   height={400}
                   className="max-w-[280px] sm:max-w-xs lg:max-w-sm w-full h-auto"
                   priority
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                   style={{
                     filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1))',
                   }}
