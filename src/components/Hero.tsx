@@ -134,6 +134,9 @@ const Hero = () => {
           </div>
           <div className="lg:col-span-6 mt-12 lg:mt-0">
             <div className="relative flex items-center justify-center">
+              {/* Static ground shadow */}
+              <div className="absolute bottom-0 w-52 h-12 bg-black/15 rounded-full blur-lg transform translate-y-4"></div>
+              
               <motion.div 
                 className="relative"
                 animate={{
