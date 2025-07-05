@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from '@/utils/motion';
 import Image from 'next/image';
 import { getAssetPath } from '@/utils/paths';
@@ -8,6 +8,9 @@ import { FaChevronLeft, FaChevronRight, FaBriefcase, FaHeart, FaCommentDots, FaS
 
 const TutorsCarousel = () => {
   const [currentTutor, setCurrentTutor] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartRef = useRef<number | null>(null);
+  const touchEndRef = useRef<number | null>(null);
 
   const tutors = [
     {
@@ -68,6 +71,48 @@ const TutorsCarousel = () => {
     setCurrentTutor((prev) => (prev - 1 + tutors.length) % tutors.length);
   }, [tutors.length]);
 
+  // Auto-rotation effect
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      nextTutor();
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [nextTutor, isPaused]);
+
+  // Touch handlers for swipe functionality
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartRef.current || !touchEndRef.current) return;
+    
+    const distance = touchStartRef.current - touchEndRef.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextTutor();
+    }
+    if (isRightSwipe) {
+      prevTutor();
+    }
+    
+    // Reset touch refs
+    touchStartRef.current = null;
+    touchEndRef.current = null;
+  };
+
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
+
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +139,11 @@ const TutorsCarousel = () => {
         </motion.div>
 
         {/* Carousel Controls */}
-        <div className="flex justify-center items-center mb-8">
+        <div 
+          className="flex justify-center items-center mb-8"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <button
             onClick={prevTutor}
             className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200 mr-4"
@@ -126,7 +175,12 @@ const TutorsCarousel = () => {
         </div>
 
         {/* Tutor Card */}
-        <div className="max-w-5xl mx-auto">
+        <div 
+          className="max-w-5xl mx-auto"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTutor}
