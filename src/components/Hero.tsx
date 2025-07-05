@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from '@/utils/motion';
 import { getAssetPath } from '@/utils/paths';
 import { useEffect } from 'react';
 
@@ -133,10 +134,20 @@ const Hero = () => {
           </div>
           <div className="lg:col-span-6 mt-12 lg:mt-0">
             <div className="relative flex items-center justify-center">
-              <div className="relative">
+              <motion.div 
+                className="relative"
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
                 <Image
-                  src={getAssetPath('/images/Family-Pose.png')}
-                  alt="Meet the Sisu Family - Four deer characters representing our AI Finnish tutors"
+                  src={getAssetPath('/images/Mob_app-left.png')}
+                  alt="Sisu Speak Mobile App - Learn Finnish through conversation"
                   width={400}
                   height={400}
                   className="max-w-[280px] sm:max-w-xs lg:max-w-sm w-full h-auto"
@@ -144,11 +155,10 @@ const Hero = () => {
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                   style={{
-                    filter: 'none',
-                    boxShadow: 'none'
+                    filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1))',
                   }}
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
