@@ -7,7 +7,7 @@ import { FaChevronDown, FaChevronUp, FaQuestionCircle } from 'react-icons/fa';
 
 const FAQSection = () => {
   
-  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const faqs = [
     {
