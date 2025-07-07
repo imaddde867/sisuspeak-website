@@ -10,8 +10,6 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
-  basePath: '/sisuspeak-website',
-  assetPrefix: '/sisuspeak-website',
 };
 
 export default nextConfig;
