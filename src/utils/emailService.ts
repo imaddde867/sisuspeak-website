@@ -30,7 +30,7 @@ export const sendWelcomeEmail = async (email: string, name?: string): Promise<bo
       to_email: email,
       to_name: name || 'Friend',
       from_name: 'Sisu Speak Team',
-      reply_to: 'hello@sisuspeak.com'
+      reply_to: 'contact@sisuspeak.live'
     };
 
     await emailjs.send(

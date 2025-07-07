@@ -34,7 +34,7 @@ const PrivacyPolicyPage = () => {
                 
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Personal Information</h3>
                 <ul className="list-disc pl-5 sm:pl-6 text-gray-600 space-y-1 sm:space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
-                  <li>Email address (for account creation and communication)</li>
+                  <li>Email address (for account creation and communication): <a href="mailto:contact@sisuspeak.live">contact@sisuspeak.live</a></li>
                   <li>Name and profile information (optional)</li>
                   <li>Learning preferences and progress data</li>
                   <li>Voice recordings (for pronunciation practice)</li>
