@@ -32,7 +32,7 @@ const FAQSection = () => {
     },
     {
       question: "What if I'm too shy to speak?",
-      answer: "Perfect! That's exactly why we created Sisu Speak. Our AI tutors are endlessly patient, never judge you, and create a safe space to practice. Start with Sisu Lapsi for gentle encouragement, then build confidence at your own pace."
+      answer: "Perfect! Sisu Speak was designed precisely for this. Our AI tutors are infinitely patient, completely non-judgmental, and provide a safe, private space for you to practice Finnish. Start with Sisu Lapsi for gentle encouragement and gradually build your confidence at your own pace."
     }
   ];
 

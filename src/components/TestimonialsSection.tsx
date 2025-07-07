@@ -50,11 +50,11 @@ const TestimonialsSection = () => {
           </div>
           
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-            What <span className="gradient-text">Learners Say</span>
+            What Our <span className="gradient-text">Finnish Learners Say</span>
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Real stories from people who transformed their speaking skills with Sisu Speak
+            Discover how Sisu Speak has transformed Finnish speaking skills for learners worldwide.
           </p>
         </motion.div>
 

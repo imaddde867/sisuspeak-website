@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://sisuspeak.live/images/family.PNG",
+        url: "https://sisuspeak.live/images/family.webp",
         width: 1200,
         height: 630,
         alt: "Sisu Speak - Meet the AI Finnish Learning Family",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Sisu Speak | AI-Powered Finnish Learning",
     description: "Learn Finnish naturally through conversation with AI tutors",
     creator: "@sisuspeak",
-    images: ["https://sisuspeak.live/images/family.PNG"],
+    images: ["https://sisuspeak.live/images/family.webp"],
   },
   robots: {
     index: true,

@@ -99,12 +99,12 @@ const CTASection = () => {
             </div>
 
             <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-              <span className="block">Start Speaking Naturally</span>
-              <span className="block text-yellow-300">With AI Conversations</span>
+              <span className="block">Unlock Fluent Finnish:</span>
+              <span className="block text-yellow-300">Join Our AI Conversation Platform</span>
             </h2>
 
             <p className="text-lg text-blue-100 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Sign up to be among the first to experience our revolutionary AI-powered speaking practice
+              Sign up for early access to Sisu Speak and revolutionize your Finnish language learning journey with personalized AI tutors.
             </p>
           </div>
 

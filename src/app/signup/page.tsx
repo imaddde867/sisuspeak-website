@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from "next";
 import React, { useState } from 'react';
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
@@ -7,6 +8,34 @@ import { trackEmailSignup } from '@/utils/analytics';
 import { validateEmail, sanitizeInput } from '@/utils/validation';
 import { submitFormData, FormSubmissionQueue } from '@/utils/api';
 import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
+
+export const metadata: Metadata = {
+  title: "Join Sisu Speak Waitlist | Early Access to AI Finnish Learning",
+  description: "Sign up for early access to Sisu Speak, the AI-powered platform for learning Finnish through conversation. Be the first to know when we launch!",
+  keywords: ["Finnish waitlist", "AI language learning early access", "Sisu Speak signup", "learn Finnish", "Finnish conversation AI"],
+  openGraph: {
+    title: "Join Sisu Speak Waitlist | Early Access to AI Finnish Learning",
+    description: "Sign up for early access to Sisu Speak, the AI-powered platform for learning Finnish through conversation. Be the first to know when we launch!",
+    url: "https://sisuspeak.live/signup",
+    siteName: "Sisu Speak",
+    images: [
+      {
+        url: "https://sisuspeak.live/images/family.PNG",
+        width: 1200,
+        height: 630,
+        alt: "Sisu Speak - Join the Waitlist",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Join Sisu Speak Waitlist | Early Access to AI Finnish Learning",
+    description: "Sign up for early access to Sisu Speak, the AI-powered platform for learning Finnish through conversation.",
+    images: ["https://sisuspeak.live/images/family.PNG"],
+  },
+};
 
 export default function Signup() {
   const [email, setEmail] = useState('');

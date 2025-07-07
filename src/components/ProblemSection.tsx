@@ -7,28 +7,28 @@ const ProblemSection = () => {
   const problems = [
     {
       icon: <FaRobot className="h-6 w-6" />,
-      title: "Too Formal & Boring",
-      description: "Traditional methods focus on grammar rules instead of real conversation"
+      title: "Overly Formal & Unengaging",
+      description: "Traditional Finnish learning methods often prioritize rigid grammar rules over practical, engaging conversation practice."
     },
     {
       icon: <FaCommentSlash className="h-6 w-6" />,
-      title: "No Real Feedback",
-      description: "Apps can't tell you if you're actually speaking correctly or naturally"
+      title: "Lack of Real-time Feedback",
+      description: "Most language apps don't provide immediate, constructive feedback on your spoken Finnish, hindering natural progression."
     },
     {
       icon: <FaClock className="h-6 w-6" />,
-      title: "Progress Too Slow",
-      description: "Months of studying but still can't have a basic conversation"
+      title: "Slow Progress & Frustration",
+      description: "Despite significant study time, many learners struggle to achieve conversational fluency in Finnish, leading to demotivation."
     },
     {
       icon: <FaChartLine className="h-6 w-6" />,
-      title: "Not Personalized",
-      description: "One-size-fits-all approach doesn't match your learning style or goals"
+      title: "Impersonal Learning Paths",
+      description: "Generic language courses fail to adapt to individual learning styles, interests, or specific Finnish language goals."
     },
     {
       icon: <FaExclamationTriangle className="h-6 w-6" />,
-      title: "Fear of Speaking",
-      description: "No safe space to practice without judgment or embarrassment"
+      title: "Anxiety Around Speaking",
+      description: "The fear of making mistakes or being judged often prevents learners from practicing spoken Finnish in real-world scenarios."
     }
   ];
 
@@ -54,11 +54,10 @@ const ProblemSection = () => {
           </div>
           
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-            Why is Finnish <span className="gradient-text">still so hard to learn?</span>
+            Why is Learning Finnish <span className="gradient-text">Still So Hard?</span>
           </h2>
           <p className="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
-            Most language learning methods fail because they treat Finnish like a puzzle to solve, 
-            not a language to speak. Sound familiar?
+            Many traditional Finnish language learning methods fall short, treating the language like a complex puzzle rather than a living conversation. Does this sound familiar?
           </p>
         </motion.div>
 

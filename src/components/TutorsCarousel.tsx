@@ -52,12 +52,12 @@ const TutorsCarousel = () => {
     {
       name: "Sisu Lapsi",
       role: "Playful Learning Buddy",
-      description: "Makes learning fun with games, stories, and child-friendly approaches, ideal for beginners and young learners.",
+      description: "Offers a playful and encouraging approach to learning Finnish, using games and stories to build foundational vocabulary and confidence for beginners and young learners.",
       icon: <FaStar className="h-6 w-6 text-white" />,
       color: "from-yellow-500 to-yellow-600",
       bgColor: "bg-yellow-50",
       borderColor: "border-yellow-200",
-      image: "/images/Sisu_Lapsi.PNG",
+      image: "/images/Sisu_Lapsi.webp",
       specialties: ["Basic Vocabulary", "Playful Learning", "Simple Phrases", "Beginner Confidence"],
       personality: "Playful, patient, and encouraging"
     },

@@ -1,8 +1,35 @@
-"use client";
-
+import type { Metadata } from "next";
 import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { trackContactSubmission, trackFormStart, trackFormAbandon } from '@/utils/analytics';
+
+export const metadata: Metadata = {
+  title: "Contact Sisu Speak | Get in Touch with Our Team",
+  description: "Have questions about Sisu Speak, our AI Finnish learning platform, or need support? Contact our team directly for assistance.",
+  keywords: ["contact Sisu Speak", "Finnish learning support", "AI tutor contact", "Sisu Speak help", "customer service"],
+  openGraph: {
+    title: "Contact Sisu Speak | Get in Touch with Our Team",
+    description: "Have questions about Sisu Speak, our AI Finnish learning platform, or need support? Contact our team directly for assistance.",
+    url: "https://sisuspeak.live/contact",
+    siteName: "Sisu Speak",
+    images: [
+      {
+        url: "https://sisuspeak.live/images/family.PNG",
+        width: 1200,
+        height: 630,
+        alt: "Sisu Speak - Contact Us",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Sisu Speak | Get in Touch with Our Team",
+    description: "Have questions about Sisu Speak, our AI Finnish learning platform, or need support? Contact our team directly for assistance.",
+    images: ["https://sisuspeak.live/images/family.PNG"],
+  },
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({

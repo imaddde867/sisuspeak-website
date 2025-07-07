@@ -69,11 +69,11 @@ const Hero = () => {
           <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6 text-center lg:text-left">
             <div className="text-center lg:text-left">
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
-                Finally—Learn Finnish by <span className="gradient-text">Speaking It</span>, Not Memorizing It
+                Finally—Learn Finnish by <span className="gradient-text">Speaking It</span>, Not Just Memorizing It
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
-                Speak naturally with AI tutors that adapt to you. No more boring grammar drills or dead-end apps.
+                Master Finnish conversation with AI tutors that adapt to your unique learning style. Say goodbye to boring grammar drills and ineffective language apps.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start px-4 sm:px-0">
@@ -149,7 +149,7 @@ const Hero = () => {
                 }}
               >
                 <Image
-                  src={getAssetPath('/images/Mob_app-left.png')}
+                  src={getAssetPath('/images/Mob_app-left.webp')}
                   alt="Sisu Speak Mobile App - Learn Finnish through conversation"
                   width={400}
                   height={400}

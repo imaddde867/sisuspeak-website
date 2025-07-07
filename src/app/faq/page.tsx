@@ -1,8 +1,35 @@
-'use client';
-
+import type { Metadata } from "next";
 import { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { motion, AnimatePresence } from '@/utils/motion';
+
+export const metadata: Metadata = {
+  title: "Sisu Speak FAQ | Frequently Asked Questions about Finnish AI Learning",
+  description: "Find answers to common questions about Sisu Speak, our AI-powered Finnish language learning platform, how it works, pricing, and more.",
+  keywords: ["Sisu Speak FAQ", "Finnish learning questions", "AI tutor questions", "language app FAQ", "learn Finnish help"],
+  openGraph: {
+    title: "Sisu Speak FAQ | Frequently Asked Questions about Finnish AI Learning",
+    description: "Find answers to common questions about Sisu Speak, our AI-powered Finnish language learning platform, how it works, pricing, and more.",
+    url: "https://sisuspeak.live/faq",
+    siteName: "Sisu Speak",
+    images: [
+      {
+        url: "https://sisuspeak.live/images/family.PNG",
+        width: 1200,
+        height: 630,
+        alt: "Sisu Speak - FAQ",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sisu Speak FAQ | Frequently Asked Questions about Finnish AI Learning",
+    description: "Find answers to common questions about Sisu Speak, our AI-powered Finnish language learning platform.",
+    images: ["https://sisuspeak.live/images/family.PNG"],
+  },
+};
 
 interface FAQItem {
   question: string;

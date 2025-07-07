@@ -10,23 +10,23 @@ const SolutionSection = () => {
   const benefits = [
     {
       icon: <FaCommentDots className="h-6 w-6" />,
-      title: "Real Conversations",
-      description: "Practice with AI tutors that respond naturally, just like talking to a Finnish friend"
+      title: "Authentic Finnish Conversations",
+      description: "Engage in dynamic, natural conversations with AI Finnish tutors that mimic real-life interactions, fostering true fluency."
     },
     {
       icon: <FaBolt className="h-6 w-6" />,
-      title: "Instant Feedback",
-      description: "Get immediate corrections on pronunciation, grammar, and natural flow"
+      title: "Immediate, Actionable Feedback",
+      description: "Receive instant, precise corrections on your Finnish pronunciation, grammar, and conversational flow, accelerating your learning."
     },
     {
       icon: <FaHeart className="h-6 w-6" />,
-      title: "Personalized Learning",
-      description: "Each tutor adapts to your interests, goals, and learning pace"
+      title: "Tailored Learning Experience",
+      description: "Our AI tutors personalize lessons to your interests, proficiency level, and learning pace, making Finnish acquisition highly effective."
     },
     {
       icon: <FaStar className="h-6 w-6" />,
-      title: "Safe Practice Space",
-      description: "Build confidence without fear of judgment in a supportive environment"
+      title: "Judgment-Free Practice Environment",
+      description: "Build confidence in speaking Finnish within a supportive, private space where mistakes are learning opportunities, not sources of embarrassment."
     }
   ];
 
@@ -46,12 +46,11 @@ const SolutionSection = () => {
           </div>
           
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4" style={{ fontFamily: 'var(--font-poppins)' }}>
-            Meet Sisu-Speak: <span className="gradient-text">Finnish Tutors That Talk Back</span>
+            Introducing Sisu Speak: <span className="gradient-text">Your AI Finnish Conversation Partner</span>
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Instead of memorizing grammar rules, you&apos;ll have natural conversations with AI tutors 
-            who understand context, provide instant feedback, and adapt to your unique learning style.
+            Forget rote memorization. Sisu Speak offers natural, AI-driven conversations that adapt to your unique learning journey, providing instant feedback and building genuine fluency in Finnish.
           </p>
         </motion.div>
 

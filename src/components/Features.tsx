@@ -82,12 +82,12 @@ const Features = () => {
           </div>
 
           <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl mb-4 px-4 sm:px-0" style={{ fontFamily: 'var(--font-poppins)' }}>
-            <span className="block">AI-Powered Learning</span>
-            <span className="block gradient-text">That Actually Works</span>
+            <span className="block">Innovative AI Features for</span>
+            <span className="block gradient-text">Effective Finnish Language Acquisition</span>
           </h2>
 
           <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed px-4 sm:px-0">
-            Discover how our innovative features make speaking practice more effective and enjoyable
+            Explore how our cutting-edge features make learning and speaking Finnish more intuitive, engaging, and successful.
           </p>
         </div>
 

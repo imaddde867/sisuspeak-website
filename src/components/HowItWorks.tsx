@@ -51,10 +51,10 @@ const HowItWorks = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            How Sisu-Speak Works
+            How Sisu Speak <span className="gradient-text">Transforms Finnish Learning</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Start speaking Finnish in three simple steps
+            Experience a revolutionary way to master Finnish in three simple steps:
           </p>
         </motion.div>
 

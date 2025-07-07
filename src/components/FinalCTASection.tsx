@@ -72,8 +72,8 @@ const FinalCTASection = () => {
               <div className="absolute inset-0 bg-white/10 rounded-3xl transform rotate-3"></div>
               <div className="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8">
                 <Image
-                  src={getAssetPath('/images/Family-Pose.png')}
-                  alt="The Sisu Family waving goodbye - Four friendly AI tutors"
+                  src={getAssetPath('/images/Family-Pose.webp')}
+                  alt="The Sisu Speak AI tutor family, representing personalized Finnish language learning"
                   width={300}
                   height={300}
                   className="max-w-xs w-full h-auto"
