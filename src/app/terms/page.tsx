@@ -1,33 +1,4 @@
-import type { Metadata } from "next";
 import PageLayout from '@/components/PageLayout';
-
-export const metadata: Metadata = {
-  title: "Terms of Service | Sisu Speak",
-  description: "Read the terms and conditions for using the Sisu Speak AI-powered Finnish learning platform. Understand your rights and responsibilities.",
-  keywords: ["terms of service", "terms and conditions", "Sisu Speak terms", "legal agreement", "user agreement"],
-  openGraph: {
-    title: "Terms of Service | Sisu Speak",
-    description: "Read the terms and conditions for using the Sisu Speak AI-powered Finnish learning platform. Understand your rights and responsibilities.",
-    url: "https://sisuspeak.live/terms",
-    siteName: "Sisu Speak",
-    images: [
-      {
-        url: "https://sisuspeak.live/images/family.PNG",
-        width: 1200,
-        height: 630,
-        alt: "Sisu Speak - Terms of Service",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Terms of Service | Sisu Speak",
-    description: "Read the terms and conditions for using the Sisu Speak AI-powered Finnish learning platform.",
-    images: ["https://sisuspeak.live/images/family.PNG"],
-  },
-};
 
 const TermsOfServicePage = () => {
   return (

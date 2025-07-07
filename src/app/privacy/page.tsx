@@ -1,33 +1,4 @@
-import type { Metadata } from "next";
 import PageLayout from '@/components/PageLayout';
-
-export const metadata: Metadata = {
-  title: "Privacy Policy | Sisu Speak",
-  description: "Understand how Sisu Speak collects, uses, and protects your personal information. Read our comprehensive privacy policy for our AI Finnish learning platform.",
-  keywords: ["privacy policy", "data protection", "Sisu Speak privacy", "user data", "Finnish learning privacy"],
-  openGraph: {
-    title: "Privacy Policy | Sisu Speak",
-    description: "Understand how Sisu Speak collects, uses, and protects your personal information. Read our comprehensive privacy policy for our AI Finnish learning platform.",
-    url: "https://sisuspeak.live/privacy",
-    siteName: "Sisu Speak",
-    images: [
-      {
-        url: "https://sisuspeak.live/images/family.PNG",
-        width: 1200,
-        height: 630,
-        alt: "Sisu Speak - Privacy Policy",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Privacy Policy | Sisu Speak",
-    description: "Understand how Sisu Speak collects, uses, and protects your personal information.",
-    images: ["https://sisuspeak.live/images/family.PNG"],
-  },
-};
 
 const PrivacyPolicyPage = () => {
   return (
