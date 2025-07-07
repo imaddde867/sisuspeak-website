@@ -4,6 +4,7 @@ import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 import PageTracker from '@/components/PageTracker';
 import Head from 'next/head';
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -179,17 +180,20 @@ export default function RootLayout({
         <meta name="twitter:description" content="Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences." />
         <meta name="twitter:image" content="https://sisuspeak.live/images/family.webp" />
         <link rel="manifest" href="/manifest.json" />
-        {/* Google Analytics 4 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQX6CBN2W7"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-CQX6CBN2W7');
-          `
-        }} />
       </Head>
+      {/* Google Analytics 4 (GA4) tag - Next.js recommended placement */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-CQX6CBN2W7"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-CQX6CBN2W7');
+        `}
+      </Script>
       <body
         className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}
       >
