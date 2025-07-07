@@ -179,6 +179,16 @@ export default function RootLayout({
         <meta name="twitter:description" content="Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences." />
         <meta name="twitter:image" content="https://sisuspeak.live/images/family.webp" />
         <link rel="manifest" href="/manifest.json" />
+        {/* Google Analytics 4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQX6CBN2W7"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CQX6CBN2W7');
+          `
+        }} />
       </Head>
       <body
         className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}
