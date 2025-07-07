@@ -171,13 +171,13 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Sisu Speak" />
         <meta property="og:url" content="https://sisuspeak.live/" />
-        <meta property="og:image" content="https://sisuspeak.live/images/family.PNG" />
+        <meta property="og:image" content="https://sisuspeak.live/images/family.webp" />
         <meta property="og:image:alt" content="Sisu Speak - Meet the AI Finnish Learning Family" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@sisuspeak" />
         <meta name="twitter:title" content="Sisu Speak | AI-Powered Finnish Learning" />
         <meta name="twitter:description" content="Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences." />
-        <meta name="twitter:image" content="https://sisuspeak.live/images/family.PNG" />
+        <meta name="twitter:image" content="https://sisuspeak.live/images/family.webp" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <body

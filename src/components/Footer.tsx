@@ -18,9 +18,7 @@ const Footer = () => {
                 sisu speak
               </span>
             </Link>
-            <p className="mt-4 text-sm text-slate-300 max-w-md">
-              
-            </p>
+            
             <div className="mt-6 flex space-x-2 sm:space-x-4 justify-center md:justify-start">
               {[
                 { icon: FaTwitter, href: "https://twitter.com/sisuspeak", label: "Twitter" },
