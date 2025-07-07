@@ -68,7 +68,7 @@ const Hero = () => {
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
           <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6 text-center lg:text-left">
             <div className="text-center lg:text-left">
-              <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6" style={{ fontFamily: 'var(--font-poppins)' }}>
+              <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 font-poppins-heading">
                 Finally—Learn Finnish by <span className="gradient-text">Speaking It</span>, Not Just Memorizing It
               </h1>
 

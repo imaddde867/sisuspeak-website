@@ -356,6 +356,10 @@ body {
 }
 
 /* Utility Classes */
+.font-poppins-heading {
+  font-family: var(--font-poppins);
+}
+
 .font-baloo {
   font-family: var(--font-baloo), cursive;
 }
