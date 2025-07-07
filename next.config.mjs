@@ -10,8 +10,8 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/sisuspeak-website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/sisuspeak-website/' : '',
+  basePath: '',
+  assetPrefix: '',
 };
 
 export default nextConfig;
