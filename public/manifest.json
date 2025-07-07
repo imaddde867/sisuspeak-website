@@ -1,0 +1,21 @@
+{
+  "name": "Sisu Speak",
+  "short_name": "SisuSpeak",
+  "description": "Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2563eb",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo_24x24.svg",
+      "sizes": "24x24",
+      "type": "image/svg+xml"
+    }
+  ]
+}

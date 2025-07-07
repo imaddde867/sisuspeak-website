@@ -5,4 +5,4 @@ Allow: /
 Disallow: /admin/
 
 # Sitemap
-Sitemap: https://imadlab.me/sisuspeak-website/sitemap.xml
+Sitemap: https://sisuspeak.live/sitemap.xml

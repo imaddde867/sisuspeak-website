@@ -57,13 +57,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sisu Speak | Learn Finnish Through AI Conversation",
     description: "Learn Finnish naturally through engaging conversations with AI tutors. More effective than traditional language learning methods.",
-    url: "https://imadlab.me/sisuspeak-website",
+    url: "https://sisuspeak.live/",
     siteName: "Sisu Speak",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://imadlab.me/sisuspeak-website/images/family.PNG",
+        url: "https://sisuspeak.live/images/family.PNG",
         width: 1200,
         height: 630,
         alt: "Sisu Speak - Meet the AI Finnish Learning Family",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Sisu Speak | AI-Powered Finnish Learning",
     description: "Learn Finnish naturally through conversation with AI tutors",
     creator: "@sisuspeak",
-    images: ["https://imadlab.me/sisuspeak-website/images/family.PNG"],
+    images: ["https://sisuspeak.live/images/family.PNG"],
   },
   robots: {
     index: true,
@@ -178,6 +178,7 @@ export default function RootLayout({
         <meta name="twitter:title" content="Sisu Speak | AI-Powered Finnish Learning" />
         <meta name="twitter:description" content="Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences." />
         <meta name="twitter:image" content="https://sisuspeak.live/images/family.PNG" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <body
         className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}
