@@ -75,6 +75,7 @@ const Navbar = memo(() => {
               {[
                 { href: "/#features", label: "Features" },
                 { href: "/#how-it-works", label: "How It Works" },
+                 { href: "/business", label: "For companies" },
                 { href: "/faq", label: "FAQ" },
                 { href: "/contact", label: "Contact" }
               ].map((item) => (
