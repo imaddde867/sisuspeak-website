@@ -115,6 +115,16 @@ const FinalCTASection = () => {
           </div>
         </motion.div>
       </div>
+      {/* Business/Organization Banner */}
+      <div className="mt-12 flex justify-center">
+        <Link
+          href="/business"
+          className="flex items-center gap-3 px-6 py-4 bg-white/90 border border-blue-700 rounded-2xl shadow-lg hover:bg-blue-50 transition-colors text-blue-800 text-lg font-semibold"
+        >
+          <span role="img" aria-label="Organizations">👥</span>
+          Are you a school, company, or organization? <span className="underline ml-2">Discover how SisuSpeak can empower your team with real-time Finnish learning!</span>
+        </Link>
+      </div>
     </section>
   );
 };
