@@ -191,7 +191,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Email Us</h3>
-                      <p className="text-gray-600">hello@sisuspeak.com</p>
+                      <p className="text-gray-600">contact@sisuspeak.live</p>
                       <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
                     </div>
                   </div>

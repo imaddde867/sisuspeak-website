@@ -81,7 +81,7 @@ export const sendWelcomeEmailFallback = async (email: string): Promise<boolean> 
           The Sisu Speak Team
           https://sisuspeak.com
         `,
-        _replyto: 'hello@sisuspeak.com'
+        _replyto: 'contact@sisuspeak.live'
       }),
     });
 

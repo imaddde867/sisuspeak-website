@@ -11,6 +11,7 @@ import FinalCTASection from '@/components/FinalCTASection';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import BusinessSection from '@/components/BusinessSection';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <TestimonialsSection />
         <CTASection />
         <FAQSection />
+        <BusinessSection />
         <FinalCTASection />
       </main>
       <Footer />
