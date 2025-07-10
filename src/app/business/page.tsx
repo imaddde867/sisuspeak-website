@@ -11,7 +11,6 @@ export default function BusinessPage() {
     >
       <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Removed main heading and intro text for simplicity */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow border border-gray-100">
               <h2 className="text-xl font-semibold text-blue-700 mb-3">Why SisuSpeak?</h2>
@@ -41,7 +40,7 @@ export default function BusinessPage() {
               Contact Us for a Demo
             </Link>
           </div>
-          <div className="text-center text-gray-700 text-base">
+          <div className="text-center text-gray-700 text-base mt-8">
             <span className="font-semibold text-blue-700">Who We Work With:</span> Language schools, online education platforms, cultural integration programs, HR departments, and more. Join leading organizations in empowering your people with real-world Finnish skills.
           </div>
         </div>
