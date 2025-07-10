@@ -77,10 +77,10 @@ const BusinessSection = () => (
 				className="text-center"
 			>
 				<Link
-					href="/contact"
+					href="/business"
 					className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-blue-600 text-white font-semibold text-base shadow hover:bg-blue-700 transition-colors"
 				>
-					Contact Us for Group Access{' '}
+					For Group Access{' '}
 					<FaArrowRight className="ml-2 h-5 w-5" />
 				</Link>
 				<p className="mt-4 text-xs text-gray-500">
