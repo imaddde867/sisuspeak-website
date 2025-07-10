@@ -111,7 +111,7 @@ const TermsOfServicePage = () => {
                 <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-gray-50 rounded-lg">
                   <p className="text-gray-700 text-sm sm:text-base">
                     <strong>Email:</strong> <a href="mailto:contact@sisuspeak.live">contact@sisuspeak.live</a><br />
-                    <strong>Address:</strong> Turku, our team
+                    <strong>Address:</strong> Turku, Finland
                   </p>
                 </div>
               </section>

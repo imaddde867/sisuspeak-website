@@ -205,7 +205,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Location</h3>
-                      <p className="text-gray-600">Turku, our team</p>
+                      <p className="text-gray-600">Turku, Finland</p>
                       <p className="text-sm text-gray-500 mt-1">The heart of Finnish innovation</p>
                     </div>
                   </div>

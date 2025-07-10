@@ -108,8 +108,8 @@ const PrivacyPolicyPage = () => {
                 </p>
                 <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-gray-50 rounded-lg">
                   <p className="text-gray-700 text-sm sm:text-base">
-                    <strong>Email:</strong> privacy@sisuspeak.com<br />
-                    <strong>Address:</strong> Turku, our team
+                    <strong>Email:</strong> contact@sisuspeak.live<br />
+                    <strong>Address:</strong> Turku, Finland
                   </p>
                 </div>
               </section>
