@@ -22,6 +22,7 @@ export default function AdminDashboard() {
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
+  const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PW;
   const [summary, setSummary] = useState<{
     total: { events: number; emailSignups: number; contactForms: number; pageViews: number; interactions: number; uniqueSessions: number };
     daily: { events: number; emailSignups: number; contactForms: number; pageViews: number; interactions: number; uniqueSessions: number };
@@ -42,7 +43,7 @@ export default function AdminDashboard() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple password protection (in production, use proper authentication)
-    if (password === 'sisuspeak2005') {
+    if (ADMIN_PASSWORD && password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
     } else {
       alert('Incorrect password');
@@ -62,6 +63,18 @@ export default function AdminDashboard() {
     link.download = `sisu-analytics-${new Date().toISOString().split('T')[0]}.json`;
     link.click();
   };
+
+  if (!ADMIN_PASSWORD) {
+    return (
+      <PageLayout title="Admin Dashboard" description="Admin is disabled until NEXT_PUBLIC_ADMIN_PW is set.">
+        <div className="max-w-md mx-auto mt-20">
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <p className="text-gray-700">Set NEXT_PUBLIC_ADMIN_PW in your environment to enable access.</p>
+          </div>
+        </div>
+      </PageLayout>
+    );
+  }
 
   if (!isAuthenticated) {
     return (
@@ -98,7 +111,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <PageLayout title="Analytics Dashboard" description="Sisu Speak signup and engagement tracking">
+  <PageLayout title="Analytics Dashboard" description="Sisu Speak signup and engagement tracking">
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Enhanced Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

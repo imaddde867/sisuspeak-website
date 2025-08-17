@@ -68,7 +68,7 @@ export const trackEvent = (eventData: AnalyticsEvent) => {
     }
 
     // Forward to Google Analytics (if available)
-    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+  const w = window as unknown as { gtag?: (...args: unknown[]) => void };
     if (typeof w.gtag === 'function') {
       if (eventData.event === 'page_view') {
         w.gtag('event', 'page_view', {

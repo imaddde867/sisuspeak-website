@@ -34,12 +34,11 @@ export const metadata: Metadata = {
   keywords: ["Finnish learning", "AI tutor", "NLP", "pronunciation", "conversation practice"],
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' }
+      { url: '/logo.jpg', type: 'image/jpeg' }
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/logo.jpg',
     apple: [
-      { url: '/favicon.ico', sizes: '180x180', type: 'image/x-icon' }
+      { url: '/logo.jpg', type: 'image/jpeg' }
     ],
   },
   openGraph: {
@@ -81,18 +80,23 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
   return (
     <html lang="en" className="scroll-smooth">
-      {/* Google Analytics 4 (GA4) tag - Next.js recommended placement */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-CQX6CBN2W7" strategy="afterInteractive" />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);} 
-          gtag('js', new Date());
-          gtag('config', 'G-CQX6CBN2W7');
-        `}
-      </Script>
+      {/* Google Analytics 4 (GA4) tag - only when GA_ID is provided */}
+      {GA_ID && (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+          <Script id="gtag-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);} 
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');
+            `}
+          </Script>
+        </>
+      )}
       <body className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}>
         {/* Skip link for accessibility */}
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-blue-600 text-white px-3 py-2 rounded">

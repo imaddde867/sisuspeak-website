@@ -102,7 +102,7 @@ export default function Head() {
       <meta name="twitter:description" content="Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences." />
       <meta name="twitter:image" content="https://sisuspeak.live/images/family.webp" />
 
-      {/* PWA manifest */}
+  {/* PWA manifest */}
       <link rel="manifest" href="/manifest.json" />
 
       {/* Performance hints */}
