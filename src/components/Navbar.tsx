@@ -39,7 +39,7 @@ const Navbar = memo(() => {
   }, [isOpen]);
 
   return (
-    <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+  <nav role="navigation" aria-label="Primary" className={`sticky top-0 z-50 w-full transition-all duration-300 ${
       isScrolled
         ? 'bg-white/98 backdrop-blur-md border-b border-gray-200 shadow-sm'
         : 'bg-white/95 backdrop-blur-sm border-b border-gray-100'
@@ -85,7 +85,7 @@ const Navbar = memo(() => {
                   onClick={() => {
                     // Smooth scroll for anchor links
                     if (item.href.startsWith('/#')) {
-                      const element = document.querySelector(item.href.substring(1));
+                      const element = document.querySelector(item.href.replace('/','')) as HTMLElement | null;
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}

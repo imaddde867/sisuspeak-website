@@ -11,7 +11,7 @@ An AI-powered Finnish learning platform that provides conversational language le
 
 ## Live Website
 
-Visit the live site: [https://imadlab.me/sisuspeak-website](https://imadlab.me/sisuspeak-website)
+Visit live at: [https://sisuspeak.live](https://sisuspeak.live)
 
 ## Features
 
@@ -101,6 +101,21 @@ Build and deploy to GitHub Pages:
 npm run predeploy
 npm run deploy
 ```
+
+If deploying under a subpath (e.g., GitHub Pages project site), set a base path so asset URLs work:
+
+```bash
+export NEXT_PUBLIC_BASE_PATH="/sisuspeak-website"
+npm run build
+```
+
+Note: Internal routing still uses absolute hrefs (e.g., "/contact"). For full subpath support, configure Next.js `basePath` and `assetPrefix` in `next.config.mjs` or keep using the root domain.
+
+## Notes
+
+- Head tags and JSON-LD moved to `src/app/head.tsx` for cleaner layout.
+- Added an accessibility skip link and main landmark.
+- Local analytics now forwards to Google Analytics when available.
 
 ## Contact
 

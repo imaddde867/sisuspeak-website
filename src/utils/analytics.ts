@@ -67,6 +67,25 @@ export const trackEvent = (eventData: AnalyticsEvent) => {
       trackPageViewSession(eventData.page || 'unknown');
     }
 
+    // Forward to Google Analytics (if available)
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+    if (typeof w.gtag === 'function') {
+      if (eventData.event === 'page_view') {
+        w.gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: eventData.page || window.location.pathname,
+        });
+      } else {
+        w.gtag('event', eventData.event, {
+          email: eventData.email,
+          source: eventData.source,
+          page: eventData.page,
+          ...eventData.data,
+        });
+      }
+    }
+
   } catch {
     // Silently fail in production
   }
