@@ -2,6 +2,11 @@
 export default function Head() {
   return (
     <>
+  {/* Explicit favicon links to ensure override and cache-busting */}
+  <link rel="icon" href="/logo.jpg?v=20250818" type="image/jpeg" />
+  <link rel="shortcut icon" href="/logo.jpg?v=20250818" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="/logo.jpg?v=20250818" />
+
       {/* Canonical URL for SEO */}
       <link rel="canonical" href="https://sisuspeak.live/" />
 

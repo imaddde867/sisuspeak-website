@@ -34,11 +34,13 @@ export const metadata: Metadata = {
   keywords: ["Finnish learning", "AI tutor", "NLP", "pronunciation", "conversation practice"],
   icons: {
     icon: [
-      { url: '/logo.jpg', type: 'image/jpeg' }
+      { url: '/logo.jpg', sizes: '32x32', type: 'image/jpeg' },
+      { url: '/logo.jpg', sizes: '192x192', type: 'image/jpeg' },
+      { url: '/logo.jpg', sizes: '512x512', type: 'image/jpeg' }
     ],
     shortcut: '/logo.jpg',
     apple: [
-      { url: '/logo.jpg', type: 'image/jpeg' }
+      { url: '/logo.jpg', sizes: '180x180', type: 'image/jpeg' }
     ],
   },
   openGraph: {
