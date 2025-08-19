@@ -74,22 +74,55 @@ export const trackEvent = (eventData: AnalyticsEvent) => {
       trackPageViewSession(eventData.page || 'unknown');
     }
 
-    // Forward to Google Analytics (if available)
-  const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+    // Forward to Google Analytics (if available). Scrub PII and map to recommended GA events.
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
     if (typeof w.gtag === 'function') {
-      if (eventData.event === 'page_view') {
+      const debugMode = process.env.NEXT_PUBLIC_GA_DEBUG === 'true';
+
+  // Map internal events to GA recommended names
+      const mapEventName = (name: string) => {
+        switch (name) {
+          case 'email_signup':
+            return 'sign_up';
+          case 'contact_form_submit':
+            return 'generate_lead';
+          default:
+            return name; // pass through for page_view and others
+        }
+      };
+
+      const gaEventName = mapEventName(eventData.event);
+
+      if (gaEventName === 'page_view') {
         w.gtag('event', 'page_view', {
           page_title: document.title,
           page_location: window.location.href,
           page_path: eventData.page || window.location.pathname,
+          debug_mode: debugMode,
         });
       } else {
-        w.gtag('event', eventData.event, {
-          email: eventData.email,
-          source: eventData.source,
-          page: eventData.page,
-          ...eventData.data,
+        // Avoid sending PII to GA.
+        const { email: _omitEmail, data = {}, ...rest } = eventData as any;
+
+        // Drop obvious PII keys
+        const piiKeys = new Set(['email', 'name', 'phone', 'company', 'message', 'subject']);
+        const filteredData: Record<string, unknown> = {};
+        Object.entries(data || {}).forEach(([k, v]) => {
+          if (!piiKeys.has(k)) filteredData[k] = v;
         });
+
+        const safeParams: Record<string, unknown> = {
+          source: rest.source,
+          page: rest.page,
+          debug_mode: debugMode,
+          ...filteredData,
+        };
+
+        // Rename a couple of common dimensions for GA consistency (still non-PII)
+        if (safeParams['element']) safeParams['content_type'] = String(safeParams['element']);
+        if (safeParams['action']) safeParams['item_id'] = String(safeParams['action']);
+
+        w.gtag('event', gaEventName, safeParams);
       }
     }
 
