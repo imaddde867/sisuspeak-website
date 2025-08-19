@@ -102,25 +102,29 @@ export const trackEvent = (eventData: AnalyticsEvent) => {
         });
       } else {
         // Avoid sending PII to GA.
-        const { email: _omitEmail, data = {}, ...rest } = eventData as any;
+        const data = (eventData.data ?? {}) as Record<string, unknown>;
 
         // Drop obvious PII keys
         const piiKeys = new Set(['email', 'name', 'phone', 'company', 'message', 'subject']);
         const filteredData: Record<string, unknown> = {};
-        Object.entries(data || {}).forEach(([k, v]) => {
+        Object.entries(data).forEach(([k, v]) => {
           if (!piiKeys.has(k)) filteredData[k] = v;
         });
 
         const safeParams: Record<string, unknown> = {
-          source: rest.source,
-          page: rest.page,
+          source: eventData.source,
+          page: eventData.page,
           debug_mode: debugMode,
           ...filteredData,
         };
 
         // Rename a couple of common dimensions for GA consistency (still non-PII)
-        if (safeParams['element']) safeParams['content_type'] = String(safeParams['element']);
-        if (safeParams['action']) safeParams['item_id'] = String(safeParams['action']);
+        if (Object.prototype.hasOwnProperty.call(filteredData, 'element')) {
+          safeParams['content_type'] = String(filteredData['element']);
+        }
+        if (Object.prototype.hasOwnProperty.call(filteredData, 'action')) {
+          safeParams['item_id'] = String(filteredData['action']);
+        }
 
         w.gtag('event', gaEventName, safeParams);
       }
