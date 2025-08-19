@@ -43,6 +43,13 @@ export const trackEvent = (eventData: AnalyticsEvent) => {
     // Only track in browser environment
     if (typeof window === 'undefined') return;
 
+    // Respect analytics consent: if user opted out, only allow necessary events (none here)
+    try {
+      const consent = JSON.parse(localStorage.getItem('sisu_consent_v1') || 'null');
+      const analyticsAllowed = !!consent?.categories?.analytics;
+      if (!analyticsAllowed) return; // skip storing/forwarding analytics events
+    } catch { /* ignore */ }
+
     const userInfo = getUserInfo();
     const events = JSON.parse(localStorage.getItem('sisu_analytics') || '[]');
 

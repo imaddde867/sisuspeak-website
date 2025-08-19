@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { FaTwitter, FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { useCookieConsent } from '@/contexts/CookieConsentContext';
 
 const Footer = () => {
   
@@ -92,7 +93,7 @@ const Footer = () => {
               &copy; {currentYear} Sisu Speak. 
             </p>
             <div className="mt-4 md:mt-0 flex items-center space-x-4">
-              <span className="text-sm text-slate-400"></span>
+              <CookiePreferencesButton />
             </div>
           </div>
         </div>
@@ -102,3 +103,13 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// Client-only button to open preferences modal
+function CookiePreferencesButton() {
+  const { openManager } = useCookieConsent();
+  return (
+    <button onClick={openManager} className="text-sm text-slate-400 hover:text-white underline underline-offset-2">
+      Cookie preferences
+    </button>
+  );
+}

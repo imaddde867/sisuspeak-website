@@ -3,7 +3,10 @@ import { Inter, Poppins } from "next/font/google";
 import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 import PageTracker from '@/components/PageTracker';
-import Script from "next/script";
+import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
+import CookieBanner from '@/components/CookieBanner';
+import CookiePreferencesModal from '@/components/CookiePreferencesModal';
+import AnalyticsScripts from '@/components/AnalyticsScripts';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -82,31 +85,21 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
   return (
     <html lang="en" className="scroll-smooth">
-      {/* Google Analytics 4 (GA4) tag - only when GA_ID is provided */}
-      {GA_ID && (
-        <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-          <Script id="gtag-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);} 
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}');
-            `}
-          </Script>
-        </>
-      )}
       <body className={`${inter.variable} ${poppins.variable} ${baloo.variable} antialiased font-sans`}>
         {/* Skip link for accessibility */}
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-blue-600 text-white px-3 py-2 rounded">
           Skip to content
         </a>
-        <PageTracker>
-          <div id="main" role="main">{children}</div>
-        </PageTracker>
+        <CookieConsentProvider>
+          <AnalyticsScripts />
+          <PageTracker>
+            <div id="main" role="main">{children}</div>
+          </PageTracker>
+          <CookieBanner />
+          <CookiePreferencesModal />
+        </CookieConsentProvider>
       </body>
     </html>
   );
