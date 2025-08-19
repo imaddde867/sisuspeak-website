@@ -2,24 +2,31 @@
 
 import { useState, useEffect, memo, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { AnimatePresence, motion } from '@/utils/motion';
 import { RiMenu4Line, RiCloseLine } from 'react-icons/ri';
 
-import { getAssetPath } from '@/utils/paths';
+import { mainNavLinks } from '@/utils/navLinks';
+import SisuLogo from './SisuLogo';
 
 const Navbar = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
 
+  // Throttled scroll handler to minimize reflows
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const toggleMenu = useCallback(() => {
@@ -55,14 +62,7 @@ const Navbar = memo(() => {
             aria-label="Sisu Speak - Home"
           >
             <div className="flex items-center space-x-2">
-              <Image
-                src={getAssetPath('/logo_24x24.svg')}
-                alt="Sisu Speak Logo"
-                width={24}
-                height={24}
-                className="w-6 h-6"
-                priority
-              />
+              <SisuLogo />
               <span className="font-baloo text-2xl font-bold gradient-text tracking-tight select-none">
                 sisu speak
               </span>
@@ -72,12 +72,7 @@ const Navbar = memo(() => {
           {/* Clean Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
-              {[
-                { href: "/#features", label: "Features" },
-                { href: "/#how-it-works", label: "How It Works" },
-                { href: "/business", label: "For Companies" },
-                { href: "/contact", label: "Contact" }
-              ].map((item) => (
+              {mainNavLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -138,12 +133,7 @@ const Navbar = memo(() => {
             className="md:hidden overflow-hidden bg-white border-t border-gray-200"
           >
             <div className="px-6 pt-6 pb-6 space-y-4">
-              {[
-                { href: "/#features", label: "Features" },
-                { href: "/#how-it-works", label: "How It Works" },
-                { href: "/business", label: "For Companies" },
-                { href: "/contact", label: "Contact" }
-              ].map((item, index) => (
+              {mainNavLinks.map((item, index) => (
                 <motion.div
                   key={item.href}
                   initial={{ opacity: 0, x: -20 }}

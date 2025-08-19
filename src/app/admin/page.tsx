@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import Section from '@/components/ui/Section';
+import Card from '@/components/ui/Card';
 import { getAnalyticsSummary } from '@/utils/analytics';
 
 interface AnalyticsEvent {
@@ -67,10 +69,10 @@ export default function AdminDashboard() {
   if (!ADMIN_PASSWORD) {
     return (
       <PageLayout title="Admin Dashboard" description="Admin is disabled until NEXT_PUBLIC_ADMIN_PW is set.">
-        <div className="max-w-md mx-auto mt-20">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="max-w-md mx-auto mt-20 px-4">
+          <Card className="p-8">
             <p className="text-gray-700">Set NEXT_PUBLIC_ADMIN_PW in your environment to enable access.</p>
-          </div>
+          </Card>
         </div>
       </PageLayout>
     );
@@ -79,8 +81,8 @@ export default function AdminDashboard() {
   if (!isAuthenticated) {
     return (
       <PageLayout title="Admin Dashboard" description="Analytics and signup tracking">
-        <div className="max-w-md mx-auto mt-20">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="max-w-md mx-auto mt-20 px-4">
+          <Card className="p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Admin Access</h2>
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
@@ -104,7 +106,7 @@ export default function AdminDashboard() {
                 Login
               </button>
             </form>
-          </div>
+          </Card>
         </div>
       </PageLayout>
     );
@@ -112,41 +114,42 @@ export default function AdminDashboard() {
 
   return (
   <PageLayout title="Analytics Dashboard" description="Sisu Speak signup and engagement tracking">
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <Section className="bg-white">
+        <div>
         {/* Enhanced Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Signups</h3>
             <p className="text-3xl font-bold text-[#7388a5]">{summary?.total.emailSignups || emailSignups.length}</p>
             <p className="text-sm text-gray-500">Total waitlist subscribers</p>
             {summary && (
               <p className="text-xs text-green-600 mt-1">+{summary.daily.emailSignups} today</p>
             )}
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          </Card>
+          <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Contact Forms</h3>
             <p className="text-3xl font-bold text-[#a3c2c8]">{summary?.total.contactForms || contactForms.length}</p>
             <p className="text-sm text-gray-500">Contact submissions</p>
             {summary && (
               <p className="text-xs text-green-600 mt-1">+{summary.daily.contactForms} today</p>
             )}
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          </Card>
+          <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Page Views</h3>
             <p className="text-3xl font-bold text-[#7388a5]">{summary?.total.pageViews || pageViews.length}</p>
             <p className="text-sm text-gray-500">Total page views</p>
             {summary && (
               <p className="text-xs text-green-600 mt-1">+{summary.daily.pageViews} today</p>
             )}
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          </Card>
+          <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Unique Sessions</h3>
             <p className="text-3xl font-bold text-[#7388a5]">{summary?.total.uniqueSessions || 0}</p>
             <p className="text-sm text-gray-500">Unique visitors</p>
             {summary && (
               <p className="text-xs text-green-600 mt-1">+{summary.daily.uniqueSessions} today</p>
             )}
-          </div>
+          </Card>
         </div>
 
         {/* Export Button */}
@@ -160,7 +163,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Recent Events */}
-        <div className="bg-white rounded-xl shadow-lg p-6">
+        <Card className="p-6">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">Recent Activity</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -217,8 +220,9 @@ export default function AdminDashboard() {
               </tbody>
             </table>
           </div>
+        </Card>
         </div>
-      </div>
+      </Section>
     </PageLayout>
   );
 }

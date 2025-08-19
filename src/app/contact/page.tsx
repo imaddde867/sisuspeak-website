@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import Section from '@/components/ui/Section';
+import Card from '@/components/ui/Card';
 import { trackContactSubmission, trackFormStart, trackFormAbandon } from '@/utils/analytics';
 
 export default function Contact() {
@@ -169,13 +171,13 @@ export default function Contact() {
       title="Contact Us"
       description="Have questions about Sisu Speak? We&apos;d love to hear from you and answer any questions about our AI-powered Finnish learning platform."
     >
-      <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section className="bg-gradient-to-br from-gray-50 to-blue-50">
+        <div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
             {/* Contact Information */}
             <div className="lg:pr-8">
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+              <Card className="p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   Ready to start your Finnish learning journey? Have questions about our AI tutors?
@@ -225,12 +227,12 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
             </div>
 
             {/* Contact Form */}
             <div>
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+              <Card className="p-8">
                 {submitted ? (
                   <div className="text-center py-8">
                     <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-gradient-to-r from-green-400 to-green-600 mb-6">
@@ -280,17 +282,10 @@ export default function Contact() {
                               className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
                                 errors.name
                                   ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                  : focusedField === 'name'
-                                    ? 'border-blue-500 focus:border-blue-500 focus:ring-blue-500'
-                                    : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
+                                  : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
                               } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                               placeholder="Your full name"
                             />
-                            {focusedField === 'name' && (
-                              <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                              </div>
-                            )}
                           </div>
                           {errors.name && (
                             <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
@@ -319,17 +314,10 @@ export default function Contact() {
                               className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
                                 errors.email
                                   ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                  : focusedField === 'email'
-                                    ? 'border-blue-500 focus:border-blue-500 focus:ring-blue-500'
-                                    : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
+                                  : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
                               } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                               placeholder="your@email.com"
                             />
-                            {focusedField === 'email' && (
-                              <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                              </div>
-                            )}
                           </div>
                           {errors.email && (
                             <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
@@ -348,17 +336,14 @@ export default function Contact() {
                           <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
                             Company <span className="text-gray-400">(Optional)</span>
                           </label>
-                          <input
+              <input
                             type="text"
                             name="company"
                             id="company"
                             value={formData.company}
                             onChange={handleChange}
-                            onFocus={handleFocus}
                             className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
-                              focusedField === 'company'
-                                ? 'border-blue-500 focus:border-blue-500 focus:ring-blue-500'
-                                : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
+                'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
                             } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                             placeholder="Your company name"
                           />
@@ -368,17 +353,14 @@ export default function Contact() {
                           <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                             Phone <span className="text-gray-400">(Optional)</span>
                           </label>
-                          <input
+              <input
                             type="tel"
                             name="phone"
                             id="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            onFocus={handleFocus}
                             className={`w-full px-4 py-3 border-2 rounded-xl transition-all duration-200 text-base min-h-[52px] text-gray-900 bg-white ${
-                              focusedField === 'phone'
-                                ? 'border-blue-500 focus:border-blue-500 focus:ring-blue-500'
-                                : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
+                'border-gray-200 focus:border-blue-500 focus:ring-blue-500'
                             } focus:outline-none focus:ring-2 focus:ring-opacity-20`}
                             placeholder="+358 XX XXX XXXX"
                           />
@@ -492,11 +474,11 @@ export default function Contact() {
                     </form>
                   </div>
                 )}
-              </div>
+              </Card>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </PageLayout>
   );
 }

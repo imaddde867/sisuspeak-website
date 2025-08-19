@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from '@/utils/motion';
+import { memo } from 'react';
+import { motion, useReducedMotion } from '@/utils/motion';
 
 
-const HowItWorks = () => {
+const HowItWorks = memo(() => {
   
 
   const steps = [
@@ -27,27 +28,29 @@ const HowItWorks = () => {
     },
   ];
 
+  const prefersReduced = useReducedMotion();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 },
+      transition: { staggerChildren: prefersReduced ? 0 : 0.15 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 12 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
   };
 
   return (
     <section id="how-it-works" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -62,7 +65,7 @@ const HowItWorks = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="grid gap-8 md:grid-cols-3"
         >
           {steps.map((step, index) => (
@@ -84,10 +87,10 @@ const HowItWorks = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.35, ease: 'easeOut', delay: prefersReduced ? 0 : 0.4 }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600 mb-6">
@@ -103,6 +106,8 @@ const HowItWorks = () => {
       </div>
     </section>
   );
-};
+});
+
+HowItWorks.displayName = 'HowItWorks';
 
 export default HowItWorks;

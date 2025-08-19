@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
-import { motion, AnimatePresence } from '@/utils/motion';
+import Section from '@/components/ui/Section';
+import { motion, AnimatePresence, fadeInUp } from '@/utils/motion';
 
 interface FAQItem {
   question: string;
@@ -97,8 +98,8 @@ const FAQPage = () => {
 			title="Frequently Asked Questions"
 			description="Find answers to common questions about Sisu Speak and our AI-powered Finnish learning platform."
 		>
-			<section className="py-12 sm:py-16 bg-white">
-				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Section className="bg-white">
+				<div className="max-w-4xl mx-auto">
 					{/* Category Filter */}
 					<div className="mb-8 sm:mb-12">
 						<div className="flex flex-wrap justify-center gap-2 px-2 sm:px-0">
@@ -133,9 +134,10 @@ const FAQPage = () => {
 						{filteredFAQs.map((item, index) => (
 							<motion.div
 								key={`${item.question}-${selectedCategory}`}
-								initial={{ opacity: 0, y: 20 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.3, delay: index * 0.1 }}
+								variants={fadeInUp}
+								initial="hidden"
+								animate="show"
+								transition={{ delay: Math.min(index * 0.04, 0.2) }}
 								className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200"
 							>
 								<button
@@ -200,7 +202,7 @@ const FAQPage = () => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</Section>
 		</PageLayout>
 	);
 };

@@ -17,10 +17,10 @@ const FinalCTASection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -12 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
             className="text-center lg:text-left"
           >
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6 border border-white/30">
@@ -62,10 +62,10 @@ const FinalCTASection = () => {
           
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 12 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.35, ease: 'easeOut', delay: 0.15 }}
+            viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
@@ -76,13 +76,14 @@ const FinalCTASection = () => {
                   alt="The Sisu Speak AI tutor family, representing personalized Finnish language learning"
                   width={300}
                   height={300}
+                  sizes="(max-width: 640px) 260px, (max-width: 1024px) 280px, 300px"
                   className="max-w-xs w-full h-auto"
                   style={{
                     filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2))',
                   }}
                 />
                 <div className="absolute -top-2 -right-2">
-                  <div className="bg-white text-blue-900 rounded-full p-2 animate-bounce">
+                  <div className="bg-white text-blue-900 rounded-full p-2">
                     <span className="text-xl">💙</span>
                   </div>
                 </div>
@@ -93,10 +94,10 @@ const FinalCTASection = () => {
         
         {/* Trust indicators */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.35, ease: 'easeOut', delay: 0.2 }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="mt-16 text-center"
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-200 text-sm">

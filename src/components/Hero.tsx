@@ -4,53 +4,52 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from '@/utils/motion';
 import { getAssetPath } from '@/utils/paths';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const Hero = () => {
 
+  const starCount = useRef(0);
   useEffect(() => {
+    const maxStars = 80;
+    const starsContainer = document.querySelector('.falling-stars');
+    if (!starsContainer) return;
+
     const createStar = () => {
+      if (starCount.current >= maxStars) return;
       const star = document.createElement('div');
       const sizes = ['star-tiny', 'star-tiny', 'star-small', 'star-small', 'star-medium', 'star-large'];
       const size = sizes[Math.floor(Math.random() * sizes.length)];
-      
       star.className = `star ${size}`;
-      star.style.left = Math.random() * 100 + '%';
-      star.style.animationDuration = (Math.random() * 6 + 6) + 's';
-      star.style.animationDelay = '0s';
-      
-      const starsContainer = document.querySelector('.falling-stars');
-      if (starsContainer) {
-        starsContainer.appendChild(star);
-        
-        // Remove star after animation completes
-        setTimeout(() => {
-          if (star.parentNode) {
-            star.parentNode.removeChild(star);
-          }
-        }, 15000);
-      }
+      (star.style as CSSStyleDeclaration).left = Math.random() * 100 + '%';
+      (star.style as CSSStyleDeclaration).animationDuration = (Math.random() * 6 + 6) + 's';
+      starCount.current += 1;
+      starsContainer.appendChild(star);
+      // Cleanup after animation
+      window.setTimeout(() => {
+        if (star.parentNode) star.parentNode.removeChild(star);
+        starCount.current = Math.max(0, starCount.current - 1);
+      }, 12000);
     };
 
-    // Create immediate burst of stars
-    for (let i = 0; i < 30; i++) {
-      setTimeout(() => createStar(), i * 50);
+    // schedule stars with rAF-backed timer
+    let running = true;
+    let last = performance.now();
+    const intervalMs = 220;
+    const loop = (now: number) => {
+      if (!running) return;
+      if (now - last >= intervalMs) {
+        createStar();
+        last = now;
+      }
+      requestAnimationFrame(loop);
+    };
+
+    // initial burst (smaller)
+    for (let i = 0; i < 15; i++) {
+      requestAnimationFrame(() => createStar());
     }
-
-    // Create continuous stars
-    const interval = setInterval(createStar, 200);
-    
-    // Create additional bursts
-    const burstInterval = setInterval(() => {
-      for (let i = 0; i < 6; i++) {
-        setTimeout(() => createStar(), i * 100);
-      }
-    }, 1200);
-    
-    return () => {
-      clearInterval(interval);
-      clearInterval(burstInterval);
-    };
+    requestAnimationFrame(loop);
+    return () => { running = false; };
   }, []);
 
   return (
@@ -69,7 +68,7 @@ const Hero = () => {
           <div className="px-4 sm:px-6 lg:px-8 lg:col-span-6 text-center lg:text-left">
             <div className="text-center lg:text-left">
               <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 font-poppins-heading">
-                Finally—Learn Finnish by <span className="gradient-text">Speaking It</span>, Not Just Memorizing It
+                Finally—Learn Finnish by <span className="gradient-text">Speaking It</span>, Not Memorizing It
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
@@ -153,6 +152,7 @@ const Hero = () => {
                   alt="Sisu Speak Mobile App - Learn Finnish through conversation"
                   width={400}
                   height={400}
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 400px"
                   className="max-w-[280px] sm:max-w-xs lg:max-w-sm w-full h-auto"
                   priority
                   style={{

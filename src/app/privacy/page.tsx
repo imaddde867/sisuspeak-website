@@ -1,4 +1,5 @@
 import PageLayout from '@/components/PageLayout';
+import Section from '@/components/ui/Section';
 
 const PrivacyPolicyPage = () => {
   return (
@@ -6,8 +7,8 @@ const PrivacyPolicyPage = () => {
       title="Privacy Policy"
       description="Learn how we collect, use, and protect your personal information at Sisu Speak."
     >
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section className="bg-white">
+        <div className="max-w-4xl mx-auto">
           <div className="prose prose-sm sm:prose-lg max-w-none">
             <div className="mb-6 sm:mb-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
               <p className="text-sm text-blue-800 mb-0">
@@ -116,7 +117,7 @@ const PrivacyPolicyPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </PageLayout>
   );
 };

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { FaTwitter, FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { useCookieConsent } from '@/contexts/CookieConsentContext';
+import { footerLearnLinks, footerSupportLinks } from '@/utils/navLinks';
 
 const Footer = () => {
   
@@ -46,15 +47,11 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Learn More</h3>
             <ul className="space-y-3">
-              {[
-                { href: "/#features", label: "Features" },
-                { href: "/#how-it-works", label: "How It Works" },
-                { href: "/faq", label: "FAQ" }
-              ].map(({ href, label }) => (
+      {footerLearnLinks.map(({ href, label }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-slate-800 inline-block min-h-[44px] flex items-center active:scale-95"
+        className="text-sm text-slate-300 hover:text-white transition-colors duration-200 px-3 rounded-lg hover:bg-slate-800 inline-flex items-center justify-center h-11 active:scale-95"
                   >
                     {label}
                   </Link>
@@ -67,16 +64,11 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">Support</h3>
             <ul className="space-y-3">
-              {[
-                { href: "/contact", label: "Contact Us" },
-                { href: "/faq", label: "FAQ" },
-                { href: "/privacy", label: "Privacy Policy" },
-                { href: "/terms", label: "Terms of Service" }
-              ].map(({ href, label }) => (
+      {footerSupportLinks.map(({ href, label }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-slate-300 hover:text-white transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-slate-800 inline-block min-h-[44px] flex items-center active:scale-95"
+        className="text-sm text-slate-300 hover:text-white transition-colors duration-200 px-3 rounded-lg hover:bg-slate-800 inline-flex items-center justify-center h-11 active:scale-95"
                   >
                     {label}
                   </Link>

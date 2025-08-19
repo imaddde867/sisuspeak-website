@@ -1,6 +1,4 @@
-"use client";
-
-import { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 
 import {
   FaMicrophone,
@@ -44,7 +42,7 @@ const FeatureCard = ({ icon, title, description }: Omit<FeatureProps, 'delay'>) 
   );
 };
 
-const Features = () => {
+const Features = memo(() => {
   const features = [
     {
       icon: <FaCommentDots className="h-6 w-6" />,
@@ -104,6 +102,8 @@ const Features = () => {
       </div>
     </section>
   );
-};
+});
+
+Features.displayName = 'Features';
 
 export default Features;

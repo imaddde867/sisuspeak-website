@@ -1,75 +1,77 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, memo } from 'react';
 import { motion, AnimatePresence } from '@/utils/motion';
 import Image from 'next/image';
 import { getAssetPath } from '@/utils/paths';
 import { FaChevronLeft, FaChevronRight, FaBriefcase, FaHeart, FaCommentDots, FaStar } from 'react-icons/fa';
 
-const TutorsCarousel = () => {
+const tutors = [
+  {
+    name: "Sisu Senior",
+    role: "Professional & Academic Guide",
+    description: "Teaches for work, studies, and formal settings, focusing on advanced vocabulary and structures.",
+    icon: <FaBriefcase className="h-6 w-6 text-white" />,
+    color: "from-blue-500 to-blue-600",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-200",
+    image: "/images/Sisu_Senior.PNG",
+    specialties: ["Business Finnish", "Academic Writing", "Professional Meetings", "Formal Presentations"],
+    personality: "Experienced, patient, and detail-oriented"
+  },
+  {
+    name: "Sisu \u00c4iti",
+    role: "Everyday & Family Conversation Partner",
+    description: "Specializes in conversational Finnish for daily life, partners, and family interactions, building practical fluency.",
+    icon: <FaHeart className="h-6 w-6 text-white" />,
+    color: "from-pink-500 to-pink-600",
+    bgColor: "bg-pink-50",
+    borderColor: "border-pink-200",
+    image: "/images/Sisu_\u00c4iti.PNG",
+    specialties: ["Daily Conversations", "Family Topics", "Shopping & Errands", "Social Situations"],
+    personality: "Warm, encouraging, and practical"
+  },
+  {
+    name: "Sisu Nuori",
+    role: "Cultural & Social Companion",
+    description: "Focuses on modern culture, slang, and social interactions, perfect for connecting with young people.",
+    icon: <FaCommentDots className="h-6 w-6 text-white" />,
+    color: "from-green-600 to-green-800",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-200",
+    image: "/images/Sisu_Nuori.PNG",
+    specialties: ["Modern Slang", "Youth Culture", "Social Media", "Casual Conversations"],
+    personality: "Fun, trendy, and relatable"
+  },
+  {
+    name: "Sisu Lapsi",
+    role: "Playful Learning Buddy",
+    description: "Offers a playful and encouraging approach to learning Finnish, using games and stories to build foundational vocabulary and confidence for beginners and young learners.",
+    icon: <FaStar className="h-6 w-6 text-white" />,
+    color: "from-yellow-500 to-yellow-600",
+    bgColor: "bg-yellow-50",
+    borderColor: "border-yellow-200",
+    image: "/images/Sisu_Lapsi.webp",
+    specialties: ["Basic Vocabulary", "Playful Learning", "Simple Phrases", "Beginner Confidence"],
+    personality: "Playful, patient, and encouraging"
+  },
+];
+
+const TutorsCarousel = memo(() => {
   const [currentTutor, setCurrentTutor] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartRef = useRef<number | null>(null);
   const touchEndRef = useRef<number | null>(null);
 
-  const tutors = [
-    {
-      name: "Sisu Senior",
-      role: "Professional & Academic Guide",
-      description: "Teaches for work, studies, and formal settings, focusing on advanced vocabulary and structures.",
-      icon: <FaBriefcase className="h-6 w-6 text-white" />,
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
-      image: "/images/Sisu_Senior.PNG",
-      specialties: ["Business Finnish", "Academic Writing", "Professional Meetings", "Formal Presentations"],
-      personality: "Experienced, patient, and detail-oriented"
-    },
-    {
-      name: "Sisu Äiti",
-      role: "Everyday & Family Conversation Partner",
-      description: "Specializes in conversational Finnish for daily life, partners, and family interactions, building practical fluency.",
-      icon: <FaHeart className="h-6 w-6 text-white" />,
-      color: "from-pink-500 to-pink-600",
-      bgColor: "bg-pink-50",
-      borderColor: "border-pink-200",
-      image: "/images/Sisu_Äiti.PNG",
-      specialties: ["Daily Conversations", "Family Topics", "Shopping & Errands", "Social Situations"],
-      personality: "Warm, encouraging, and practical"
-    },
-    {
-      name: "Sisu Nuori",
-      role: "Cultural & Social Companion",
-      description: "Focuses on modern culture, slang, and social interactions, perfect for connecting with young people.",
-      icon: <FaCommentDots className="h-6 w-6 text-white" />,
-      color: "from-green-600 to-green-800",
-      bgColor: "bg-green-50",
-      borderColor: "border-green-200",
-      image: "/images/Sisu_Nuori.PNG",
-      specialties: ["Modern Slang", "Youth Culture", "Social Media", "Casual Conversations"],
-      personality: "Fun, trendy, and relatable"
-    },
-    {
-      name: "Sisu Lapsi",
-      role: "Playful Learning Buddy",
-      description: "Offers a playful and encouraging approach to learning Finnish, using games and stories to build foundational vocabulary and confidence for beginners and young learners.",
-      icon: <FaStar className="h-6 w-6 text-white" />,
-      color: "from-yellow-500 to-yellow-600",
-      bgColor: "bg-yellow-50",
-      borderColor: "border-yellow-200",
-      image: "/images/Sisu_Lapsi.webp",
-      specialties: ["Basic Vocabulary", "Playful Learning", "Simple Phrases", "Beginner Confidence"],
-      personality: "Playful, patient, and encouraging"
-    },
-  ];
+  // tutors array hoisted above component
 
   const nextTutor = useCallback(() => {
     setCurrentTutor((prev) => (prev + 1) % tutors.length);
-  }, [tutors.length]);
+  }, []);
 
   const prevTutor = useCallback(() => {
     setCurrentTutor((prev) => (prev - 1 + tutors.length) % tutors.length);
-  }, [tutors.length]);
+  }, []);
 
   // Auto-rotation effect
   useEffect(() => {
@@ -117,10 +119,10 @@ const TutorsCarousel = () => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mb-12"
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6 border border-blue-200">
@@ -184,10 +186,10 @@ const TutorsCarousel = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTutor}
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 32 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, x: -32 }}
+              transition={{ duration: 0.28, ease: 'easeOut' }}
               className={`bg-white ${tutors[currentTutor].borderColor} border-2 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden`}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
@@ -247,6 +249,7 @@ const TutorsCarousel = () => {
                       alt={`${tutors[currentTutor].name} - AI Finnish tutor`}
                       width={300}
                       height={300}
+                      sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 300px"
                       className="relative w-72 h-72 object-contain rounded-2xl"
                       priority={currentTutor === 0}
                     />
@@ -261,10 +264,10 @@ const TutorsCarousel = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.35, ease: 'easeOut', delay: 0.2 }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mt-12"
         >
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-50 text-blue-800 text-sm font-medium">
@@ -275,6 +278,8 @@ const TutorsCarousel = () => {
       </div>
     </section>
   );
-};
+});
+
+TutorsCarousel.displayName = 'TutorsCarousel';
 
 export default TutorsCarousel;

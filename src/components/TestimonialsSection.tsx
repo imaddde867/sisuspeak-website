@@ -1,11 +1,12 @@
 "use client";
 
-import { motion } from '@/utils/motion';
+import { memo } from 'react';
+import { motion, useReducedMotion } from '@/utils/motion';
 
 import { FaStar, FaQuoteLeft } from 'react-icons/fa';
 
-const TestimonialsSection = () => {
-  
+const TestimonialsSection = memo(() => {
+  const prefersReduced = useReducedMotion();
 
   const testimonials = [
     {
@@ -38,10 +39,10 @@ const TestimonialsSection = () => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mb-12"
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium mb-6 border border-yellow-200">
@@ -62,10 +63,10 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.35, ease: 'easeOut', delay: prefersReduced ? 0 : index * 0.08 }}
+              viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
               className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200 relative"
             >
               <div className="absolute top-4 right-4 text-blue-100">
@@ -97,10 +98,10 @@ const TestimonialsSection = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.35, ease: 'easeOut', delay: prefersReduced ? 0 : 0.3 }}
+          viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mt-12"
         >
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-100 text-green-800 text-sm font-medium">
@@ -111,6 +112,8 @@ const TestimonialsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+TestimonialsSection.displayName = 'TestimonialsSection';
 
 export default TestimonialsSection;

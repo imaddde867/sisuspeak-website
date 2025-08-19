@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
+import Section from '@/components/ui/Section';
+import Card from '@/components/ui/Card';
 import { trackEmailSignup } from '@/utils/analytics';
 import { validateEmail, sanitizeInput } from '@/utils/validation';
 import { submitFormData, FormSubmissionQueue } from '@/utils/api';
@@ -85,28 +87,14 @@ export default function Signup() {
   };
 
   return (
-    <PageLayout>
-      {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800 py-16 sm:py-20">
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-            Early Access Available
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Join the <span className="text-yellow-300">Sisu</span> Waitlist
-          </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed mb-8">
-            Be among the first to experience AI-powered Finnish learning. Get notified when we launch.
-          </p>
-        </div>
-      </div>
-
-      {/* Main Form Section */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PageLayout
+      title="Join the Sisu Waitlist"
+      description="Be among the first to experience AI‑powered Finnish learning. We’ll notify you when early access opens."
+    >
+      <Section className="bg-gray-50">
+        <div className="max-w-2xl mx-auto">
           {submitted ? (
-            <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-10 text-center border border-gray-100">
+            <Card className="p-8 sm:p-10 text-center">
               <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-500 mb-6">
                 <svg className="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -155,9 +143,9 @@ export default function Signup() {
                   Back to Home
                 </Link>
               </div>
-            </div>
+            </Card>
           ) : (
-            <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-10 border border-gray-100">
+            <Card className="p-8 sm:p-10">
               <div className="text-center mb-8">
                 <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,6 +180,8 @@ export default function Signup() {
                       } focus:outline-none focus:ring-2 focus:ring-opacity-20 placeholder-gray-400`}
                       placeholder="your@email.com"
                       disabled={isSubmitting}
+                      aria-invalid={!!errors.email}
+                      aria-describedby={errors.email ? 'email-error' : undefined}
                     />
 
                     {/* Email validation indicator */}
@@ -215,7 +205,7 @@ export default function Signup() {
                   </div>
 
                   {errors.email && (
-                    <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                    <p id="email-error" className="mt-2 text-sm text-red-600 flex items-center gap-1">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
@@ -287,10 +277,10 @@ export default function Signup() {
                   </div>
                 </div>
               </form>
-            </div>
+            </Card>
           )}
         </div>
-      </section>
+      </Section>
     </PageLayout>
   );
 }
