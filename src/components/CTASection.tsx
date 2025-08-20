@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { sendWelcomeEmailWithFallback } from '@/utils/emailService';
+import { saveWaitlistSignup } from '@/utils/db';
 import { trackEmailSignup } from '@/utils/analytics';
 
 const logDevError = (...args: unknown[]) => {
@@ -41,22 +42,14 @@ const CTASection = () => {
     setError('');
 
     try {
-      // Send email to Formspree
-      const response = await fetch('https://formspree.io/f/mwpbkgao', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          source: 'Sisu Speak CTA',
-          timestamp: new Date().toISOString(),
-          page: 'homepage'
-        }),
+      await saveWaitlistSignup({
+        email,
+        source: 'Sisu Speak CTA',
+        timestamp: new Date().toISOString(),
+        page: 'homepage',
       });
 
-      if (response.ok) {
+      {
         setSubmitted(true);
 
         // Track successful email signup
@@ -75,11 +68,7 @@ const CTASection = () => {
 
         setEmail('');
         setIsValidEmail(false);
-      } else {
-        const errorText = await response.text();
-        logDevError('CTA Response error:', errorText);
-        throw new Error(`Failed to submit: ${response.status}`);
-      }
+  }
     } catch (error) {
       logDevError('CTA Submission error:', error);
       setError('Something went wrong. Please try again.');

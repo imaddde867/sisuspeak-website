@@ -5,6 +5,7 @@ import PageLayout from '@/components/PageLayout';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 import { trackContactSubmission, trackFormStart, trackFormAbandon } from '@/utils/analytics';
+import { saveContactMessage } from '@/utils/db';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -107,29 +108,19 @@ export default function Contact() {
     }
 
     try {
-      // Send contact form to Formspree (configured to send to imadeddine200507@gmail.com)
-      const response = await fetch('https://formspree.io/f/mwpbkgao', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject || 'General Inquiry',
-          message: formData.message,
-          company: formData.company || '',
-          phone: formData.phone || '',
-          source: 'Sisu Speak Contact Form',
-          timestamp: new Date().toISOString(),
-          page: 'contact',
-          _replyto: formData.email,
-          _subject: `New Contact Form Submission: ${formData.subject || 'General Inquiry'}`,
-        }),
+      await saveContactMessage({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject || 'General Inquiry',
+        message: formData.message,
+        company: formData.company || undefined,
+        phone: formData.phone || undefined,
+        source: 'Sisu Speak Contact Form',
+        timestamp: new Date().toISOString(),
+        page: 'contact',
       });
 
-      if (response.ok) {
+      {
         setSubmitted(true);
 
         // Track successful contact form submission
@@ -153,11 +144,7 @@ export default function Contact() {
           company: '',
           phone: ''
         });
-      } else {
-        const errorText = await response.text();
-        console.error('Response error:', errorText);
-        throw new Error(`Failed to submit: ${response.status}`);
-      }
+  }
     } catch (error) {
       console.error('Submission error:', error);
       setErrors({ submit: 'Something went wrong. Please try again.' });

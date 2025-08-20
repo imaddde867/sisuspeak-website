@@ -17,30 +17,19 @@ export const submitFormData = async (
   data: FormSubmissionData,
   maxRetries: number = 3
 ): Promise<boolean> => {
-  const FORMSPREE_URL = 'https://formspree.io/f/mwpbkgao';
+  // Now submit to Supabase instead of Formspree
+  const { saveWaitlistSignup } = await import('./db');
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      const response = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(data),
+      await saveWaitlistSignup({
+        email: data.email,
+        source: data.source,
+        page: data.page,
+        timestamp: data.timestamp,
+        metadata: data,
       });
-
-      if (response.ok) {
-        return true;
-      }
-
-      // If it's the last attempt, throw an error
-      const responseText = await response.text();
-
-      // If it's the last attempt, throw an error
-      if (attempt === maxRetries) {
-        throw new Error(`Failed after ${maxRetries} attempts. Last error: ${response.status} - ${responseText}`);
-      }
+      return true;
 
       // Wait before retrying (exponential backoff)
       await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));

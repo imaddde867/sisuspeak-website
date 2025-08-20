@@ -117,6 +117,30 @@ Note: Internal routing still uses absolute hrefs (e.g., "/contact"). For full su
 - Added an accessibility skip link and main landmark.
 - Local analytics now forwards to Google Analytics when available.
 
+## Supabase (email capture)
+
+Supabase is already configured and live. Forms submit directly to Supabase with RLS-enabled insert-only access from the client.
+
+What exists:
+- Tables: `waitlist_signups`, `contact_messages`, `email_events`
+- RLS: anon role can INSERT only; no client-side reads are permitted
+
+Verify data:
+- In Supabase Dashboard → Project → Database → Tables → public schema
+- Check new rows in `waitlist_signups` (CTA/Signup) and `contact_messages` (Contact page)
+
+Local development:
+- Ensure `.env.local` has your project values:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=YOUR_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_ANON_KEY
+```
+
+Operational notes:
+- Reading data should be done via Dashboard or a secure backend with a service role key (not from the client)
+- If schema changes are needed, edit `supabase/migrations/0001_init_waitlist_and_contact.sql` and push via Supabase SQL editor or CLI
+
 ## Contact
 
 **Imad Eddine El Mouss**

@@ -47,47 +47,22 @@ export const sendWelcomeEmail = async (email: string, name?: string): Promise<bo
 };
 
 /**
- * Fallback email service using Formspree for welcome emails
- * This is a backup method in case EmailJS fails
+ * Fallback email service: log the intent to Supabase for later processing
  */
 export const sendWelcomeEmailFallback = async (email: string): Promise<boolean> => {
   try {
-    const response = await fetch('https://formspree.io/f/mwpbkgao', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: email,
-        source: 'Sisu Speak Welcome Email',
-        type: 'welcome_email',
-        timestamp: new Date().toISOString(),
-        _subject: 'Welcome to Sisu Speak Waitlist! 🇫🇮',
-        _autoresponse: `
-          Tervetuloa! Welcome to the Sisu Speak family!
-
-          Thank you for joining our waitlist. You're now part of an exclusive group of Finnish language enthusiasts who will be the first to experience our revolutionary AI-powered learning platform.
-
-          What happens next?
-          • You'll receive early access when we launch
-          • Exclusive updates on our development progress
-          • Special launch pricing just for waitlist members
-          • Tips and resources for Finnish language learning
-
-          We're working hard to bring you the most effective and engaging way to learn language through AI conversation. Your journey to fluency starts here!
-
-          Kiitos ja nähdään pian! (Thank you and see you soon!)
-
-          The Sisu Speak Team
-          https://sisuspeak.com
-        `,
-        _replyto: 'contact@sisuspeak.live'
-      }),
+    const { supabase } = await import('./supabaseClient');
+    const { error } = await supabase.from('email_events').insert({
+      type: 'welcome_email',
+      email,
+      status: 'queued',
+      created_at: new Date().toISOString(),
+      metadata: { source: 'emailjs_fallback' },
     });
-
-    return response.ok;
+    if (error) throw error;
+    return true;
   } catch (error) {
-    console.error('Fallback welcome email failed:', error);
+    console.error('Fallback welcome email log failed:', error);
     return false;
   }
 };
@@ -103,6 +78,6 @@ export const sendWelcomeEmailWithFallback = async (email: string, name?: string)
     return true;
   }
 
-  // Fallback to Formspree
+  // Fallback to Supabase event log
   return await sendWelcomeEmailFallback(email);
 };
