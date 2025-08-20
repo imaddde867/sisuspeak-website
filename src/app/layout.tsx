@@ -8,6 +8,7 @@ import CookieBanner from '@/components/CookieBanner';
 import CookiePreferencesModal from '@/components/CookiePreferencesModal';
 import AnalyticsScripts from '@/components/AnalyticsScripts';
 import PerformanceMonitor from '@/components/PerformanceMonitor';
+import SubmissionQueueProcessor from '@/components/SubmissionQueueProcessor';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -102,6 +103,7 @@ export default function RootLayout({
           <PageTracker>
             <div id="main" role="main">{children}</div>
           </PageTracker>
+          <SubmissionQueueProcessor />
           <CookieBanner />
           <CookiePreferencesModal />
         </CookieConsentProvider>
