@@ -42,9 +42,9 @@ const ProblemSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mb-12 sm:mb-16"
         >
@@ -65,11 +65,11 @@ const ProblemSection = () => {
           {problems.map((problem, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, ease: 'easeOut', delay: index * 0.08 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.3, ease: 'easeOut', delay: index * 0.05 }}
               viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
-              whileHover={{ y: -4, scale: 1.02 }}
+              whileHover={{ scale: 1.02 }}
               className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-blue-100 hover:border-blue-200 flex flex-col h-full"
             >
               <motion.div 

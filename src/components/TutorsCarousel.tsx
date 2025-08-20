@@ -119,9 +119,9 @@ const TutorsCarousel = memo(() => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mb-12"
         >
@@ -183,15 +183,16 @@ const TutorsCarousel = memo(() => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentTutor}
-              initial={{ opacity: 0, x: 32 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -32 }}
-              transition={{ duration: 0.28, ease: 'easeOut' }}
-              className={`bg-white ${tutors[currentTutor].borderColor} border-2 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden`}
-            >
+          <div className="relative min-h-[400px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentTutor}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className={`absolute inset-0 bg-white ${tutors[currentTutor].borderColor} border-2 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden`}
+              >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 {/* Left Side - Content */}
                 <div className={`${tutors[currentTutor].bgColor} p-8 lg:p-10`}>
@@ -259,14 +260,15 @@ const TutorsCarousel = memo(() => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut', delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut', delay: 0.1 }}
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mt-12"
         >

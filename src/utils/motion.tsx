@@ -33,13 +33,23 @@ export {
 
 // Add any other framer-motion exports you need in your project here
 
-// Shared, subtle variants to prevent jarring animations
+// Shared, subtle variants to prevent jarring animations and layout shifts
 export const fadeInUp = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: 8 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' } },
 };
 
 export const fadeIn = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.35, ease: 'easeOut' } },
+  show: { opacity: 1, transition: { duration: 0.25, ease: 'easeOut' } },
+};
+
+export const stableSlide = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.2, ease: 'easeOut' } },
+};
+
+export const noLayoutShift = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.2 } },
 };

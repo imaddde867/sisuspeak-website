@@ -39,17 +39,17 @@ const HowItWorks = memo(() => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 12 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } },
   };
 
   return (
     <section id="how-it-works" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mb-16"
         >
@@ -87,9 +87,9 @@ const HowItWorks = memo(() => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut', delay: prefersReduced ? 0 : 0.4 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut', delay: prefersReduced ? 0 : 0.2 }}
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="mt-16 text-center"
         >

@@ -39,9 +39,9 @@ const TestimonialsSection = memo(() => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mb-12"
         >
@@ -63,9 +63,9 @@ const TestimonialsSection = memo(() => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, ease: 'easeOut', delay: prefersReduced ? 0 : index * 0.08 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.3, ease: 'easeOut', delay: prefersReduced ? 0 : index * 0.05 }}
               viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
               className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200 relative"
             >
@@ -98,9 +98,9 @@ const TestimonialsSection = memo(() => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut', delay: prefersReduced ? 0 : 0.3 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut', delay: prefersReduced ? 0 : 0.15 }}
           viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
           className="text-center mt-12"
         >

@@ -126,19 +126,20 @@ const Navbar = memo(() => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-white border-t border-gray-200"
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
+            exit={{ opacity: 0, scaleY: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            style={{ transformOrigin: 'top' }}
+            className="md:hidden overflow-hidden bg-white border-t border-gray-200 shadow-lg"
           >
             <div className="px-6 pt-6 pb-6 space-y-4">
               {mainNavLinks.map((item, index) => (
                 <motion.div
                   key={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2, delay: index * 0.05 }}
                 >
                   <Link
                     href={item.href}
@@ -151,9 +152,9 @@ const Navbar = memo(() => {
               ))}
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2, delay: 0.2 }}
                 className="pt-4 border-t border-gray-200"
               >
                 <Link

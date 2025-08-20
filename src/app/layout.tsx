@@ -7,6 +7,7 @@ import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
 import CookieBanner from '@/components/CookieBanner';
 import CookiePreferencesModal from '@/components/CookiePreferencesModal';
 import AnalyticsScripts from '@/components/AnalyticsScripts';
+import PerformanceMonitor from '@/components/PerformanceMonitor';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +35,7 @@ const baloo = Baloo_2({
 export const metadata: Metadata = {
   title: "Sisu Speak | AI-Powered Finnish Learning",
   description: "Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences.",
-  keywords: ["Finnish learning", "AI tutor", "NLP", "pronunciation", "conversation practice"],
+  keywords: ["Finnish learning", "AI tutor", "NLP", "pronunciation", "conversation practice", "language learning app", "Finnish conversation", "AI language tutor"],
   icons: {
     icon: [
       { url: '/logo.jpg', sizes: '32x32', type: 'image/jpeg' },
@@ -80,6 +81,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
@@ -94,12 +98,32 @@ export default function RootLayout({
         </a>
         <CookieConsentProvider>
           <AnalyticsScripts />
+          <PerformanceMonitor />
           <PageTracker>
             <div id="main" role="main">{children}</div>
           </PageTracker>
           <CookieBanner />
           <CookiePreferencesModal />
         </CookieConsentProvider>
+        
+        {/* Service Worker Registration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                      console.log('SW registration failed: ', registrationError);
+                    });
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );

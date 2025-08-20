@@ -34,9 +34,9 @@ const SolutionSection = () => {
     <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
           viewport={{ once: true, margin: "-20px" }}
           className="text-center mb-12"
         >
@@ -58,15 +58,15 @@ const SolutionSection = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ 
-                duration: 0.5, 
-                delay: index * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                duration: 0.3, 
+                delay: index * 0.05,
+                ease: 'easeOut'
               }}
               viewport={{ once: true, margin: "-20px" }}
-              whileHover={{ y: -4, scale: 1.02 }}
+              whileHover={{ scale: 1.02 }}
               className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-white/50 text-center hover:shadow-lg hover:border-blue-200"
             >
               <motion.div 
@@ -87,9 +87,9 @@ const SolutionSection = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.3, ease: 'easeOut' }}
           viewport={{ once: true, margin: "-20px" }}
           className="text-center mt-12"
         >

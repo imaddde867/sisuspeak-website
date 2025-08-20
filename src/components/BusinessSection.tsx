@@ -29,9 +29,9 @@ const BusinessSection = () => (
 	<section className="py-16 bg-gray-50">
 		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<motion.div
-				initial={{ opacity: 0, y: -20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 0.3 }}
 				viewport={{ once: true }}
 				className="text-center mb-12"
 			>
@@ -51,9 +51,9 @@ const BusinessSection = () => (
 				{businessTypes.map((type, idx) => (
 					<motion.div
 						key={type.title}
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, delay: idx * 0.1 }}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 0.3, delay: idx * 0.05 }}
 						viewport={{ once: true }}
 						className="bg-blue-50 rounded-2xl p-6 border border-blue-100 shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-200 flex flex-col items-center text-center min-h-[200px]"
 					>
@@ -70,9 +70,9 @@ const BusinessSection = () => (
 				))}
 			</div>
 			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, delay: 0.3 }}
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 0.3, delay: 0.15 }}
 				viewport={{ once: true }}
 				className="text-center"
 			>
