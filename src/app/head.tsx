@@ -8,7 +8,7 @@ export default function Head() {
   <link rel="apple-touch-icon" href="/logo.jpg?v=20250820" />
 
       {/* Canonical URL for SEO */}
-      <link rel="canonical" href="https://sisuspeak.live/" />
+      <link rel="canonical" href="https://www.sisuspeak.live/" />
 
       {/* JSON-LD Structured Data for Organization, Website, and FAQPage */}
       <script
@@ -18,8 +18,8 @@ export default function Head() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Sisu Speak",
-            "url": "https://sisuspeak.live/",
-            "logo": "https://sisuspeak.live/logo_24x24.svg",
+            "url": "https://www.sisuspeak.live/",
+            "logo": "https://www.sisuspeak.live/logo_24x24.svg",
             "sameAs": [
               "https://twitter.com/sisuspeak",
               "https://linkedin.com/company/sisuspeak",
@@ -37,11 +37,11 @@ export default function Head() {
           __html: `{
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "url": "https://sisuspeak.live/",
+            "url": "https://www.sisuspeak.live/",
             "name": "Sisu Speak",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://sisuspeak.live/?q={search_term_string}",
+              "target": "https://www.sisuspeak.live/?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           }`,
@@ -98,14 +98,14 @@ export default function Head() {
       <meta name="application-name" content="Sisu Speak" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Sisu Speak" />
-      <meta property="og:url" content="https://sisuspeak.live/" />
-      <meta property="og:image" content="https://sisuspeak.live/images/family.webp" />
+  <meta property="og:url" content="https://www.sisuspeak.live/" />
+  <meta property="og:image" content="https://www.sisuspeak.live/images/family.webp" />
       <meta property="og:image:alt" content="Sisu Speak - Meet the AI Finnish Learning Family" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@sisuspeak" />
       <meta name="twitter:title" content="Sisu Speak | AI-Powered Finnish Learning" />
       <meta name="twitter:description" content="Learn Finnish naturally through conversation with AI tutors. Sisu Speak uses advanced NLP to provide personalized Finnish learning experiences." />
-      <meta name="twitter:image" content="https://sisuspeak.live/images/family.webp" />
+  <meta name="twitter:image" content="https://www.sisuspeak.live/images/family.webp" />
 
   {/* PWA manifest */}
       <link rel="manifest" href="/manifest.json" />

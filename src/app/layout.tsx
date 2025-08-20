@@ -51,13 +51,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sisu Speak | Learn Finnish Through AI Conversation",
     description: "Learn Finnish naturally through engaging conversations with AI tutors. More effective than traditional language learning methods.",
-    url: "https://sisuspeak.live/",
+    url: "https://www.sisuspeak.live/",
     siteName: "Sisu Speak",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://sisuspeak.live/images/family.webp",
+        url: "https://www.sisuspeak.live/images/family.webp",
         width: 1200,
         height: 630,
         alt: "Sisu Speak - Meet the AI Finnish Learning Family",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Sisu Speak | AI-Powered Finnish Learning",
     description: "Learn Finnish naturally through conversation with AI tutors",
     creator: "@sisuspeak",
-    images: ["https://sisuspeak.live/images/family.webp"],
+  images: ["https://www.sisuspeak.live/images/family.webp"],
   },
   robots: {
     index: true,
