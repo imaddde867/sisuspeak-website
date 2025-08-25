@@ -79,7 +79,7 @@ const TutorsCarousel = memo(() => {
     
     const interval = setInterval(() => {
       nextTutor();
-    }, 3000); // Change every 3 seconds
+    }, 5000); // Increased to 5 seconds for better performance
 
     return () => clearInterval(interval);
   }, [nextTutor, isPaused]);

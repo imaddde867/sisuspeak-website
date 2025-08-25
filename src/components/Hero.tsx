@@ -31,10 +31,10 @@ const Hero = () => {
       }, 12000);
     };
 
-    // schedule stars with rAF-backed timer
+    // Optimized star creation for better performance
     let running = true;
     let last = performance.now();
-    const intervalMs = 220;
+    const intervalMs = 800; // Increased from 220ms to 800ms for smoother scrolling
     const loop = (now: number) => {
       if (!running) return;
       if (now - last >= intervalMs) {
@@ -44,8 +44,8 @@ const Hero = () => {
       requestAnimationFrame(loop);
     };
 
-    // initial burst (smaller)
-    for (let i = 0; i < 15; i++) {
+    // Reduced initial burst for better performance
+    for (let i = 0; i < 8; i++) { // Reduced from 15 to 8
       requestAnimationFrame(() => createStar());
     }
     requestAnimationFrame(loop);
